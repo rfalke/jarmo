@@ -96,7 +96,7 @@ def doOneLine(line):
 
     def write_get_raw(name, start, size):
         if searchRegion(name, size, True) is None:
-            out.write(indent + "    final int %s = getPart(opcode32Bit, %d, %d); // raw\n" % (name, start, size))
+            out.write(indent + "    final int %s = helper.getPart(opcode32Bit, %d, %d); // raw\n" % (name, start, size))
 
     def has_regions(**kwargs):
         for key in kwargs.keys():
@@ -118,7 +118,7 @@ def doOneLine(line):
 
     def requireSigned(name, numBits):
         require(name, numBits)
-        out.write(indent + "    final int %sSigned = asSigned(%s, %d);\n" % (name, name, numBits))
+        out.write(indent + "    final int %sSigned = helper.asSigned(%s, %d);\n" % (name, name, numBits))
 
     if " " in left:
         opc, rest = left.split(" ", 1)
@@ -141,13 +141,13 @@ def doOneLine(line):
 
     if 1:
         for region in regions:
-            out.write(indent + "    final int %s = getPart(opcode32Bit, %d, %d);\n" % (
+            out.write(indent + "    final int %s = helper.getPart(opcode32Bit, %d, %d);\n" % (
                 region.name, region.start, region.size))
 
         word = words[0]
         if word == "B.<cond>":
             require("cond", 4)
-            second.append('stmt.opcode = "B." + decodeBranchCondition(cond);')
+            second.append('stmt.opcode = "B." + helper.decodeBranchCondition(cond);')
         elif "{2}" in word:
             require("Q", 1)
             second.append('stmt.opcode = "%s" + (Q==0?"":"2");' % word.replace("{2}", ""))
@@ -167,7 +167,7 @@ def doOneLine(line):
         ALIAS_MAP["SBFM"] = [("ASR <Wd>,<Wn>,#<shift>", "imms == 31"),
                              ("ASR <Xd>,<Xn>,#<shift>", "imms == 63"),
                              ("SBFIZ", "imms < immr"),
-                             ("SBFX", "isBfxPreferred(sf, 0, imms, immr)"),
+                             ("SBFX", "helper.isBfxPreferred(sf, 0, imms, immr)"),
                              ("SXTB", "immr == 0 && imms == 7"),
                              ("SXTH", "immr == 0 && imms == 15"),
                              ("SXTW", "immr == 0 && imms == 31")]
@@ -176,17 +176,17 @@ def doOneLine(line):
                              ("LSR <Wd>,<Wn>,#<shift>", "imms == 31"),
                              ("LSR <Xd>,<Xn>,#<shift>", "imms == 63"),
                              ("UBFIZ", "imms < immr && imms + 1 != immr"),
-                             ("UBFX", "isBfxPreferred(sf, 0, imms, immr)"),
+                             ("UBFX", "helper.isBfxPreferred(sf, 0, imms, immr)"),
                              ("UXTB", "immr == 0 && imms == 7"),
                              ("UXTH", "immr == 0 && imms == 15")]
-        ALIAS_MAP["USHLL{2}"] = [("UXTL{2}", "bitCount(immh) == 1 && immb == 0")]
+        ALIAS_MAP["USHLL{2}"] = [("UXTL{2}", "helper.bitCount(immh) == 1 && immb == 0")]
         ALIAS_MAP["SUBS <Wd>,<Wn>,<Wm>{,<shift2> #<amount>}"] = [
             ("CMP <Wn>,<Wm>{,<shift2> #<amount>}", "Rd == 31 && Rn != 31"),
             ("NEGS <Wd>,<Wm>{,<shift2> #<amount>}", "Rn == 31")]
         ALIAS_MAP["SUBS <Xd>,<Xn>,<Xm>{,<shift2> #<amount>}"] = [
             ("CMP <Xn>,<Xm>{,<shift2> #<amount>}", "Rd == 31 && Rn != 31"),
             ("NEGS <Xd>,<Xm>{,<shift2> #<amount>}", "Rn == 31")]
-        ALIAS_MAP["SSHLL{2}"] = [("SXTL{2}", "immb == 0 && bitCount(immh) == 1")]
+        ALIAS_MAP["SSHLL{2}"] = [("SXTL{2}", "immb == 0 && helper.bitCount(immh) == 1")]
         ALIAS_MAP["UMOV <Wd>,<Vn>.<Ts>[<index-if1>]"] = [("MOV <Wd>,<Vn>.S[<index-if1>]", "(imm5 & 0b111) == 0b100")]
         ALIAS_MAP["UMOV <Xd>,<Vn>.<Ts>[<index-if2>]"] = [("MOV <Xd>,<Vn>.D[<index-if2>]", "(imm5 & 0b1111) == 0b1000")]
         ALIAS_MAP["SBCS"] = [("NGCS", "Rn == 31")]
@@ -194,10 +194,10 @@ def doOneLine(line):
             ("MOV <Wd|WSP>,<Wn|WSP>", "shift == 0 && imm12 == 0 && (Rd == 31 || Rn == 31)")]
         ALIAS_MAP["ADD <Xd|SP>,<Xn|SP>,#<imm>{,<shift>}"] = [
             ("MOV <Xd|SP>,<Xn|SP>", "shift == 0 && imm12 == 0 && (Rd == 31 || Rn == 31)")]
-        ALIAS_MAP["SYS"] = [("AT", 'getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[0].equals("AT")'),
-                            ("DC", 'getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[0].equals("DC")'),
-                            ("IC", 'getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[0].equals("IC")'),
-                            ("TLBI", 'getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[0].equals("TLBI")')]
+        ALIAS_MAP["SYS"] = [("AT", 'helper.getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[0].equals("AT")'),
+                            ("DC", 'helper.getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[0].equals("DC")'),
+                            ("IC", 'helper.getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[0].equals("IC")'),
+                            ("TLBI", 'helper.getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[0].equals("TLBI")')]
         ALIAS_MAP["MOVN <Wd>,#<imm>{,LSL #<shift>}"] = [
             ("MOV <Wd>,#<imm-inv-hw>", '!(imm16==0 && hw!=0) && imm16!=0xffff')]
         ALIAS_MAP["MOVN <Xd>,#<imm>{,LSL #<shift>}"] = [("MOV <Xd>,#<imm-inv-hw>", '!(imm16==0 && hw!=0)')]
@@ -292,7 +292,7 @@ def doOneLine(line):
 
             require("R" + name, 5)
             second.append(
-                arg + 'getRegisterName("%s", %s, %s, %d);' % (registerPrefix, "R" + name, withSp, optionalReg))
+                arg + 'helper.getRegisterName("%s", %s, %s, %d);' % (registerPrefix, "R" + name, withSp, optionalReg))
         elif word in ["<W(s+1)>", "<W(t+1)>",
                       "<X(s+1)>", "<X(t+1)>"]:
             reg_type = word[1]
@@ -300,55 +300,55 @@ def doOneLine(line):
             require("R" + reg_name, 5)
             assert reg_type in "XW", reg_type
             second.append(
-                arg + 'getRegisterName("%s", (%s+1)%%32, false, -1);' % (reg_type, "R" + reg_name))
+                arg + 'helper.getRegisterName("%s", (%s+1)%%32, false, -1);' % (reg_type, "R" + reg_name))
         elif word in ["#<imm-inv-hw>", "#<imm-nor-hw>"] and words[0] in ["MOV"]:
             require("hw", 2)
             require("imm16", 16)
             negate = toJavaBool("inv" in word)
             assert words[1][1] in "XW", words[0]
-            second.append(arg + 'decodeShiftedImm16("%s", imm16, hw, %s);' % (words[1][1], negate))
+            second.append(arg + 'helper.decodeShiftedImm16("%s", imm16, hw, %s);' % (words[1][1], negate))
         elif word in ["#<imm>"] and words[0] in ["TST", "EOR", "AND", "ANDS", "ORR", "MOV"]:
             require("immr", 6)
             require("imms", 6)
             require("N", 1)
             write_get_raw("sf", 31, 1)
 
-            second.append(arg + 'decodeAluImm(N, immr, imms, sf==0?32:64);')
+            second.append(arg + 'helper.decodeAluImm(N, immr, imms, sf==0?32:64);')
         elif word in ["#<lsb>"] and words[0] in ["SBFIZ", "BFC", "BFI", "BFXIL", "SBFX", "UBFIZ", "UBFX"]:
             require("immr", 6)
             require("imms", 6)
             write_get_raw("sf", 31, 1)
 
             second.append(
-                arg + 'decodeLsb(immr, imms, sf==0?32:64, %s);' % (toJavaBool(words[0] in ["BFXIL", "SBFX", "UBFX"])))
+                arg + 'helper.decodeLsb(immr, imms, sf==0?32:64, %s);' % (toJavaBool(words[0] in ["BFXIL", "SBFX", "UBFX"])))
         elif word in ["#<lsb>"] and words[0] in ["ROR", "EXTR"]:
             require("imms", 6)
             write_get_raw("sf", 31, 1)
 
-            second.append(arg + 'decodeLsbRor(imms, sf==0?32:64);')
+            second.append(arg + 'helper.decodeLsbRor(imms, sf==0?32:64);')
         elif word in ["#<width>"] and words[0] in ["SBFIZ", "BFC", "BFI", "BFXIL", "SBFX", "UBFIZ", "UBFX"]:
             require("immr", 6)
             require("imms", 6)
             write_get_raw("sf", 31, 1)
 
             second.append(
-                arg + 'decodeWidth(immr, imms, sf==0?32:64, %s);' % toJavaBool(words[0] in ["BFXIL", "SBFX", "UBFX"]))
+                arg + 'helper.decodeWidth(immr, imms, sf==0?32:64, %s);' % toJavaBool(words[0] in ["BFXIL", "SBFX", "UBFX"]))
         elif word in ["#<imm>"] and words[0] in ["TBNZ", "TBZ"]:
             require("b5", 1)
             require("b40", 5)
 
-            second.append(arg + 'formatDecimalImm((b5<<5)+b40);')
+            second.append(arg + 'helper.formatDecimalImm((b5<<5)+b40);')
         elif word in ["#<imm>"] and words[0] in ["CCMP", "CCMN"]:
             require("imm5", 5)
 
-            second.append(arg + 'formatHexImm(imm5);')
+            second.append(arg + 'helper.formatHexImm(imm5);')
         elif word in ["#<imm>"] and words[0] in ["BRK", "SMC"]:
             require("imm16", 16)
 
-            second.append(arg + 'formatHexImm(imm16);')
+            second.append(arg + 'helper.formatHexImm(imm16);')
         elif word in ["#<imm>"] and words[0] in ["FMOV"]:
             if has_regions(imm8=8):
-                second.append(arg + 'decodeFmovConstant(imm8);')
+                second.append(arg + 'helper.decodeFmovConstant(imm8);')
             else:
                 require("a", 1)
                 require("b", 1)
@@ -359,7 +359,7 @@ def doOneLine(line):
                 require("g", 1)
                 require("h", 1)
 
-                second.append(arg + 'decodeFmovConstant(a,b,c,d,e,f,g,h);')
+                second.append(arg + 'helper.decodeFmovConstant(a,b,c,d,e,f,g,h);')
         elif word in ["#<imm>"] and words[0] in ["MOVI"]:
             require("a", 1)
             require("b", 1)
@@ -370,7 +370,7 @@ def doOneLine(line):
             require("g", 1)
             require("h", 1)
 
-            second.append(arg + 'decodeMovi64Constant(a,b,c,d,e,f,g,h);')
+            second.append(arg + 'helper.decodeMovi64Constant(a,b,c,d,e,f,g,h);')
         elif word in ["#<imm8>"] and words[0] in ["MOVI", "MVNI"]:
             require("a", 1)
             require("b", 1)
@@ -381,38 +381,38 @@ def doOneLine(line):
             require("g", 1)
             require("h", 1)
 
-            second.append(arg + 'decodeMovi8Constant(a,b,c,d,e,f,g,h);')
+            second.append(arg + 'helper.decodeMovi8Constant(a,b,c,d,e,f,g,h);')
         elif word in ["#<imm6>"]:
             require("imm6", 6)
 
-            second.append(arg + 'formatDecimalImm(imm6);')
+            second.append(arg + 'helper.formatDecimalImm(imm6);')
         elif word in ["{#<imm>}"] and words[0].startswith("DCPS"):
             require("imm16", 16)
 
-            second.append(arg + 'formatHexImm(imm16);')
+            second.append(arg + 'helper.formatHexImm(imm16);')
         elif word in ["#<nzcv>"] and words[0] in ["CCMP", "CCMN", "FCCMP", "FCCMPE"]:
             require("nzcv", 4)
 
-            second.append(arg + 'formatHexImm(nzcv);')
+            second.append(arg + 'helper.formatHexImm(nzcv);')
         elif word in ["#<imm>{,<shift>}"]:
             require("shift", 2)
             require("imm12", 12)
 
-            second.append(arg + 'decodeShiftedImm12(imm12, shift);')
+            second.append(arg + 'helper.decodeShiftedImm12(imm12, shift);')
         elif word in ["#<imm>{,LSL #<shift>}"]:
             require("hw", 2)
             require("imm16", 16)
             write_get_raw("s", 31, 1)
 
-            second.append(arg + 'decodeMovShiftedImm16(imm16, hw, s==0?32:64);')
+            second.append(arg + 'helper.decodeMovShiftedImm16(imm16, hw, s==0?32:64);')
         elif word in ["#<immr>"]:
             require("immr", 6)
 
-            second.append(arg + 'formatDecimalImm(immr);')
+            second.append(arg + 'helper.formatDecimalImm(immr);')
         elif word in ["#<imms>"]:
             require("imms", 6)
 
-            second.append(arg + 'formatDecimalImm(imms);')
+            second.append(arg + 'helper.formatDecimalImm(imms);')
         elif re.match(r"^\[<[XW]n\|W?SP>,#<imm[0-9]*>\]!$", word):
             registerPrefix = word[2]
             require("Rn", 5)
@@ -427,13 +427,13 @@ def doOneLine(line):
             else:
                 assert False, "Don't know about variant " + repr(variant) + " words=" + repr(words)
 
-            second.append(arg + 'formatPreIndexMemAccess("%s", Rn, imm7Signed<<%s);' % (registerPrefix, shift))
+            second.append(arg + 'helper.formatPreIndexMemAccess("%s", Rn, imm7Signed<<%s);' % (registerPrefix, shift))
         elif word == "[<Xn|SP>,#<simm>]!" or word == "[<Wn|WSP>,#<simm>]!":
             registerPrefix = word[2]
             require("Rn", 5)
             requireSigned("imm9", 9)
 
-            second.append(arg + 'formatPreIndexMemAccess("%s", Rn, imm9Signed);' % registerPrefix)
+            second.append(arg + 'helper.formatPreIndexMemAccess("%s", Rn, imm9Signed);' % registerPrefix)
         elif re.match(r"^\[<[XW]n\|W?SP>\],#<imm[0-9]*>$", word):
             registerPrefix = word[2]
             require("Rn", 5)
@@ -449,13 +449,13 @@ def doOneLine(line):
                 assert False, "Don't know about variant " + repr(variant) + " words=" + repr(words)
 
             second.append(
-                arg + 'formatPostIndexMemAccess("%s", Rn, imm7Signed<<%s );' % (registerPrefix, shift))
+                arg + 'helper.formatPostIndexMemAccess("%s", Rn, imm7Signed<<%s );' % (registerPrefix, shift))
         elif word == "[<Xn|SP>],#<simm>" or word == "[<Wn|WSP>],#<simm>":
             registerPrefix = word[2]
             require("Rn", 5)
             requireSigned("imm9", 9)
 
-            second.append(arg + 'formatPostIndexMemAccess("%s", Rn, imm9Signed);' % registerPrefix)
+            second.append(arg + 'helper.formatPostIndexMemAccess("%s", Rn, imm9Signed);' % registerPrefix)
         elif re.match(r"^\[<[WX]n\|W?SP>\{,#<imm[0-9]*>\}\]$", word):
             registerPrefix = word[2]
             require("Rn", 5)
@@ -470,13 +470,13 @@ def doOneLine(line):
             else:
                 assert False, "Don't know about variant " + repr(variant) + " words=" + repr(words)
 
-            second.append(arg + 'formatMemAccessWithOffset("%s", Rn, imm7Signed<<%s);' % (registerPrefix, shift))
+            second.append(arg + 'helper.formatMemAccessWithOffset("%s", Rn, imm7Signed<<%s);' % (registerPrefix, shift))
         elif word == "[<Xn|SP>{,#<simm>}]" or word == "[<Wn|WSP>{,#<simm>}]":
             registerPrefix = word[2]
             require("Rn", 5)
             requireSigned("imm9", 9)
 
-            second.append(arg + 'formatMemAccessWithOffset("%s", Rn, imm9Signed);' % registerPrefix)
+            second.append(arg + 'helper.formatMemAccessWithOffset("%s", Rn, imm9Signed);' % registerPrefix)
         elif word == "[<Xn|SP>{,#<simm2>}]" or word == "[<Wn|WSP>{,#<simm2>}]":
             registerPrefix = word[2]
             require("Rn", 5)
@@ -484,7 +484,7 @@ def doOneLine(line):
             require("S", 1)
 
             second.append(
-                arg + 'formatMemAccessWithOffset("%s", Rn, decodeLdraaOffset(imm9, S));' % registerPrefix)
+                arg + 'helper.formatMemAccessWithOffset("%s", Rn, helper.decodeLdraaOffset(imm9, S));' % registerPrefix)
         elif word == "[<Xn|SP>{,#<simm2>}]!" or word == "[<Wn|WSP>{,#<simm2>}]!":
             registerPrefix = word[2]
             require("Rn", 5)
@@ -492,7 +492,7 @@ def doOneLine(line):
             require("S", 1)
 
             second.append(
-                arg + 'formatPreIndexMemAccess("%s", Rn, decodeLdraaOffset(imm9, S));' % registerPrefix)
+                arg + 'helper.formatPreIndexMemAccess("%s", Rn, helper.decodeLdraaOffset(imm9, S));' % registerPrefix)
         elif word == "[<Xn|SP>{,#<pimm>}]" or word == "[<Wn|WSP>{,#<pimm>}]":
             registerPrefix = word[2]
             require("Rn", 5)
@@ -508,7 +508,7 @@ def doOneLine(line):
                     shift = "(opcPart*4+size)"
                 else:
                     shift = "size"
-            second.append(arg + 'formatMemAccessWithOffset("%s", Rn, imm12 << %s);' % (
+            second.append(arg + 'helper.formatMemAccessWithOffset("%s", Rn, imm12 << %s);' % (
                 registerPrefix, shift))
         elif word == '[<Xn|SP>,(<Wm>|<Xm>){,<extend> {<amount>}}]' or word == '[<Xn|SP>,(<Wm>|<Xm>),<extend> {<amount>}]':
             registerPrefix = "X"
@@ -524,7 +524,7 @@ def doOneLine(line):
                 require("opc", 2)
                 amount = "S==1?(size+4*(opc/2)):0"
             is8Bit = toJavaBool(words[1] == "<Bt>")
-            second.append(arg + 'formatMemAccessWithTwoRegisters("%s", Rn, Rm, option, %s, %s, S, %s);' % (
+            second.append(arg + 'helper.formatMemAccessWithTwoRegisters("%s", Rn, Rm, option, %s, %s, S, %s);' % (
                 registerPrefix, amount, showDefaultLsl, is8Bit))
         elif word == '[<Xn|SP>,<Xm>{,LSL <amount>}]':
             registerPrefix = "X"
@@ -537,31 +537,31 @@ def doOneLine(line):
             if is_simd(words[1]):
                 require("opc", 2)
                 amount = "S==1?(size+4*(opc/2)):0"
-            second.append(arg + 'formatMemAccessWithTwoRegistersLsl("%s", Rn, Rm, %s, S);' % (
+            second.append(arg + 'helper.formatMemAccessWithTwoRegistersLsl("%s", Rn, Rm, %s, S);' % (
                 registerPrefix, amount))
         elif word == "[<Xn|SP>]":
             registerPrefix = "X"
             require("Rn", 5)
 
-            second.append(arg + 'formatMemAccessWithOffset("%s", Rn, 0);' % registerPrefix)
+            second.append(arg + 'helper.formatMemAccessWithOffset("%s", Rn, 0);' % registerPrefix)
         elif word == "<label>" and words[0] in ["LDR", "STR", "CBZ", "CBNZ", "B.<cond>", "LDRSW", "PRFM"]:
             requireSigned("imm19", 19)
 
-            second.append(arg + 'decodeLoadStoreRegAddrLabel(pc, imm19Signed);')
+            second.append(arg + 'helper.decodePcRelativeLabel(pc, 4 * imm19Signed);')
         elif word == "<label>" and words[0] in ["TBNZ", "TBZ"]:
             requireSigned("imm14", 14)
 
-            second.append(arg + 'decodePcRelativeLabel(pc, 4 * imm14Signed);')
+            second.append(arg + 'helper.decodePcRelativeLabel(pc, 4 * imm14Signed);')
         elif word == "<label>" and words[0] in ["ADRP", "ADR"]:
             require("immhi", 19)
             require("immlo", 2)
             page = toJavaBool(words[0] == "ADRP")
 
-            second.append(arg + 'decodeAdrLabel(pc, asSigned((immhi<<2)+immlo, 21), %s);' % page)
+            second.append(arg + 'helper.decodeAdrLabel(pc, helper.asSigned((immhi<<2)+immlo, 21), %s);' % page)
         elif word == "<label>" and words[0] in ["BL", "B"]:
             requireSigned("imm26", 26)
 
-            second.append(arg + 'decodeLongBranchLabel(pc, imm26Signed);')
+            second.append(arg + 'helper.decodePcRelativeLabel(pc, 4 * imm26Signed);')
         elif word in ["<Xm>{,<shift> #<amount>}",
                       "<Wm>{,<shift> #<amount>}",
                       "<Xm>{,<shift2> #<amount>}",
@@ -571,42 +571,42 @@ def doOneLine(line):
             require("imm6", 6)
 
             rorEnabled = toJavaBool("<shift>" in word)
-            second.append(arg + 'decodeShiftedRegister("%s", Rm, shift, imm6, %s);' % (word[1], rorEnabled))
+            second.append(arg + 'helper.decodeShiftedRegister("%s", Rm, shift, imm6, %s);' % (word[1], rorEnabled))
         elif word == "#<shift>" and has_regions(immh=4, immb=3):
-            second.append(arg + 'decodeShift_constMinusImm(immh, immb, true, true, true, false);')
+            second.append(arg + 'helper.decodeShift_constMinusImm(immh, immb, true, true, true, false);')
         elif word == "#<shift-hb2>":
             require("immh", 4)
             require("immb", 3)
 
-            second.append(arg + 'decodeShift_immMinusConst(immh, immb, false, false, false, true);')
+            second.append(arg + 'helper.decodeShift_immMinusConst(immh, immb, false, false, false, true);')
         elif word == "#<shift-hb3>":
             require("immh", 4)
             require("immb", 3)
 
-            second.append(arg + 'decodeShift_immMinusConst(immh, immb, true, true, true, true);')
+            second.append(arg + 'helper.decodeShift_immMinusConst(immh, immb, true, true, true, true);')
         elif word == "#<shift-hb4>":
             require("immh", 4)
             require("immb", 3)
 
-            second.append(arg + 'decodeShift_constMinusImm(immh, immb, false, false, false, true);')
+            second.append(arg + 'helper.decodeShift_constMinusImm(immh, immb, false, false, false, true);')
         elif word == "#<shift-hb5>":
             require("immh", 4)
             require("immb", 3)
 
-            second.append(arg + 'decodeShift_constMinusImm(immh, immb, true, true, true, true);')
+            second.append(arg + 'helper.decodeShift_constMinusImm(immh, immb, true, true, true, true);')
         elif word == "#<shift-hb6>":
             require("immh", 4)
             require("immb", 3)
 
-            second.append(arg + 'decodeShift_immMinusConst(immh, immb, true, true, true, false);')
+            second.append(arg + 'helper.decodeShift_immMinusConst(immh, immb, true, true, true, false);')
         elif word == "#<shift>" and words[0].startswith("ROR"):
             require("imms", 6)
 
-            second.append(arg + 'formatDecimalImm(imms);')
+            second.append(arg + 'helper.formatDecimalImm(imms);')
         elif word == "#<shift>" and words[0].startswith("SHLL"):
             require("size", 2)
 
-            second.append(arg + 'decodeShift2(size);')
+            second.append(arg + 'helper.decodeShift2(size);')
         elif word == "#<shift>":
             require("immr", 6)
             require("imms", 6)
@@ -616,12 +616,12 @@ def doOneLine(line):
             if words[1].startswith("<W"):
                 regSize = 32
 
-            second.append(arg + 'decodeShift(immr, imms, %d);' % regSize)
+            second.append(arg + 'helper.decodeShift(immr, imms, %d);' % regSize)
         elif word == "#<index>":
             require("Q", 1)
             require("imm4", 4)
 
-            second.append(arg + 'decodeIndex(Q, imm4);')
+            second.append(arg + 'helper.decodeIndex(Q, imm4);')
         elif word == "#<imm8>{,LSL #<amount>}":
             require("a", 1)
             require("b", 1)
@@ -634,7 +634,7 @@ def doOneLine(line):
             require("op", 1)
             require("cmode", 4)
 
-            second.append(arg + 'decodeImm8WithLsl(a,b,c,d,e,f,g,h,op,cmode);')
+            second.append(arg + 'helper.decodeImm8WithLsl(a,b,c,d,e,f,g,h,op,cmode);')
         elif word == "#<imm8>{,LSL #<amount>}":
             require("a", 1)
             require("b", 1)
@@ -647,31 +647,31 @@ def doOneLine(line):
             require("op", 1)
             require("cmode", 4)
 
-            second.append(arg + 'decodeImm8WithLsl(a,b,c,d,e,f,g,h,op,cmode);')
+            second.append(arg + 'helper.decodeImm8WithLsl(a,b,c,d,e,f,g,h,op,cmode);')
         elif word == "MSL #<amount>":
             require("cmode", 4)
 
-            second.append(arg + 'decodeMslAmount(cmode);')
+            second.append(arg + 'helper.decodeMslAmount(cmode);')
         elif word == "<R><t>":
             require("Rt", 5)
             require("b5", 1)
 
-            second.append(arg + 'getRegisterName(b5==0 ? "W" : "X", Rt, false, -1);')
+            second.append(arg + 'helper.getRegisterName(b5==0 ? "W" : "X", Rt, false, -1);')
         elif word == "<R><m>":
             require("Rm", 5)
             require("option", 3)
 
-            second.append(arg + 'getRegisterName(option&3==3 ? "X" : "W", Rm, false, -1);')
+            second.append(arg + 'helper.getRegisterName(option&3==3 ? "X" : "W", Rm, false, -1);')
         elif word == "<R><n>":
             require("Rn", 5)
             require("imm5", 5)
 
-            second.append(arg + 'decodeBaseRegister(imm5, Rn);')
+            second.append(arg + 'helper.decodeBaseRegister(imm5, Rn);')
         elif word == "<R><n2>":
             require("Rn", 5)
             require("imm5", 5)
 
-            second.append(arg + 'decodeBaseRegister2(imm5, Rn);')
+            second.append(arg + 'helper.decodeBaseRegister2(imm5, Rn);')
         elif word == '<R><m>{,<extend> {#<amount>}}':
             require("Rm", 5)
             require("option", 3)
@@ -680,7 +680,7 @@ def doOneLine(line):
             if has_regions(Rd=5) and searchRegion("Rd", 5).value != "11111":
                 haveSp += " || Rd == 31"
             second.append(
-                arg + 'decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, %s, true);' % haveSp)
+                arg + 'helper.decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, %s, true);' % haveSp)
         elif word == '<Wm>{,<extend> {#<amount>}}':
             require("Rm", 5)
             require("option", 3)
@@ -688,15 +688,15 @@ def doOneLine(line):
             haveSp = "Rn == 31"
             if has_regions(Rd=5) and searchRegion("Rd", 5).value != "11111":
                 haveSp += " || Rd == 31"
-            second.append(arg + 'decodeRegisterWithExtend("W", Rm, option, imm3, %s, false);' % haveSp)
+            second.append(arg + 'helper.decodeRegisterWithExtend("W", Rm, option, imm3, %s, false);' % haveSp)
         elif word == "<cond>":
             require("cond", 4)
 
-            second.append(arg + 'decodeBranchCondition(cond);')
+            second.append(arg + 'helper.decodeBranchCondition(cond);')
         elif word == "<cond2>":
             require("cond", 4)
 
-            second.append(arg + 'decodeBranchCondition(cond ^ 1);')
+            second.append(arg + 'helper.decodeBranchCondition(cond ^ 1);')
         elif word in ['{ <Vt>.<T> }',
                       '{ <Vt>.<T>,<Vt2>.<T> }',
                       '{ <Vt>.<T>,<Vt2>.<T>,<Vt3>.<T> }',
@@ -708,7 +708,7 @@ def doOneLine(line):
             enable1D = toJavaBool(words[0] in ["LD1", "LD1R", "LD2R", "LD3R", "LD4R",
                                                "ST1", "ST1R", "ST2R", "ST3R", "ST4R"])
             second.append("final int numRegs = %d;" % word.count("<T>"))
-            second.append(arg + 'decodeLd1(Q, size, Rt, numRegs, %s);' % enable1D)
+            second.append(arg + 'helper.decodeLd1(Q, size, Rt, numRegs, %s);' % enable1D)
         elif word in ['{ <Vn>.16B }',
                       '{ <Vn>.16B,<Vn+1>.16B }',
                       '{ <Vn>.16B,<Vn+1>.16B,<Vn+2>.16B }',
@@ -716,14 +716,14 @@ def doOneLine(line):
             require("Rn", 5)
 
             second.append("final int numRegs = %d;" % word.count("16B"))
-            second.append(arg + 'decodeTbx(Rn, numRegs);')
+            second.append(arg + 'helper.decodeTbx(Rn, numRegs);')
         elif word == '[<Xn|SP>],<imm>':
             registerPrefix = "X"
             require("Rn", 5)
             require("Q", 1)
 
             second.append(
-                arg + 'formatPostIndexMemAccess("%s", Rn, decodeLd1Offset(Q, numRegs));' % registerPrefix)
+                arg + 'helper.formatPostIndexMemAccess("%s", Rn, helper.decodeLd1Offset(Q, numRegs));' % registerPrefix)
         elif re.match('\[<Xn\|SP>\],<imm-f[1234]>$', word):
             registerPrefix = "X"
             require("Rn", 5)
@@ -731,7 +731,7 @@ def doOneLine(line):
             require("size", 2)
             factor = int(word[-2])
 
-            second.append(arg + 'formatPostIndexMemAccess("%s", Rn, %d << size);' % (registerPrefix, factor))
+            second.append(arg + 'helper.formatPostIndexMemAccess("%s", Rn, %d << size);' % (registerPrefix, factor))
         elif word in ['{ <Vt>.B }[<index>]',
                       '{ <Vt>.D }[<index>]',
                       '{ <Vt>.H }[<index>]',
@@ -744,7 +744,7 @@ def doOneLine(line):
             require("S", 1)
             require("size", 2)
 
-            second.append(arg + 'decodeLd1Index("%s", Rt, Q, S, size);' % registerPrefix)
+            second.append(arg + 'helper.decodeLd1Index("%s", Rt, Q, S, size);' % registerPrefix)
         elif word in ['{ <Vt>.B,<Vt2>.B }[<index>]',
                       '{ <Vt>.D,<Vt2>.D }[<index>]',
                       '{ <Vt>.H,<Vt2>.H }[<index>]',
@@ -757,7 +757,7 @@ def doOneLine(line):
             require("S", 1)
             require("size", 2)
 
-            second.append(arg + 'decodeLd2Index("%s", Rt, Q, S, size);' % registerPrefix)
+            second.append(arg + 'helper.decodeLd2Index("%s", Rt, Q, S, size);' % registerPrefix)
         elif word in ['{ <Vt>.B,<Vt2>.B,<Vt3>.B }[<index>]',
                       '{ <Vt>.D,<Vt2>.D,<Vt3>.D }[<index>]',
                       '{ <Vt>.H,<Vt2>.H,<Vt3>.H }[<index>]',
@@ -770,7 +770,7 @@ def doOneLine(line):
             require("S", 1)
             require("size", 2)
 
-            second.append(arg + 'decodeLd3Index("%s", Rt, Q, S, size);' % registerPrefix)
+            second.append(arg + 'helper.decodeLd3Index("%s", Rt, Q, S, size);' % registerPrefix)
         elif word in ['{ <Vt>.B,<Vt2>.B,<Vt3>.B,<Vt4>.B }[<index>]',
                       '{ <Vt>.D,<Vt2>.D,<Vt3>.D,<Vt4>.D }[<index>]',
                       '{ <Vt>.H,<Vt2>.H,<Vt3>.H,<Vt4>.H }[<index>]',
@@ -783,25 +783,25 @@ def doOneLine(line):
             require("S", 1)
             require("size", 2)
 
-            second.append(arg + 'decodeLd4Index("%s", Rt, Q, S, size);' % registerPrefix)
+            second.append(arg + 'helper.decodeLd4Index("%s", Rt, Q, S, size);' % registerPrefix)
         elif re.match("^<[DHS][dnma]>$", word):
             reg_type = word[1]
             reg_name = word[2]
             require("R" + reg_name, 5)
 
-            second.append(arg + 'formatFpuRegister("%s", R%s);' % (reg_type, reg_name))
+            second.append(arg + 'helper.formatFpuRegister("%s", R%s);' % (reg_type, reg_name))
         elif re.match("^<V><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
 
             if has_regions(size=2):
-                second.append(arg + 'decodeFpuRegister_size(size, %s, null, null, null, "D");' % reg_name)
+                second.append(arg + 'helper.decodeFpuRegister_size(size, %s, null, null, null, "D");' % reg_name)
             elif has_regions(sz=1):
-                second.append(arg + 'decodeFpuRegister_sz(%s, sz, "S", "D");' % reg_name)
+                second.append(arg + 'helper.decodeFpuRegister_sz(%s, sz, "S", "D");' % reg_name)
             elif has_regions(immh=4):
-                second.append(arg + 'decodeFpuRegister_leadingZeros(immh, %s, null, "H", "S", "D");' % reg_name)
+                second.append(arg + 'helper.decodeFpuRegister_leadingZeros(immh, %s, null, "H", "S", "D");' % reg_name)
             elif has_regions(imm5=5):
-                second.append(arg + 'decodeFpuRegister_custom1(imm5, %s);' % reg_name)
+                second.append(arg + 'helper.decodeFpuRegister_custom1(imm5, %s);' % reg_name)
             else:
                 assert 0, "Don't know how to decode " + word + ". Have " + repr(regions)
 
@@ -810,85 +810,85 @@ def doOneLine(line):
             require(reg_name, 5)
             require("size", 2)
 
-            second.append(arg + 'decodeFpuRegister_size(size, %s, "B", "H", "S", null);' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_size(size, %s, "B", "H", "S", null);' % reg_name)
         elif re.match("^<V-si2><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("size", 2)
 
-            second.append(arg + 'decodeFpuRegister_size(size, %s, null, "S", "D", null);' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_size(size, %s, null, "S", "D", null);' % reg_name)
         elif re.match("^<V-si3><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("size", 2)
 
-            second.append(arg + 'decodeFpuRegister_size(size, %s, null, "H", "S", null);' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_size(size, %s, null, "H", "S", null);' % reg_name)
         elif re.match("^<V-si4><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("size", 2)
 
-            second.append(arg + 'decodeFpuRegister_size(size, %s, "B", "H", "S", "D");' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_size(size, %s, "B", "H", "S", "D");' % reg_name)
         elif re.match("^<V-si5><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("size", 2)
 
-            second.append(arg + 'decodeFpuRegister_size(size, %s, "H", "S", "D", null);' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_size(size, %s, "H", "S", "D", null);' % reg_name)
         elif re.match("^<V-ih1><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("immh", 4)
 
-            second.append(arg + 'decodeFpuRegister_leadingZeros(immh, %s, "H", "S", "D", null);' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_leadingZeros(immh, %s, "H", "S", "D", null);' % reg_name)
         elif re.match("^<V-ih2><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("immh", 4)
 
-            second.append(arg + 'decodeFpuRegister_leadingZeros(immh, %s, "B", "H", "S", null);' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_leadingZeros(immh, %s, "B", "H", "S", null);' % reg_name)
         elif re.match("^<V-ih3><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("immh", 4)
 
-            second.append(arg + 'decodeFpuRegister_leadingZeros(immh, %s, "B", "H", "S", "D");' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_leadingZeros(immh, %s, "B", "H", "S", "D");' % reg_name)
         elif re.match("^<V-ih4><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("immh", 4)
 
-            second.append(arg + 'decodeFpuRegister_leadingZeros(immh, %s, null, null, null, "D");' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_leadingZeros(immh, %s, null, null, null, "D");' % reg_name)
         elif re.match("^<V-sz1><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeFpuRegister_sz(%s, sz, "H", null);' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_sz(%s, sz, "H", null);' % reg_name)
         elif re.match("^<V-sz2><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeFpuRegister_sz(%s, sz, "S", "D");' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_sz(%s, sz, "S", "D");' % reg_name)
         elif re.match("^<V-sz3><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeFpuRegister_sz(%s, sz, null, "S");' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_sz(%s, sz, null, "S");' % reg_name)
         elif re.match("^<V-sz4><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeFpuRegister_sz(%s, sz, null, "D");' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_sz(%s, sz, null, "D");' % reg_name)
         elif re.match("^<V-sz5><[dnm]>$", word):
             reg_name = "R" + word[-2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeFpuRegister_sz(%s, sz, "S", null);' % reg_name)
+            second.append(arg + 'helper.decodeFpuRegister_sz(%s, sz, "S", null);' % reg_name)
         ########################################################################################
         elif word == '<Vm>.<Ts>[<index-sz1>]':
             reg_name = "R" + word[2]
@@ -898,7 +898,7 @@ def doOneLine(line):
             require("L", 1)
             require("sz", 1)
 
-            second.append(arg + 'decodeVectorRegWithIndex_szHml1(%s, sz, H, L, M);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex_szHml1(%s, sz, H, L, M);' % reg_name)
         ########################################################################################
         elif word == '<Vm>.<Ts>[<index-si1>]':
             reg_name = "R" + word[2]
@@ -908,7 +908,7 @@ def doOneLine(line):
             require("L", 1)
             require("size", 2)
 
-            second.append(arg + 'decodeVectorRegWithIndex2(%s, size, H, L, M);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex2(%s, size, H, L, M);' % reg_name)
         elif word == '<Vm>.<Ts>[<index-si2>]':
             reg_name = "R" + word[2]
             require(reg_name, 4)
@@ -917,7 +917,7 @@ def doOneLine(line):
             require("L", 1)
             require("size", 2)
 
-            second.append(arg + 'decodeVectorRegWithIndex6(%s, size, H, L, M);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex6(%s, size, H, L, M);' % reg_name)
         elif word == '<Vm>.<Ts>[<index-si3>]':
             reg_name = "R" + word[2]
             require(reg_name, 4)
@@ -926,32 +926,32 @@ def doOneLine(line):
             require("L", 1)
             require("size", 2)
 
-            second.append(arg + 'decodeVectorRegWithIndex7(%s, size, H, L, M);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex7(%s, size, H, L, M);' % reg_name)
         ########################################################################################
         elif word == '<Vn>.<Ts>[<index>]' or word == '<Vn>.<T>[<index>]' or word == '<Vd>.<Ts>[<index>]':
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("imm5", 5)
 
-            second.append(arg + 'decodeVectorRegWithIndex1(%s, imm5, true, true, true, true);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex1(%s, imm5, true, true, true, true);' % reg_name)
         elif word == '<Vd>.<Ts>[<index-if1>]' or word == '<Vn>.<Ts>[<index-if1>]' or word == '<Vn>.S[<index-if1>]':
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("imm5", 5)
 
-            second.append(arg + 'decodeVectorRegWithIndex1(%s, imm5, true, true, true, false);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex1(%s, imm5, true, true, true, false);' % reg_name)
         elif word == '<Vd>.<Ts>[<index-if2>]' or word == '<Vn>.<Ts>[<index-if2>]' or word == '<Vn>.D[<index-if2>]':
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("imm5", 5)
 
-            second.append(arg + 'decodeVectorRegWithIndex1(%s, imm5, false, false, false, true);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex1(%s, imm5, false, false, false, true);' % reg_name)
         elif word == '<Vd>.<Ts>[<index-if3>]' or word == '<Vn>.<Ts>[<index-if3>]':
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("imm5", 5)
 
-            second.append(arg + 'decodeVectorRegWithIndex1(%s, imm5, true, true, false, false);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex1(%s, imm5, true, true, false, false);' % reg_name)
         ########################################################################################
         elif word == '<Vm>.H[<index>]':
             reg_name = "R" + word[2]
@@ -960,7 +960,7 @@ def doOneLine(line):
             require("M", 1)
             require("L", 1)
 
-            second.append(arg + 'decodeVectorRegWithIndex3(%s, H, L, M);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex3(%s, H, L, M);' % reg_name)
         elif word == '<Vm>.4B[<index>]':
             reg_name = "R" + word[2]
             require(reg_name, 4)
@@ -968,37 +968,37 @@ def doOneLine(line):
             require("M", 1)
             require("L", 1)
 
-            second.append(arg + 'decodeVectorRegWithIndex11(%s, M, H, L);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex11(%s, M, H, L);' % reg_name)
         elif word == '<Vn>.<Ts>[<index2>]':
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("imm5", 5)
             require("imm4", 4)
 
-            second.append(arg + 'decodeVectorRegWithIndex10(%s, imm5, imm4);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex10(%s, imm5, imm4);' % reg_name)
         elif word == '<Vm>.S[<imm2>]':
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("imm2", 2)
 
-            second.append(arg + 'decodeVectorRegWithIndex12(%s, imm2);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegWithIndex12(%s, imm2);' % reg_name)
         ########################################################################################
         elif re.match("^<V[dnm]>.<T>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
 
             if has_regions(size=2, Q=1):
-                second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "______r_");' % reg_name)
+                second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "______r_");' % reg_name)
             elif has_regions(Q=1, imm5=5):
-                second.append(arg + 'decodeVectorReg5(Q, imm5, %s);' % reg_name)
+                second.append(arg + 'helper.decodeVectorReg5(Q, imm5, %s);' % reg_name)
             elif has_regions(Q=1, sz=1):
-                second.append(arg + 'decodeVectorReg6(sz, Q, %s);' % reg_name)
+                second.append(arg + 'helper.decodeVectorReg6(sz, Q, %s);' % reg_name)
             elif has_regions(Q=1, immh=4):
-                second.append(arg + 'decodeVectorReg9(immh, Q, %s);' % reg_name)
+                second.append(arg + 'helper.decodeVectorReg9(immh, Q, %s);' % reg_name)
             elif has_regions(Q=1):
-                second.append(arg + 'decodeVectorRegBWithQ(Q, %s);' % reg_name)
+                second.append(arg + 'helper.decodeVectorRegBWithQ(Q, %s);' % reg_name)
             elif has_regions(size=2):
-                second.append(arg + 'decodeVectorReg2(size, %s);' % reg_name)
+                second.append(arg + 'helper.decodeVectorReg2(size, %s);' % reg_name)
             else:
                 assert 0, "Don't know how to decode " + word
         elif re.match("^<V[dnm]>.<T-siq1>$", word):
@@ -1007,132 +1007,132 @@ def doOneLine(line):
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "______rr");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "______rr");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq2>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "__rrrr__");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "__rrrr__");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq3>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "rr____rr");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "rr____rr");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq4>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "rr____r_");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "rr____r_");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq5>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "rr__r_rr");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "rr__r_rr");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq6>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "____r_rr");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "____r_rr");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq7>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "__rrrrrr");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "__rrrrrr");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq8>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "____rrrr");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "____rrrr");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq9>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ(size, Q, %s, "_______r");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ(size, Q, %s, "_______r");' % reg_name)
         elif re.match("^<V[dnm]>.<T-siq10>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_sizeQ_custom1(%s, Q, size);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sizeQ_custom1(%s, Q, size);' % reg_name)
         ########################################################################################
         elif re.match("^<V[dnm]>.<T-si1>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
 
-            second.append(arg + 'decodeVectorReg_size1(size, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_size1(size, %s);' % reg_name)
         elif re.match("^<V[dnm]>.<T-si2>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
 
-            second.append(arg + 'decodeVectorReg_size2(size, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_size2(size, %s);' % reg_name)
         elif re.match("^<V[dnm]>.<T-si3>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("size", 2)
 
-            second.append(arg + 'decodeVectorReg_size3(size, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_size3(size, %s);' % reg_name)
         elif re.match("^<V[dnm]>.<T-h>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorRegHWithQ(Q, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegHWithQ(Q, %s);' % reg_name)
         elif re.match("^<V[dnm]>.<T-b>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorRegBWithQ(Q, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegBWithQ(Q, %s);' % reg_name)
         elif re.match("^<V[dnm]>.<T-s>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorRegSWithQ(Q, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorRegSWithQ(Q, %s);' % reg_name)
         ########################################################################################
         elif re.match("^<V[dnm]>.<T-sz1>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeVectorReg_sz(%s, sz, "2H", null);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sz(%s, sz, "2H", null);' % reg_name)
         elif re.match("^<V[dnm]>.<T-sz2>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeVectorReg_sz(%s, sz, "2S", "2D");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sz(%s, sz, "2S", "2D");' % reg_name)
         elif re.match("^<V[dnm]>.<T-sz3>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeVectorReg_sz(%s, sz, null, "2D");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sz(%s, sz, null, "2D");' % reg_name)
         elif re.match("^<V[dnm]>.<T-sz4>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("sz", 1)
 
-            second.append(arg + 'decodeVectorReg_sz(%s, sz, "4S", "2D");' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_sz(%s, sz, "4S", "2D");' % reg_name)
         ########################################################################################
         elif re.match("^<V[dnm]>.<T-szq1>$", word):
             reg_name = "R" + word[2]
@@ -1140,60 +1140,60 @@ def doOneLine(line):
             require("Q", 1)
             require("sz", 1)
 
-            second.append(arg + 'decodeVectorReg_szQ1(%s, sz, Q);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_szQ1(%s, sz, Q);' % reg_name)
         elif re.match("^<V[dnm]>.<T-szq2>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("sz", 1)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_szQ2(sz, Q, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_szQ2(sz, Q, %s);' % reg_name)
         elif re.match("^<V[dnm]>.<T-szq3>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("sz", 1)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_szQ3(%s, sz, Q);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_szQ3(%s, sz, Q);' % reg_name)
         elif re.match("^<V[dnm]>.<T-szq4>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("sz", 1)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg_szQ4(sz, Q, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg_szQ4(sz, Q, %s);' % reg_name)
         ########################################################################################
         elif re.match("^<V[dnm]>.<T-cu1>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("immh", 4)
 
-            second.append(arg + 'decodeVectorReg10(immh, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg10(immh, %s);' % reg_name)
         elif re.match("^<V[dnm]>.<T10>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("immh", 4)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg11(immh, Q, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg11(immh, Q, %s);' % reg_name)
         elif re.match("^<V[dnm]>.<T11>$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             require("immh", 4)
             require("Q", 1)
 
-            second.append(arg + 'decodeVectorReg12(immh, Q, %s);' % reg_name)
+            second.append(arg + 'helper.decodeVectorReg12(immh, Q, %s);' % reg_name)
         elif re.match("^<V[dnma]>.[0-9]*[BSDHQ]$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
             suffix = word.split(".")[1]
 
-            second.append(arg + 'formatVectorRegister(%s, "%s");' % (reg_name, suffix))
+            second.append(arg + 'helper.formatVectorRegister(%s, "%s");' % (reg_name, suffix))
         elif re.match(r"^<V[dnma]>.D\[1\]$", word):
             reg_name = "R" + word[2]
             require(reg_name, 5)
 
-            second.append(arg + 'formatVectorRegister(%s, "D[1]");' % reg_name)
+            second.append(arg + 'helper.formatVectorRegister(%s, "D[1]");' % reg_name)
         elif re.match("^#[0-9]+$", word) or word == "#0.0":
             second.append(arg + '"%s";' % word)
         elif word == "<dc_op>" or word == '<ic_op>{,<Xt>}':
@@ -1202,55 +1202,55 @@ def doOneLine(line):
             require("op2", 3)
             require("Rt", 5)
 
-            second.append(arg + 'getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[1];')
+            second.append(arg + 'helper.getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[1];')
         elif word == "<at_op>":
             require("op1", 3)
             require("CRm", 4)
             require("op2", 3)
 
-            second.append(arg + 'getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[1];')
+            second.append(arg + 'helper.getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[1];')
         elif word == '<option>|#<imm>':
             require("CRm", 4)
 
-            second.append(arg + 'decodeDmbOption(CRm);')
+            second.append(arg + 'helper.decodeDmbOption(CRm);')
         elif word == '{<option>|#<imm>}':
             require("CRm", 4)
 
-            second.append(arg + 'decodeIsbOption(CRm);')
+            second.append(arg + 'helper.decodeIsbOption(CRm);')
         elif word == '#<imm>' and words[0] in ["HVC", "SVC", "HLT"]:
             require("imm16", 16)
 
-            second.append(arg + 'formatHexImm(imm16);')
+            second.append(arg + 'helper.formatHexImm(imm16);')
         elif word in ['#<immh>'] and words[0] in ["HINT"]:
             require("CRm", 4)
             require("op2", 3)
 
-            second.append(arg + 'formatHexImm((CRm<<3) + op2);')
+            second.append(arg + 'helper.formatHexImm((CRm<<3) + op2);')
         elif word == '{#<imm>}':
             require("CRm", 4)
 
-            second.append(arg + 'CRm==15?"":formatHexImm(CRm);')
+            second.append(arg + 'CRm==15?"":helper.formatHexImm(CRm);')
         elif word == '#<rotate1>':
             require("rot", 1)
 
-            second.append(arg + 'formatDecimalImm(rot==0?90:270);')
+            second.append(arg + 'helper.formatDecimalImm(rot==0?90:270);')
         elif word == '#<rotate2>':
             require("rot", 2)
 
-            second.append(arg + 'formatDecimalImm(rot * 90);')
+            second.append(arg + 'helper.formatDecimalImm(rot * 90);')
         elif word == '#<fbits>':
             require("scale", 6)
 
-            second.append(arg + 'decodeFbitsFromScale(scale);')
+            second.append(arg + 'helper.decodeFbitsFromScale(scale);')
         elif word == '#<fbits2>':
             require("immh", 4)
             require("immb", 3)
 
-            second.append(arg + 'decodeFbits2(immh, immb);')
+            second.append(arg + 'helper.decodeFbits2(immh, immb);')
         elif word == '(<prfop>|#<imm5>)':
             require("Rt", 5)
 
-            second.append(arg + 'decodePrefetchOp(Rt);')
+            second.append(arg + 'helper.decodePrefetchOp(Rt);')
         elif word == '(<systemreg>|S<op0>_<op1>_<Cn>_<Cm>_<op2>)':
             require("o0", 1)
             require("op1", 3)
@@ -1258,27 +1258,27 @@ def doOneLine(line):
             require("CRm", 4)
             require("CRn", 4)
 
-            second.append(arg + 'decodeSystemRegister(o0+2, op1, CRn, CRm, op2);')
+            second.append(arg + 'helper.decodeSystemRegister(o0+2, op1, CRn, CRm, op2);')
         elif word == '<tlbi_op>{,<Xt>}':
             require("op1", 3)
             require("op2", 3)
             require("CRm", 4)
             require("Rt", 5)
 
-            second.append(arg + 'decodeTlbiRegister(Rt, op1, CRm, op2);')
+            second.append(arg + 'helper.decodeTlbiRegister(Rt, op1, CRm, op2);')
         elif word == '#<op1>':
             require("op1", 3)
 
-            second.append(arg + 'formatDecimalImm(op1);')
+            second.append(arg + 'helper.formatDecimalImm(op1);')
         elif word == '#<op2>':
             require("op2", 3)
 
-            second.append(arg + 'formatDecimalImm(op2);')
+            second.append(arg + 'helper.formatDecimalImm(op2);')
         elif word == '#<op2>{,<Xt>}':
             require("Rt", 5)
             require("op2", 3)
 
-            second.append(arg + 'formatDecimalImm(op2) + (Rt==31 ? "" : ("," + getRegisterName("X", Rt, false, -1)));')
+            second.append(arg + 'helper.formatDecimalImm(op2) + (Rt==31 ? "" : ("," + helper.getRegisterName("X", Rt, false, -1)));')
         elif word == '<Cn>':
             require("CRn", 4)
 
@@ -1370,12 +1370,23 @@ package holdec.jarmo.arm64;
 import java.util.List;
 import java.util.ArrayList;
 
-import static holdec.jarmo.arm64.ArmDisasmHelper.*;
-
 @SuppressWarnings("ConstantConditions")
 public class ArmDisasmDecoder {
     private boolean verbose;
     private boolean showMatching;
+    private final ArmDisasmHelper helper;
+
+    public ArmDisasmDecoder() {
+        this(new ArmDisasmHelper(new ObjdumpFormatter()));
+    }
+
+    public ArmDisasmDecoder(Formatter formatter) {
+        this(new ArmDisasmHelper(formatter));
+    }
+
+    private ArmDisasmDecoder(ArmDisasmHelper helper) {
+        this.helper = helper;
+    }
 
     public AsmStatement decode(long pc, int opcode32Bit) {
         AsmStatement stmt = new AsmStatement(pc);
@@ -1398,7 +1409,7 @@ for bits in range(32, 5, -1):
 out.write('''
             } else {
                 if (verbose) {
-                    logUnknownOpcode(opcode32Bit);
+                    helper.logUnknownOpcode(opcode32Bit);
                 }
                 stmt.markAsUnknown(opcode32Bit);
             }
@@ -1408,7 +1419,6 @@ out.write('''
             }
             stmt.markAsUnknown(opcode32Bit);
         }
-        postProcessStatement(stmt);
         return stmt;
     }
 
