@@ -4303,6 +4303,13 @@ public class A64DisasmTest {
     }
 
     @Test
+    public void test_msr_pstate() {
+        assertDecoding(0xd50047bf, "msr spsel,#0x7");
+        assertDecoding(0xd50347df, "msr daifset,#0x7");
+        assertDecoding(0xd50347ff, "msr daifclr,#0x7");
+    }
+
+    @Test
     public void test_msr_unknown() {
         assertDecoding(0xd510a7a0, "msr s2_0_c10_c7_5,x0");
         assertDecoding(0xd51847d9, "msr s3_0_c4_c7_6,x25");

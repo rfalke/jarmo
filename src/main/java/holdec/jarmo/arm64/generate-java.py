@@ -1226,7 +1226,7 @@ def doOneLine(line):
             require("op2", 3)
 
             second.append(arg + 'helper.formatHexImm((CRm<<3) + op2);')
-        elif word == '{#<imm>}':
+        elif word == '{#<imm>}' or word == '#<imm>':
             require("CRm", 4)
 
             second.append(arg + 'CRm==15?"":helper.formatHexImm(CRm);')
@@ -1289,6 +1289,11 @@ def doOneLine(line):
             second.append(arg + '"C" + CRm;')
         elif word == 'CSYNC':
             second.append(arg + '"%s";' % word)
+        elif word == '<pstatefield>':
+            require("op1", 3)
+            require("op2", 3)
+
+            second.append(arg + 'helper.decodePstatefield(op1, op2);')
         else:
             assert 0, [word, words[0], regions, words]
 

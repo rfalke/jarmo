@@ -1007,6 +1007,7 @@ MOVZ <Wd>,#<imm>{,LSL #<shift>}                                              (01
 MOVZ <Xd>,#<imm>{,LSL #<shift>}                                              (110100101)<hw:xx><imm16:xxxxxxxxxxxxxxxx><Rd:xxxxx>
 MRS <Xt>,(<systemreg>|S<op0>_<op1>_<Cn>_<Cm>_<op2>)                          (110101010011)<o0:x><op1:xxx><CRn:xxxx><CRm:xxxx><op2:xxx><Rt:xxxxx>
 MSR (<systemreg>|S<op0>_<op1>_<Cn>_<Cm>_<op2>),<Xt>                          (110101010001)<o0:x><op1:xxx><CRn:xxxx><CRm:xxxx><op2:xxx><Rt:xxxxx>
+MSR <pstatefield>,#<imm>                                                     (1101010100000)<op1:xxx>(0100)<CRm:xxxx><op2:xxx>(11111)
 MSUB <Wd>,<Wn>,<Wm>,<Wa>                                                     (00011011000)<Rm:xxxxx>(1)<Ra:xxxxx><Rn:xxxxx><Rd:xxxxx>
 MSUB <Xd>,<Xn>,<Xm>,<Xa>                                                     (10011011000)<Rm:xxxxx>(1)<Ra:xxxxx><Rn:xxxxx><Rd:xxxxx>
 MUL <Vd>.<T-siq1>,<Vn>.<T-siq1>,<Vm>.<T-siq1>                                (0)<Q:x>(001110)<size:xx>(1)<Rm:xxxxx>(100111)<Rn:xxxxx><Rd:xxxxx>

@@ -5200,6 +5200,30 @@ public class ArmDisasmDecoder {
             }
         }
 
+        // 11010101 00000xxx 0100xxxx xxx11111
+        if ((opcode32Bit & 0xfff8f01f) == 0xd500401f) {
+            if (verbose) {
+                System.out.println("   trying MSR <pstatefield>,#<imm>");
+            }
+            final int op1 = helper.getPart(opcode32Bit, 16, 3);
+            final int CRm = helper.getPart(opcode32Bit, 8, 4);
+            final int op2 = helper.getPart(opcode32Bit, 5, 3);
+            if (numMatching > 0) {
+                if (numMatching == 1) {
+                    matching = new ArrayList<>();
+                }
+                matching.add(stmt.format());
+            }
+            numMatching += 1;
+            stmt.opcode = "MSR";
+            stmt.key = "opcode & 0xfff8f01f = 0xd500401f";
+            stmt.arg1 = helper.decodePstatefield(op1, op2);
+            stmt.arg2 = CRm==15?"":helper.formatHexImm(CRm);
+            if (showMatching) {
+                System.out.println(stmt.format() + " " + stmt.key);
+            }
+        }
+
         // 01011010 000xxxxx 00000011 111xxxxx
         if ((opcode32Bit & 0xffe0ffe0) == 0x5a0003e0) {
             if (verbose) {

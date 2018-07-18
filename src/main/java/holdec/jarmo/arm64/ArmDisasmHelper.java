@@ -1490,4 +1490,20 @@ public class ArmDisasmHelper {
         System.out.println("         10987654 32109876 54321098 76543210");
         System.out.println(String.format("opcode = %s = 0x%08x", toBinaryStringWithSpacesBetweenBytes(opcode), opcode));
     }
+
+    public String decodePstatefield(int op1, int op2) {
+        String key = String.format("%s:%s", asBinaryString(3, op1), asBinaryString(3, op2));
+        Map<String, String> map = new HashMap<>();
+        map.put("000:011", "UAO");
+        map.put("000:100", "PAN");
+        map.put("000:101", "SPSel");
+        map.put("011:110", "DAIFSet");
+        map.put("011:111", "DAIFClr");
+        String result = map.get(key);
+        if (result == null) {
+            throw new UndefinedInstructionException("op1=" + op1 + " op2=" + op2);
+        }
+        return result;
+    }
+
 }
