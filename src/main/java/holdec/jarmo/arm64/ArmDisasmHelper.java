@@ -863,13 +863,10 @@ public class ArmDisasmHelper {
     }
 
     public String decodeMovShiftedImm16(int imm16, int hw, int registerSize) {
-        if (hw == 0) {
-            return String.format("#0x%x", imm16);
-        }
         if (registerSize == 32 && hw > 1) {
             throw new UndefinedInstructionException("hw=" + hw + " registerSize=" + registerSize);
         }
-        return String.format("#0x%x, LSL #%d", imm16, 16 * hw);
+        return formatter.formatImmWithLsl(imm16, 16 * hw);
     }
 
     public String decodeMslAmount(int cmode) {
@@ -888,10 +885,7 @@ public class ArmDisasmHelper {
         if (shift > 1) {
             throw new UndefinedInstructionException("value=" + value + " shift=" + shift);
         }
-        if (shift == 0) {
-            return String.format("#0x%x", value);
-        }
-        return String.format("#0x%x, lsl #12", value);
+        return formatter.formatImmWithLsl(value, shift * 12);
     }
 
     public String decodeAdrLabel(long pc, int offset, boolean pageAlign) {
@@ -1122,11 +1116,11 @@ public class ArmDisasmHelper {
         if (cmode == 0 || cmode == 1 || cmode == 8 || cmode == 9) {
             return formatHexImm(imm8);
         } else if (cmode == 2 || cmode == 3 || cmode == 10 || cmode == 11) {
-            return String.format("#0x%x, lsl #%d", imm8, 8);
+            return formatter.formatImmWithLsl(imm8, 8);
         } else if (cmode == 4 || cmode == 5) {
-            return String.format("#0x%x, lsl #%d", imm8, 16);
+            return formatter.formatImmWithLsl(imm8, 16);
         } else if (cmode == 6 || cmode == 7) {
-            return String.format("#0x%x, lsl #%d", imm8, 24);
+            return formatter.formatImmWithLsl(imm8, 24);
         } else {
             throw new UndefinedInstructionException("imm8=" + imm8 + "=0x" + Integer.toHexString(imm8) + " cmode=" + cmode + " ");
         }

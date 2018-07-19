@@ -24,4 +24,13 @@ public class ObjdumpFormatter implements Formatter {
     public String formatLabel(long addressValue) {
         return String.format("0x%x", addressValue);
     }
+
+    @Override
+    public String formatImmWithLsl(int value, int lslBits) {
+        if (lslBits == 0) {
+            return String.format("#0x%x", value);
+        }
+        return String.format("#0x%x, LSL #%d", value, lslBits);
+
+    }
 }
