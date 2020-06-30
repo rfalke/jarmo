@@ -8,7 +8,7 @@ INPUT_FILE = BASE_DIR + "/a64.asm-patterns"
 verbose = False
 
 
-def toHex(binStr):
+def toJavaHex(binStr):
     v = 0
     for c in binStr:
         v *= 2
@@ -19,7 +19,37 @@ def toHex(binStr):
     return "0x%04x" % v
 
 
-allKnown = []
+class MaskedValue:
+    def __init__(self, mask, value):
+        assert len(mask) == 32
+        assert len(value) == 32
+        self.mask = mask
+        self.value = value
+        self.numBitsInMask = mask.count("1")
+
+    def javaMask(self):
+        return toJavaHex(self.mask)
+
+    def javaValue(self):
+        return toJavaHex(self.value)
+
+    def combine(self):
+        r = ""
+        for i in range(32):
+            if self.mask[i] == "0":
+                r += "x"
+            else:
+                r += self.value[i]
+            if (i + 1) % 8 == 0:
+                r += " "
+        return r.strip()
+
+
+class ParsedLine:
+    def __init__(self, left, matchMask, regions):
+        self.left = left
+        self.matchMask = matchMask
+        self.regions = regions
 
 
 def mysplit(str):
@@ -72,27 +102,14 @@ def matches(input, words):
 
 def doOneLine(line):
     left = line.left
-    mask = line.mask
-    value = line.value
+    mask = line.matchMask.mask
+    value = line.matchMask.value
     regions = line.regions
     nameToRegion = {}
     for i in regions:
         nameToRegion[i.name] = i
     if verbose:
-        print("==", left)
-        # print("  mask and value:", mask, value)
-        print("  regions:", regions)
-
-    def combine(mask, value):
-        r = ""
-        for i in range(32):
-            if mask[i] == "0":
-                r += "x"
-            else:
-                r += value[i]
-            if (i + 1) % 8 == 0:
-                r += " "
-        return r.strip()
+        print("==", left, mask, value)
 
     def write_get_raw(name, start, size):
         if searchRegion(name, size, True) is None:
@@ -129,9 +146,9 @@ def doOneLine(line):
         print("  words:", words, flush=True)
 
     indent = "        "
-    out.write(indent + '// %s\n' % combine(mask, value))
+    out.write(indent + '// %d bits set in %s\n' % (line.matchMask.numBitsInMask, line.matchMask.combine()))
     out.write(indent + "if ((opcode32Bit & %s) == %s) {\n" % (
-        toHex(mask), toHex(value)))
+        line.matchMask.javaMask(), line.matchMask.javaValue()))
     out.write(indent + '    if (verbose) {\n')
     out.write(indent + '        System.out.println("   trying %s");\n' % left.strip())
     out.write(indent + '    }\n')
@@ -153,7 +170,7 @@ def doOneLine(line):
             second.append('stmt.opcode = "%s" + (Q==0?"":"2");' % word.replace("{2}", ""))
         else:
             second.append('stmt.opcode = "%s";' % word)
-        second.append('stmt.key = "opcode & %s = %s";' % (toHex(mask), toHex(value)))
+        second.append('stmt.key = "opcode & %s = %s";' % (line.matchMask.javaMask(), line.matchMask.javaValue()))
 
         ALIAS_MAP = {}
         ALIAS_MAP["BFM"] = [("BFC", "Rn == 31 && imms < immr"),
@@ -320,7 +337,8 @@ def doOneLine(line):
             write_get_raw("sf", 31, 1)
 
             second.append(
-                arg + 'helper.decodeLsb(immr, imms, sf==0?32:64, %s);' % (toJavaBool(words[0] in ["BFXIL", "SBFX", "UBFX"])))
+                arg + 'helper.decodeLsb(immr, imms, sf==0?32:64, %s);' % (
+                    toJavaBool(words[0] in ["BFXIL", "SBFX", "UBFX"])))
         elif word in ["#<lsb>"] and words[0] in ["ROR", "EXTR"]:
             require("imms", 6)
             write_get_raw("sf", 31, 1)
@@ -332,7 +350,8 @@ def doOneLine(line):
             write_get_raw("sf", 31, 1)
 
             second.append(
-                arg + 'helper.decodeWidth(immr, imms, sf==0?32:64, %s);' % toJavaBool(words[0] in ["BFXIL", "SBFX", "UBFX"]))
+                arg + 'helper.decodeWidth(immr, imms, sf==0?32:64, %s);' % toJavaBool(
+                    words[0] in ["BFXIL", "SBFX", "UBFX"]))
         elif word in ["#<imm>"] and words[0] in ["TBNZ", "TBZ"]:
             require("b5", 1)
             require("b40", 5)
@@ -1278,7 +1297,8 @@ def doOneLine(line):
             require("Rt", 5)
             require("op2", 3)
 
-            second.append(arg + 'helper.formatDecimalImm(op2) + (Rt==31 ? "" : ("," + helper.getRegisterName("X", Rt, false, -1)));')
+            second.append(
+                arg + 'helper.formatDecimalImm(op2) + (Rt==31 ? "" : ("," + helper.getRegisterName("X", Rt, false, -1)));')
         elif word == '<Cn>':
             require("CRn", 4)
 
@@ -1298,18 +1318,9 @@ def doOneLine(line):
             assert 0, [word, words[0], regions, words]
 
     def write_common_part(indent):
-        out.write(indent + '    if (numMatching > 0) {\n')
-        out.write(indent + '        if (numMatching == 1) {\n')
-        out.write(indent + '            matching = new ArrayList<>();\n')
-        out.write(indent + '        }\n')
-        out.write(indent + '        matching.add(stmt.format());\n')
-        out.write(indent + '    }\n')
-        out.write(indent + '    numMatching += 1;\n')
         for i in second:
             out.write(indent + "    " + i + "\n")
-        out.write(indent + '    if (showMatching) {\n')
-        out.write(indent + '        System.out.println(stmt.format() + " " + stmt.key);\n')
-        out.write(indent + '    }\n')
+        out.write(indent + '    return stmt;\n')
 
     if test:
         test2 = ["(" + x + ")" for x in test]
@@ -1359,11 +1370,14 @@ def parseLine(line):
             regions.append(Region(name, offset + bits, bits, offset, region))
     assert len(value) == 32, line
     assert len(mask) == 32, line
-    numMaskBits = mask.count("1")
-    allKnown.append((left, eval(toHex(mask)), eval(toHex(value))))
-    ParsedLine = collections.namedtuple("ParsedLine", ["left", "mask", "value", "regions", "numMaskBits"])
-    return ParsedLine(left, mask, value, regions, numMaskBits)
+    return ParsedLine(left, MaskedValue(mask, value), regions)
 
+
+lines = [x.strip() for x in open(INPUT_FILE).readlines() if x.strip()]
+parsedLines = []
+for line in [x for x in lines if x[0] != "#"]:
+    left = line[:70].strip()
+    parsedLines.append(parseLine(line))
 
 out = open(BASE_DIR + "/ArmDisasmDecoder.java.new", "w")
 out.write('''
@@ -1396,28 +1410,56 @@ public class ArmDisasmDecoder {
     public AsmStatement decode(long pc, int opcode32Bit) {
         AsmStatement stmt = new AsmStatement(pc);
 
+        try {
 ''')
 
-lines = [x.strip() for x in open(INPUT_FILE).readlines() if x.strip()]
-parsedLines = []
-for line in [x for x in lines if x[0] != "#"]:
-    left = line[:70].strip()
-    parsedLines.append(parseLine(line))
+leafs = []
+
+
+def divide(input, path, state):
+    indent = ("    " * (3 + len(path)))
+    if len(input) < 25:
+        myid = len(leafs)
+        leafs.append((myid, input, path, state[:]))
+        out.write(indent + "return searchInLeaf%d(pc, opcode32Bit, stmt);\n" % myid)
+        return
+    best_score = 42
+    best_bit = None
+    best_lists = None
+    if verbose:
+        print("=== have %d inputs for path %r" % (len(input), path))
+    for bit in range(32):
+        zero = [x for x in input if x.matchMask.mask[bit] == "1" and x.matchMask.value[bit] == "0"]
+        one = [x for x in input if x.matchMask.mask[bit] == "1" and x.matchMask.value[bit] == "1"]
+        undef = [x for x in input if x.matchMask.mask[bit] == "0"]
+        if verbose:
+            print("for bit %2d would get %d/%d/%d" % (bit, len(zero), len(one), len(undef)))
+        zp = float(len(zero)) / len(input)
+        op = float(len(one)) / len(input)
+        if len(undef) == 0 and len(zero) > 0 and len(one):
+            score = max(zp, op)
+            if score < best_score:
+                best_score = score
+                best_lists = (zero, one, undef)
+                best_bit = bit
+    assert best_bit != None
+    if verbose:
+        print("Use best bit %d and split further" % best_bit)
+
+    bitNum = 31 - best_bit
+    out.write(indent + "if((opcode32Bit & 0x%08x) == 0) { // bit %d = 0\n" % (2 ** bitNum, bitNum))
+    state[best_bit] = "0"
+    divide(best_lists[0], path + ["%d=0" % best_bit], state)
+    out.write(indent + "} else { // bit %d = 1\n" % bitNum)
+    state[best_bit] = "1"
+    divide(best_lists[1], path + ["%d=1" % best_bit], state)
+    out.write(indent + "}\n")
+    state[best_bit] = None
+
+
+divide(parsedLines, [], [None] * 32)
+
 out.write('''
-        try {
-            if(false) {
-                // Nothing''')
-for bits in range(32, 5, -1):
-    out.write('''
-            } else if(decodeWith%dBitsSet(pc, opcode32Bit, stmt)) {
-                // Nothing''' % bits)
-out.write('''
-            } else {
-                if (verbose) {
-                    helper.logUnknownOpcode(opcode32Bit);
-                }
-                stmt.markAsUnknown(opcode32Bit);
-            }
         } catch(UndefinedInstructionException e) {
             if(verbose) {
                 e.printStackTrace();
@@ -1429,24 +1471,38 @@ out.write('''
 
 ''')
 
-for bits in range(32, 5, -1):
+for leaf_id, leaf_lines, leaf_path, leaf_state in leafs:
+    mask = ""
+    value = ""
+    for i in leaf_state:
+        if i == None:
+            mask += "0"
+            value += "0"
+        elif i == "0":
+            mask += "1"
+            value += "0"
+        elif i == "1":
+            mask += "1"
+            value += "1"
+        else:
+            assert False
+    maskedValue = MaskedValue(mask, value)
     out.write('''
-    private boolean decodeWith%dBitsSet(long pc, int opcode32Bit, AsmStatement stmt) {
-        int numMatching = 0;
-        List<String> matching = null;
+    
+    // %d opcodes for %d bits set: %s
+    private AsmStatement searchInLeaf%d(long pc, int opcode32Bit, AsmStatement stmt) {
 
-''' % bits)
-    for line in [x for x in parsedLines if x.numMaskBits == bits]:
+''' % (len(leaf_lines), maskedValue.numBitsInMask, maskedValue.combine(), leaf_id))
+    leaf_lines.sort(key=lambda x: x.matchMask.numBitsInMask, reverse=True)
+    for line in leaf_lines:
         doOneLine(line)
 
     out.write('''
-        if (numMatching == 0) {
-            return false;
-        } else if (numMatching == 1) {
-            return true;
+        if (verbose) {
+            helper.logUnknownOpcode(opcode32Bit);
         }
-        matching.add(stmt.format());
-        throw new RuntimeException("Multiple interpretations possible for "+String.format("0x%08x", opcode32Bit)+": " + matching);
+        stmt.markAsUnknown(opcode32Bit);
+        return stmt;
     }
 ''')
 
