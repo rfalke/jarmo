@@ -5,16 +5,16 @@ public class ObjdumpFormatter implements Formatter {
     @Override
     public String formatMemAccess(MemAccessType memAccessType, String register, int offset) {
         if (memAccessType == MemAccessType.PreIndex) {
-            return String.format("[%s,#%d]!", register, offset);
+            return "[" + register + ",#" + offset + "]!";
         }
         if (memAccessType == MemAccessType.PostIndex) {
-            return String.format("[%s],#%d", register, offset);
+            return "[" + register + "],#" + offset;
         }
         if (memAccessType == MemAccessType.OnlyOffset) {
             if (offset == 0) {
-                return String.format("[%s]", register);
+                return "[" + register + "]";
             } else {
-                return String.format("[%s,#%d]", register, offset);
+                return "[" + register + ",#" + offset + "]";
             }
         }
         throw new RuntimeException("Unknown type " + memAccessType);
@@ -22,15 +22,14 @@ public class ObjdumpFormatter implements Formatter {
 
     @Override
     public String formatLabel(long addressValue) {
-        return String.format("0x%x", addressValue);
+        return "0x" + Long.toHexString(addressValue);
     }
 
     @Override
     public String formatImmWithLsl(int value, int lslBits) {
         if (lslBits == 0) {
-            return String.format("#0x%x", value);
+            return "#0x" + Integer.toHexString(value);
         }
-        return String.format("#0x%x, LSL #%d", value, lslBits);
-
+        return "#0x" + Integer.toHexString(value) + ", LSL #" + lslBits;
     }
 }
