@@ -15,12 +15,12 @@ public class AsmStatement {
     }
 
     public void markAsUnknown(int opcode) {
-        this.opcode = String.format(".inst 0x%08x", opcode);
-        this.arg1 = null;
-        this.arg2 = null;
-        this.arg3 = null;
-        this.arg4 = null;
-        this.arg5 = null;
+        this.opcode = ".inst";
+        arg1 = String.format("0x%08x", opcode);
+        arg2 = null;
+        arg3 = null;
+        arg4 = null;
+        arg5 = null;
     }
 
     public String format() {

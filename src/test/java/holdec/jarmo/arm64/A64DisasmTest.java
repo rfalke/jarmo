@@ -6756,6 +6756,14 @@ public class A64DisasmTest {
         assertInvalidOpcode(0xc8d2be61);
     }
 
+    @Test
+    public void test_unknown() {
+        ArmDisasmDecoder decoder = new ArmDisasmDecoder();
+        AsmStatement decoded = decoder.decode(0, 0);
+        assertThat(decoded.opcode, is(".inst"));
+        assertThat(decoded.arg1, is("0x00000000"));
+    }
+
     private void assertInvalidOpcode(int opcode) {
         assertDecoding(opcode, String.format(".inst 0x%08x", opcode));
     }
