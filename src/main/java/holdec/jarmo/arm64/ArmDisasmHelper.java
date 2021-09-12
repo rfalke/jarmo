@@ -754,22 +754,23 @@ public class ArmDisasmHelper {
             return String.format("{v%d.%s}", startRegister, suffix);
         }
         if (numRegs == 2) {
-            return String.format("{v%d.%s, v%d.%s}", startRegister, suffix, (startRegister + 1) % 32, suffix);
+            return String.format("{v%d.%s,v%d.%s}", startRegister, suffix, (startRegister + 1) % 32, suffix);
         }
         int last = (startRegister + numRegs - 1) % 32;
-        if (last < startRegister) {
+        if (startRegister < last && formatter.formatVectorRegisterListAsRange()) {
+            if (numRegs == 3) {
+                return String.format("{v%d.%s-v%d.%s}", startRegister, suffix, (startRegister + 2) % 32, suffix);
+            }
+            if (numRegs == 4) {
+                return String.format("{v%d.%s-v%d.%s}", startRegister, suffix, (startRegister + 3) % 32, suffix);
+            }
+        } else {
             if (numRegs == 3) {
                 return String.format("{v%d.%s,v%d.%s,v%d.%s}", startRegister, suffix, (startRegister + 1) % 32, suffix, (startRegister + 2) % 32, suffix);
             }
             if (numRegs == 4) {
                 return String.format("{v%d.%s,v%d.%s,v%d.%s,v%d.%s}", startRegister, suffix, (startRegister + 1) % 32, suffix, (startRegister + 2) % 32, suffix, (startRegister + 3) % 32, suffix);
             }
-        }
-        if (numRegs == 3) {
-            return String.format("{v%d.%s-v%d.%s}", startRegister, suffix, (startRegister + 2) % 32, suffix);
-        }
-        if (numRegs == 4) {
-            return String.format("{v%d.%s-v%d.%s}", startRegister, suffix, (startRegister + 3) % 32, suffix);
         }
         throw new UndefinedInstructionException("numRegs=" + numRegs);
     }

@@ -32,4 +32,9 @@ public class ObjdumpFormatter implements Formatter {
         }
         return "#0x" + Integer.toHexString(value) + ", LSL #" + lslBits;
     }
+
+    @Override
+    public boolean formatVectorRegisterListAsRange() {
+        return true;
+    }
 }

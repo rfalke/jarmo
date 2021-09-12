@@ -12,4 +12,6 @@ public interface Formatter {
     String formatLabel(long addressValue);
 
     String formatImmWithLsl(int imm16, int lslBits);
+
+    boolean formatVectorRegisterListAsRange();
 }
