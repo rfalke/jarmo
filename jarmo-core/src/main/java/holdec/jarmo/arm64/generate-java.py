@@ -309,7 +309,7 @@ def doOneLine(line):
 
             require("R" + name, 5)
             second.append(
-                arg + 'helper.getRegisterName("%s", %s, %s, %d);' % (registerPrefix, "R" + name, withSp, optionalReg))
+                arg + "helper.getRegisterName('%s', %s, %s, %d);" % (registerPrefix, "R" + name, withSp, optionalReg))
         elif word in ["<W(s+1)>", "<W(t+1)>",
                       "<X(s+1)>", "<X(t+1)>"]:
             reg_type = word[1]
@@ -317,13 +317,13 @@ def doOneLine(line):
             require("R" + reg_name, 5)
             assert reg_type in "XW", reg_type
             second.append(
-                arg + 'helper.getRegisterName("%s", (%s+1)%%32, false, -1);' % (reg_type, "R" + reg_name))
+                arg + "helper.getRegisterName('%s', (%s+1)%%32, false, -1);" % (reg_type, "R" + reg_name))
         elif word in ["#<imm-inv-hw>", "#<imm-nor-hw>"] and words[0] in ["MOV"]:
             require("hw", 2)
             require("imm16", 16)
             negate = toJavaBool("inv" in word)
             assert words[1][1] in "XW", words[0]
-            second.append(arg + 'helper.decodeShiftedImm16("%s", imm16, hw, %s);' % (words[1][1], negate))
+            second.append(arg + "helper.decodeShiftedImm16('%s', imm16, hw, %s);" % (words[1][1], negate))
         elif word in ["#<imm>"] and words[0] in ["TST", "EOR", "AND", "ANDS", "ORR", "MOV"]:
             require("immr", 6)
             require("imms", 6)
@@ -446,13 +446,13 @@ def doOneLine(line):
             else:
                 assert False, "Don't know about variant " + repr(variant) + " words=" + repr(words)
 
-            second.append(arg + 'helper.formatPreIndexMemAccess("%s", Rn, imm7Signed<<%s);' % (registerPrefix, shift))
+            second.append(arg + "helper.formatPreIndexMemAccess('%s', Rn, imm7Signed<<%s);" % (registerPrefix, shift))
         elif word == "[<Xn|SP>,#<simm>]!" or word == "[<Wn|WSP>,#<simm>]!":
             registerPrefix = word[2]
             require("Rn", 5)
             requireSigned("imm9", 9)
 
-            second.append(arg + 'helper.formatPreIndexMemAccess("%s", Rn, imm9Signed);' % registerPrefix)
+            second.append(arg + "helper.formatPreIndexMemAccess('%s', Rn, imm9Signed);" % registerPrefix)
         elif re.match(r"^\[<[XW]n\|W?SP>\],#<imm[0-9]*>$", word):
             registerPrefix = word[2]
             require("Rn", 5)
@@ -468,13 +468,13 @@ def doOneLine(line):
                 assert False, "Don't know about variant " + repr(variant) + " words=" + repr(words)
 
             second.append(
-                arg + 'helper.formatPostIndexMemAccess("%s", Rn, imm7Signed<<%s );' % (registerPrefix, shift))
+                arg + "helper.formatPostIndexMemAccess('%s', Rn, imm7Signed<<%s );" % (registerPrefix, shift))
         elif word == "[<Xn|SP>],#<simm>" or word == "[<Wn|WSP>],#<simm>":
             registerPrefix = word[2]
             require("Rn", 5)
             requireSigned("imm9", 9)
 
-            second.append(arg + 'helper.formatPostIndexMemAccess("%s", Rn, imm9Signed);' % registerPrefix)
+            second.append(arg + "helper.formatPostIndexMemAccess('%s', Rn, imm9Signed);" % registerPrefix)
         elif re.match(r"^\[<[WX]n\|W?SP>\{,#<imm[0-9]*>\}\]$", word):
             registerPrefix = word[2]
             require("Rn", 5)
@@ -489,13 +489,13 @@ def doOneLine(line):
             else:
                 assert False, "Don't know about variant " + repr(variant) + " words=" + repr(words)
 
-            second.append(arg + 'helper.formatMemAccessWithOffset("%s", Rn, imm7Signed<<%s);' % (registerPrefix, shift))
+            second.append(arg + "helper.formatMemAccessWithOffset('%s', Rn, imm7Signed<<%s);" % (registerPrefix, shift))
         elif word == "[<Xn|SP>{,#<simm>}]" or word == "[<Wn|WSP>{,#<simm>}]":
             registerPrefix = word[2]
             require("Rn", 5)
             requireSigned("imm9", 9)
 
-            second.append(arg + 'helper.formatMemAccessWithOffset("%s", Rn, imm9Signed);' % registerPrefix)
+            second.append(arg + "helper.formatMemAccessWithOffset('%s', Rn, imm9Signed);" % registerPrefix)
         elif word == "[<Xn|SP>{,#<simm2>}]" or word == "[<Wn|WSP>{,#<simm2>}]":
             registerPrefix = word[2]
             require("Rn", 5)
@@ -503,7 +503,7 @@ def doOneLine(line):
             require("S", 1)
 
             second.append(
-                arg + 'helper.formatMemAccessWithOffset("%s", Rn, helper.decodeLdraaOffset(imm9, S));' % registerPrefix)
+                arg + "helper.formatMemAccessWithOffset('%s', Rn, helper.decodeLdraaOffset(imm9, S));" % registerPrefix)
         elif word == "[<Xn|SP>{,#<simm2>}]!" or word == "[<Wn|WSP>{,#<simm2>}]!":
             registerPrefix = word[2]
             require("Rn", 5)
@@ -511,7 +511,7 @@ def doOneLine(line):
             require("S", 1)
 
             second.append(
-                arg + 'helper.formatPreIndexMemAccess("%s", Rn, helper.decodeLdraaOffset(imm9, S));' % registerPrefix)
+                arg + "helper.formatPreIndexMemAccess('%s', Rn, helper.decodeLdraaOffset(imm9, S));" % registerPrefix)
         elif word == "[<Xn|SP>{,#<pimm>}]" or word == "[<Wn|WSP>{,#<pimm>}]":
             registerPrefix = word[2]
             require("Rn", 5)
@@ -527,7 +527,7 @@ def doOneLine(line):
                     shift = "(opcPart*4+size)"
                 else:
                     shift = "size"
-            second.append(arg + 'helper.formatMemAccessWithOffset("%s", Rn, imm12 << %s);' % (
+            second.append(arg + "helper.formatMemAccessWithOffset('%s', Rn, imm12 << %s);" % (
                 registerPrefix, shift))
         elif word == '[<Xn|SP>,(<Wm>|<Xm>){,<extend> {<amount>}}]' or word == '[<Xn|SP>,(<Wm>|<Xm>),<extend> {<amount>}]':
             registerPrefix = "X"
@@ -543,7 +543,7 @@ def doOneLine(line):
                 require("opc", 2)
                 amount = "S==1?(size+4*(opc/2)):0"
             is8Bit = toJavaBool(words[1] == "<Bt>")
-            second.append(arg + 'helper.formatMemAccessWithTwoRegisters("%s", Rn, Rm, option, %s, %s, S, %s);' % (
+            second.append(arg + "helper.formatMemAccessWithTwoRegisters('%s', Rn, Rm, option, %s, %s, S, %s);" % (
                 registerPrefix, amount, showDefaultLsl, is8Bit))
         elif word == '[<Xn|SP>,<Xm>{,LSL <amount>}]':
             registerPrefix = "X"
@@ -556,13 +556,13 @@ def doOneLine(line):
             if is_simd(words[1]):
                 require("opc", 2)
                 amount = "S==1?(size+4*(opc/2)):0"
-            second.append(arg + 'helper.formatMemAccessWithTwoRegistersLsl("%s", Rn, Rm, %s, S);' % (
+            second.append(arg + "helper.formatMemAccessWithTwoRegistersLsl('%s', Rn, Rm, %s, S);" % (
                 registerPrefix, amount))
         elif word == "[<Xn|SP>]":
             registerPrefix = "X"
             require("Rn", 5)
 
-            second.append(arg + 'helper.formatMemAccessWithOffset("%s", Rn, 0);' % registerPrefix)
+            second.append(arg + "helper.formatMemAccessWithOffset('%s', Rn, 0);" % registerPrefix)
         elif word == "<label>" and words[0] in ["LDR", "STR", "CBZ", "CBNZ", "B.<cond>", "LDRSW", "PRFM"]:
             requireSigned("imm19", 19)
 
@@ -590,7 +590,7 @@ def doOneLine(line):
             require("imm6", 6)
 
             rorEnabled = toJavaBool("<shift>" in word)
-            second.append(arg + 'helper.decodeShiftedRegister("%s", Rm, shift, imm6, %s);' % (word[1], rorEnabled))
+            second.append(arg + "helper.decodeShiftedRegister('%s', Rm, shift, imm6, %s);" % (word[1], rorEnabled))
         elif word == "#<shift>" and has_regions(immh=4, immb=3):
             second.append(arg + 'helper.decodeShift_constMinusImm(immh, immb, true, true, true, false);')
         elif word == "#<shift-hb2>":
@@ -675,12 +675,12 @@ def doOneLine(line):
             require("Rt", 5)
             require("b5", 1)
 
-            second.append(arg + 'helper.getRegisterName(b5==0 ? "W" : "X", Rt, false, -1);')
+            second.append(arg + "helper.getRegisterName(b5==0 ? 'W' : 'X', Rt, false, -1);")
         elif word == "<R><m>":
             require("Rm", 5)
             require("option", 3)
 
-            second.append(arg + 'helper.getRegisterName(option&3==3 ? "X" : "W", Rm, false, -1);')
+            second.append(arg + "helper.getRegisterName(option&3==3 ? 'X' : 'W', Rm, false, -1);")
         elif word == "<R><n>":
             require("Rn", 5)
             require("imm5", 5)
@@ -699,7 +699,7 @@ def doOneLine(line):
             if has_regions(Rd=5) and searchRegion("Rd", 5).value != "11111":
                 haveSp += " || Rd == 31"
             second.append(
-                arg + 'helper.decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, %s, true);' % haveSp)
+                arg + "helper.decodeRegisterWithExtend((option&3)==3 ? 'X' : 'W', Rm, option, imm3, %s, true);" % haveSp)
         elif word == '<Wm>{,<extend> {#<amount>}}':
             require("Rm", 5)
             require("option", 3)
@@ -707,7 +707,7 @@ def doOneLine(line):
             haveSp = "Rn == 31"
             if has_regions(Rd=5) and searchRegion("Rd", 5).value != "11111":
                 haveSp += " || Rd == 31"
-            second.append(arg + 'helper.decodeRegisterWithExtend("W", Rm, option, imm3, %s, false);' % haveSp)
+            second.append(arg + "helper.decodeRegisterWithExtend('W', Rm, option, imm3, %s, false);" % haveSp)
         elif word == "<cond>":
             require("cond", 4)
 
@@ -742,7 +742,7 @@ def doOneLine(line):
             require("Q", 1)
 
             second.append(
-                arg + 'helper.formatPostIndexMemAccess("%s", Rn, helper.decodeLd1Offset(Q, numRegs));' % registerPrefix)
+                arg + "helper.formatPostIndexMemAccess('%s', Rn, helper.decodeLd1Offset(Q, numRegs));" % registerPrefix)
         elif re.match(r'\[<Xn\|SP>\],<imm-f[1234]>$', word):
             registerPrefix = "X"
             require("Rn", 5)
@@ -750,7 +750,7 @@ def doOneLine(line):
             require("size", 2)
             factor = int(word[-2])
 
-            second.append(arg + 'helper.formatPostIndexMemAccess("%s", Rn, %d << size);' % (registerPrefix, factor))
+            second.append(arg + "helper.formatPostIndexMemAccess('%s', Rn, %d << size);" % (registerPrefix, factor))
         elif word in ['{ <Vt>.B }[<index>]',
                       '{ <Vt>.D }[<index>]',
                       '{ <Vt>.H }[<index>]',
@@ -1298,7 +1298,7 @@ def doOneLine(line):
             require("op2", 3)
 
             second.append(
-                arg + 'helper.formatDecimalImm(op2) + (Rt==31 ? "" : ("," + helper.getRegisterName("X", Rt, false, -1)));')
+                arg + "helper.formatDecimalImm(op2) + (Rt==31 ? \"\" : (\",\" + helper.getRegisterName('X', Rt, false, -1)));")
         elif word == '<Cn>':
             require("CRn", 4)
 

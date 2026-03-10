@@ -40,28 +40,28 @@ public class ArmDisasmHelper {
         this.formatter = formatter;
     }
 
-    public String formatPreIndexMemAccess(String registerType, int register, int offset) {
+    public String formatPreIndexMemAccess(char registerType, int register, int offset) {
         String reg = getRegisterName(registerType, register, true, -1);
         return formatter.formatMemAccess(Formatter.MemAccessType.PreIndex, reg, offset);
     }
 
-    public String formatPostIndexMemAccess(String registerType, int register, int offset) {
+    public String formatPostIndexMemAccess(char registerType, int register, int offset) {
         String reg = getRegisterName(registerType, register, true, -1);
         return formatter.formatMemAccess(Formatter.MemAccessType.PostIndex, reg, offset);
     }
 
-    public String formatMemAccessWithOffset(String registerType, int register, int offset) {
+    public String formatMemAccessWithOffset(char registerType, int register, int offset) {
         String reg = getRegisterName(registerType, register, true, -1);
         return formatter.formatMemAccess(Formatter.MemAccessType.OnlyOffset, reg, offset);
     }
 
-    public String formatMemAccessWithTwoRegisters(String registerType, int baseRegister, int extraRegister, int option, int scale, boolean showDefaultLsl, int shift, boolean is8Bit) {
+    public String formatMemAccessWithTwoRegisters(char registerType, int baseRegister, int extraRegister, int option, int scale, boolean showDefaultLsl, int shift, boolean is8Bit) {
         String baseReg = getRegisterName(registerType, baseRegister, true, -1);
-        String extraReg = getRegisterName(((option & 1) == 1) ? "X" : "W", extraRegister, false, -1);
+        String extraReg = getRegisterName(((option & 1) == 1) ? 'X' : 'W', extraRegister, false, -1);
         if (option == 3 && scale == 0 && shift == 0) {
             return "[" + baseReg + ", " + extraReg + (showDefaultLsl ? ", lsl #0" : "") + "]";
         }
-        if (!("W".equals(registerType) || "X".equals(registerType))) {
+        if (!(registerType == 'W' || registerType == 'X')) {
             throw new RuntimeException();
         }
         String suffix;
@@ -82,10 +82,10 @@ public class ArmDisasmHelper {
         return "[" + baseReg + ", " + extraReg + ", " + suffix + "]";
     }
 
-    public String formatMemAccessWithTwoRegistersLsl(String registerType, int baseRegister, int extraRegister, int scale, int shift) {
+    public String formatMemAccessWithTwoRegistersLsl(char registerType, int baseRegister, int extraRegister, int scale, int shift) {
         String baseReg = getRegisterName(registerType, baseRegister, true, -1);
-        String extraReg = getRegisterName("X", extraRegister, false, -1);
-        if (!("W".equals(registerType) || "X".equals(registerType))) {
+        String extraReg = getRegisterName('X', extraRegister, false, -1);
+        if (!(registerType == 'W' || registerType == 'X')) {
             throw new RuntimeException();
         }
         if (scale == 0 && shift == 0) {
@@ -95,28 +95,28 @@ public class ArmDisasmHelper {
     }
 
     public String decodeBaseRegister(int imm5, int register) {
-        return getRegisterName((imm5 & 0b1111) == 8 ? "X" : "W", register, false, -1);
+        return getRegisterName((imm5 & 0b1111) == 8 ? 'X' : 'W', register, false, -1);
     }
 
     public String decodeBaseRegister2(int imm5, int register) {
         int trailingZeros = Integer.numberOfTrailingZeros(imm5);
-        String regType;
+        char regType;
         if (trailingZeros <= 2) {
-            regType = "W";
+            regType = 'W';
         } else if (trailingZeros == 3) {
-            regType = "X";
+            regType = 'X';
         } else {
             throw new UndefinedInstructionException("imm5=" + imm5);
         }
         return getRegisterName(regType, register, false, -1);
     }
 
-    public String getRegisterName(String registerType, int register, boolean withSp, int optionalReg) {
+    public String getRegisterName(char registerType, int register, boolean withSp, int optionalReg) {
         if (register >= 0 && register <= 30) {
             if (register == optionalReg) {
                 return null;
             }
-            switch (registerType.charAt(0)) {
+            switch (registerType) {
                 case 'X': return X_REGS_ZR[register];
                 case 'W': return W_REGS_ZR[register];
                 case 'H': return H_REGS[register];
@@ -127,7 +127,7 @@ public class ArmDisasmHelper {
             }
         }
         if (register == 31) {
-            switch (registerType.charAt(0)) {
+            switch (registerType) {
                 case 'X': return withSp ? X_REGS_SP[31] : X_REGS_ZR[31];
                 case 'W': return withSp ? W_REGS_SP[31] : W_REGS_ZR[31];
                 case 'H': return H_REGS[31];
@@ -681,7 +681,7 @@ public class ArmDisasmHelper {
         throw new RuntimeException();
     }
 
-    public String decodeShiftedRegister(String registerType, int register, int shiftType, int amount, boolean rorEnabled) {
+    public String decodeShiftedRegister(char registerType, int register, int shiftType, int amount, boolean rorEnabled) {
         String reg = getRegisterName(registerType, register, false, -1);
         String suffix;
         if (shiftType == 0 && amount == 0) {
@@ -697,13 +697,13 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("type=" + shiftType + " amount=" + amount);
         }
-        if ("W".equals(registerType) && amount >= 32) {
+        if (registerType == 'W' && amount >= 32) {
             throw new UndefinedInstructionException("register=" + registerType + " type=" + shiftType + " amount=" + amount);
         }
         return reg + suffix;
     }
 
-    public String decodeRegisterWithExtend(String registerType, int register, int option, int shift, boolean preferLsl, boolean is64Bit) {
+    public String decodeRegisterWithExtend(char registerType, int register, int option, int shift, boolean preferLsl, boolean is64Bit) {
         String reg = getRegisterName(registerType, register, false, -1);
         boolean isLsl = (is64Bit && option == 3) || (!is64Bit && option == 2);
         if (preferLsl && isLsl && shift == 0) {
@@ -712,8 +712,8 @@ public class ArmDisasmHelper {
         return reg + ", " + decodeExtendWithShift(registerType, option, shift, false, preferLsl, is64Bit);
     }
 
-    private String decodeExtendWithShift(String registerType, int option, int shift, boolean includeZeroShift, boolean preferLsl, boolean is64Bit) {
-        if (!("W".equals(registerType) || "X".equals(registerType))) {
+    private String decodeExtendWithShift(char registerType, int option, int shift, boolean includeZeroShift, boolean preferLsl, boolean is64Bit) {
+        if (!(registerType == 'W' || registerType == 'X')) {
             throw new RuntimeException();
         }
         if (shift > 4) {
@@ -882,15 +882,15 @@ public class ArmDisasmHelper {
         return result;
     }
 
-    public String decodeShiftedImm16(String registerType, int value, int shiftAmount, boolean negate) {
-        if ("W".equals(registerType) && shiftAmount > 1) {
+    public String decodeShiftedImm16(char registerType, int value, int shiftAmount, boolean negate) {
+        if (registerType == 'W' && shiftAmount > 1) {
             throw new UndefinedInstructionException("registerType=" + registerType + " shiftAmount=" + shiftAmount);
         }
         long valueAsLong = value;
         long v = valueAsLong << (16 * shiftAmount);
         if (negate) {
             v = ~v;
-            if ("W".equals(registerType)) {
+            if (registerType == 'W') {
                 v &= 0xffffffffL;
             }
         }
@@ -1226,7 +1226,7 @@ public class ArmDisasmHelper {
         }
         // IC IVAU: op1=3, crn=7, crm=5, op2=1 — result includes the register operand.
         if (op1 == 3 && crn == 7 && crm == 5 && op2 == 1) {
-            return "IC IVAU," + getRegisterName("X", register, false, -1);
+            return "IC IVAU," + getRegisterName('X', register, false, -1);
         }
         String key = asBinaryString(3, op1) + " " + asBinaryString(4, crn) + " " + asBinaryString(4, crm) + " " + asBinaryString(3, op2);
         String result = SYS_OP_MAP.get(key);

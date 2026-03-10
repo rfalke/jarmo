@@ -575,11 +575,11 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASP";
             stmt.key = "opcode & 0xffe1fc01 = 0x8207c00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", (Rs+1)%32, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg4 = helper.getRegisterName("W", (Rt+1)%32, false, -1);
-            stmt.arg5 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', (Rs+1)%32, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg4 = helper.getRegisterName('W', (Rt+1)%32, false, -1);
+            stmt.arg5 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -593,11 +593,11 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASP";
             stmt.key = "opcode & 0xffe1fc01 = 0x48207c00";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", (Rs+1)%32, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", (Rt+1)%32, false, -1);
-            stmt.arg5 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', (Rs+1)%32, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', (Rt+1)%32, false, -1);
+            stmt.arg5 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -611,11 +611,11 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASPL";
             stmt.key = "opcode & 0xffe1fc01 = 0x820fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", (Rs+1)%32, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg4 = helper.getRegisterName("W", (Rt+1)%32, false, -1);
-            stmt.arg5 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', (Rs+1)%32, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg4 = helper.getRegisterName('W', (Rt+1)%32, false, -1);
+            stmt.arg5 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -629,11 +629,11 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASPL";
             stmt.key = "opcode & 0xffe1fc01 = 0x4820fc00";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", (Rs+1)%32, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", (Rt+1)%32, false, -1);
-            stmt.arg5 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', (Rs+1)%32, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', (Rt+1)%32, false, -1);
+            stmt.arg5 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -648,10 +648,10 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLXP";
             stmt.key = "opcode & 0xffe08000 = 0x88208000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg4 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg4 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -666,10 +666,10 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLXP";
             stmt.key = "opcode & 0xffe08000 = 0xc8208000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg4 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg4 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -684,9 +684,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLXRB";
             stmt.key = "opcode & 0xffe08000 = 0x8008000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -701,9 +701,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLXRH";
             stmt.key = "opcode & 0xffe08000 = 0x48008000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -718,10 +718,10 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STXP";
             stmt.key = "opcode & 0xffe08000 = 0x88200000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg4 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg4 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -736,10 +736,10 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STXP";
             stmt.key = "opcode & 0xffe08000 = 0xc8200000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg4 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg4 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -754,9 +754,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STXRB";
             stmt.key = "opcode & 0xffe08000 = 0x8000000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -771,9 +771,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STXRH";
             stmt.key = "opcode & 0xffe08000 = 0x48000000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -789,9 +789,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLXR";
             stmt.key = "opcode & 0x7fe08000 = 0x8008000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -807,9 +807,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLXR";
             stmt.key = "opcode & 0x7fe08000 = 0x48008000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -825,9 +825,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STXR";
             stmt.key = "opcode & 0x7fe08000 = 0x8000000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -843,9 +843,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STXR";
             stmt.key = "opcode & 0x7fe08000 = 0x48000000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -862,9 +862,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STNP";
             stmt.key = "opcode & 0xffc00000 = 0x28000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -881,9 +881,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STNP";
             stmt.key = "opcode & 0xffc00000 = 0xa8000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -913,7 +913,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc007000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -931,7 +931,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc00a000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -949,7 +949,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc006000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -967,7 +967,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc002000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -984,7 +984,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc008000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1001,7 +1001,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc004000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1018,7 +1018,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc000000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1035,9 +1035,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STNP";
             stmt.key = "opcode & 0xffc00000 = 0x6c000000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -1054,9 +1054,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STNP";
             stmt.key = "opcode & 0xffc00000 = 0xac000000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -1073,9 +1073,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STNP";
             stmt.key = "opcode & 0xffc00000 = 0x2c000000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -1101,9 +1101,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASB";
             stmt.key = "opcode & 0xffe0fc00 = 0x8a07c00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1117,9 +1117,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASH";
             stmt.key = "opcode & 0xffe0fc00 = 0x48a07c00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1133,9 +1133,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x8a0fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1149,9 +1149,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x48a0fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1166,9 +1166,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CAS";
             stmt.key = "opcode & 0x7fe0fc00 = 0x8a07c00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1183,9 +1183,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CAS";
             stmt.key = "opcode & 0x7fe0fc00 = 0x48a07c00";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1200,9 +1200,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x8a0fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1217,9 +1217,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x48a0fc00";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1235,8 +1235,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLLR";
             stmt.key = "opcode & 0xffe08000 = 0x88800000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1252,8 +1252,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLLR";
             stmt.key = "opcode & 0xffe08000 = 0xc8800000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1269,8 +1269,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLLRB";
             stmt.key = "opcode & 0xffe08000 = 0x8800000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1286,8 +1286,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLLRH";
             stmt.key = "opcode & 0xffe08000 = 0x48800000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1302,8 +1302,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLRB";
             stmt.key = "opcode & 0xffe08000 = 0x8808000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1318,8 +1318,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLRH";
             stmt.key = "opcode & 0xffe08000 = 0x48808000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1335,8 +1335,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLR";
             stmt.key = "opcode & 0x7fe08000 = 0x8808000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1352,8 +1352,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STLR";
             stmt.key = "opcode & 0x7fe08000 = 0x48808000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1370,9 +1370,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x28800000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2) );
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2) );
             return stmt;
         }
 
@@ -1389,9 +1389,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0xa8800000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2) );
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2) );
             return stmt;
         }
 
@@ -1421,7 +1421,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc9f7000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -1439,7 +1439,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc9fa000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -1457,7 +1457,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc9f6000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -1475,7 +1475,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc9f2000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -1492,7 +1492,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc9f8000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -1509,7 +1509,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc9f4000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -1526,7 +1526,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc9f0000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -1545,8 +1545,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xc807000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -1565,8 +1565,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xc80a000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -1585,8 +1585,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xc806000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -1605,8 +1605,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xc802000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -1624,8 +1624,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xc808000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -1643,8 +1643,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xc804000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -1662,8 +1662,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xc800000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -1680,9 +1680,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x6c800000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc) );
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc) );
             return stmt;
         }
 
@@ -1699,9 +1699,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0xac800000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc) );
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc) );
             return stmt;
         }
 
@@ -1718,9 +1718,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x2c800000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc) );
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc) );
             return stmt;
         }
 
@@ -1746,11 +1746,11 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASPA";
             stmt.key = "opcode & 0xffe1fc01 = 0x8607c00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", (Rs+1)%32, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg4 = helper.getRegisterName("W", (Rt+1)%32, false, -1);
-            stmt.arg5 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', (Rs+1)%32, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg4 = helper.getRegisterName('W', (Rt+1)%32, false, -1);
+            stmt.arg5 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1764,11 +1764,11 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASPA";
             stmt.key = "opcode & 0xffe1fc01 = 0x48607c00";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", (Rs+1)%32, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", (Rt+1)%32, false, -1);
-            stmt.arg5 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', (Rs+1)%32, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', (Rt+1)%32, false, -1);
+            stmt.arg5 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1782,11 +1782,11 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASPAL";
             stmt.key = "opcode & 0xffe1fc01 = 0x860fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", (Rs+1)%32, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg4 = helper.getRegisterName("W", (Rt+1)%32, false, -1);
-            stmt.arg5 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', (Rs+1)%32, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg4 = helper.getRegisterName('W', (Rt+1)%32, false, -1);
+            stmt.arg5 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1800,11 +1800,11 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASPAL";
             stmt.key = "opcode & 0xffe1fc01 = 0x4860fc00";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", (Rs+1)%32, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", (Rt+1)%32, false, -1);
-            stmt.arg5 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', (Rs+1)%32, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', (Rt+1)%32, false, -1);
+            stmt.arg5 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1819,9 +1819,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAXP";
             stmt.key = "opcode & 0xffe08000 = 0x88608000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1836,9 +1836,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAXP";
             stmt.key = "opcode & 0xffe08000 = 0xc8608000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1854,8 +1854,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAXR";
             stmt.key = "opcode & 0xffe08000 = 0x88408000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1871,8 +1871,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAXR";
             stmt.key = "opcode & 0xffe08000 = 0xc8408000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1887,8 +1887,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAXRB";
             stmt.key = "opcode & 0xffe08000 = 0x8408000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1903,8 +1903,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAXRH";
             stmt.key = "opcode & 0xffe08000 = 0x48408000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1919,9 +1919,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDXP";
             stmt.key = "opcode & 0xffe08000 = 0x88600000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1936,9 +1936,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDXP";
             stmt.key = "opcode & 0xffe08000 = 0xc8600000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1953,8 +1953,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDXRB";
             stmt.key = "opcode & 0xffe08000 = 0x8400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1969,8 +1969,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDXRH";
             stmt.key = "opcode & 0xffe08000 = 0x48400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -1986,8 +1986,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDXR";
             stmt.key = "opcode & 0x7fe08000 = 0x8400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2003,8 +2003,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDXR";
             stmt.key = "opcode & 0x7fe08000 = 0x48400000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2021,9 +2021,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDNP";
             stmt.key = "opcode & 0xffc00000 = 0x28400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -2040,9 +2040,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDNP";
             stmt.key = "opcode & 0xffc00000 = 0xa8400000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -2072,7 +2072,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc407000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2090,7 +2090,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc40a000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2108,7 +2108,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc406000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2126,7 +2126,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc402000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2143,7 +2143,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc408000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2160,7 +2160,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc404000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2177,7 +2177,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xc400000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2194,9 +2194,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDNP";
             stmt.key = "opcode & 0xffc00000 = 0x6c400000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -2213,9 +2213,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDNP";
             stmt.key = "opcode & 0xffc00000 = 0xac400000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -2232,9 +2232,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDNP";
             stmt.key = "opcode & 0xffc00000 = 0x2c400000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -2260,9 +2260,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x8e07c00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2276,9 +2276,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x48e07c00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2292,9 +2292,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x8e0fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2308,9 +2308,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x48e0fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2325,9 +2325,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x8e07c00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2342,9 +2342,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x48e07c00";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2359,9 +2359,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x8e0fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2376,9 +2376,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CASAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x48e0fc00";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2394,8 +2394,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAR";
             stmt.key = "opcode & 0xffe08000 = 0x88c08000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2411,8 +2411,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAR";
             stmt.key = "opcode & 0xffe08000 = 0xc8c08000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2427,8 +2427,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDARB";
             stmt.key = "opcode & 0xffe08000 = 0x8c08000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2443,8 +2443,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDARH";
             stmt.key = "opcode & 0xffe08000 = 0x48c08000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2459,8 +2459,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDLARB";
             stmt.key = "opcode & 0xffe08000 = 0x8c00000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2475,8 +2475,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDLARH";
             stmt.key = "opcode & 0xffe08000 = 0x48c00000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2492,8 +2492,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDLAR";
             stmt.key = "opcode & 0x7fe08000 = 0x8c00000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2509,8 +2509,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDLAR";
             stmt.key = "opcode & 0x7fe08000 = 0x48c00000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2527,9 +2527,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x28c00000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2) );
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2) );
             return stmt;
         }
 
@@ -2546,9 +2546,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0xa8c00000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2) );
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2) );
             return stmt;
         }
 
@@ -2566,9 +2566,9 @@ public class ArmDisasmDecoder {
             if (((Rn != Rt && Rn != Rt2) || Rn == 31) && (Rt != Rt2)) {
                 stmt.opcode = "LDPSW";
                 stmt.key = "opcode & 0xffc00000 = 0x68c00000";
-                stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-                stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2) );
+                stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+                stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2) );
                 return stmt;
             }
         }
@@ -2599,7 +2599,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xcdf7000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -2617,7 +2617,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xcdfa000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -2635,7 +2635,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xcdf6000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -2653,7 +2653,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xcdf2000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -2670,7 +2670,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xcdf8000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -2687,7 +2687,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xcdf4000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -2704,7 +2704,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xcdf0000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, helper.decodeLd1Offset(Q, numRegs));
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, helper.decodeLd1Offset(Q, numRegs));
             return stmt;
         }
 
@@ -2723,8 +2723,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xcc07000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -2743,8 +2743,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xcc0a000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -2763,8 +2763,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xcc06000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -2783,8 +2783,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xcc02000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -2802,8 +2802,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xcc08000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -2821,8 +2821,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xcc04000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -2840,8 +2840,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xcc00000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, false);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -2858,9 +2858,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x6cc00000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc) );
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc) );
             return stmt;
         }
 
@@ -2877,9 +2877,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0xacc00000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc) );
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc) );
             return stmt;
         }
 
@@ -2896,9 +2896,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x2cc00000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rt2, false, -1);
-            stmt.arg3 = helper.formatPostIndexMemAccess("X", Rn, imm7Signed<<(2 + opc) );
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rt2, false, -1);
+            stmt.arg3 = helper.formatPostIndexMemAccess('X', Rn, imm7Signed<<(2 + opc) );
             return stmt;
         }
 
@@ -2928,7 +2928,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbffffc00 = 0xd008400";
             stmt.arg1 = helper.decodeLd1Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2946,7 +2946,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbffffc00 = 0xd208400";
             stmt.arg1 = helper.decodeLd2Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2964,7 +2964,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfffec00 = 0xd008000";
             stmt.arg1 = helper.decodeLd1Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -2982,7 +2982,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfffec00 = 0xd208000";
             stmt.arg1 = helper.decodeLd2Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3000,7 +3000,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfffdc00 = 0xd008400";
             stmt.arg1 = helper.decodeLd3Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3018,7 +3018,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfffdc00 = 0xd208400";
             stmt.arg1 = helper.decodeLd4Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3036,7 +3036,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfffe400 = 0xd004000";
             stmt.arg1 = helper.decodeLd1Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3054,7 +3054,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfffe400 = 0xd204000";
             stmt.arg1 = helper.decodeLd2Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3072,7 +3072,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfffcc00 = 0xd008000";
             stmt.arg1 = helper.decodeLd3Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3090,7 +3090,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfffcc00 = 0xd208000";
             stmt.arg1 = helper.decodeLd4Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3108,7 +3108,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfffe000 = 0xd000000";
             stmt.arg1 = helper.decodeLd1Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3126,7 +3126,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfffe000 = 0xd200000";
             stmt.arg1 = helper.decodeLd2Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3144,7 +3144,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfffc400 = 0xd004000";
             stmt.arg1 = helper.decodeLd3Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3162,7 +3162,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfffc400 = 0xd204000";
             stmt.arg1 = helper.decodeLd4Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3180,7 +3180,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfffc000 = 0xd000000";
             stmt.arg1 = helper.decodeLd3Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3198,7 +3198,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfffc000 = 0xd200000";
             stmt.arg1 = helper.decodeLd4Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -3215,9 +3215,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x6d000000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -3234,9 +3234,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0xad000000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -3253,9 +3253,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x2d000000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -3272,9 +3272,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x29000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -3291,9 +3291,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0xa9000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -3323,7 +3323,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbffffc00 = 0xd9f8400";
             stmt.arg1 = helper.decodeLd1Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#8";
             return stmt;
         }
@@ -3342,7 +3342,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfffec00 = 0xd9f8000";
             stmt.arg1 = helper.decodeLd1Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#4";
             return stmt;
         }
@@ -3361,7 +3361,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfffdc00 = 0xd9f8400";
             stmt.arg1 = helper.decodeLd3Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#24";
             return stmt;
         }
@@ -3380,7 +3380,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfffe400 = 0xd9f4000";
             stmt.arg1 = helper.decodeLd1Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#2";
             return stmt;
         }
@@ -3399,7 +3399,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfffcc00 = 0xd9f8000";
             stmt.arg1 = helper.decodeLd3Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#12";
             return stmt;
         }
@@ -3418,7 +3418,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfffe000 = 0xd9f0000";
             stmt.arg1 = helper.decodeLd1Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#1";
             return stmt;
         }
@@ -3437,7 +3437,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfffc400 = 0xd9f4000";
             stmt.arg1 = helper.decodeLd3Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#6";
             return stmt;
         }
@@ -3456,7 +3456,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfffc000 = 0xd9f0000";
             stmt.arg1 = helper.decodeLd3Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#3";
             return stmt;
         }
@@ -3476,8 +3476,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfe0fc00 = 0xd808400";
             stmt.arg1 = helper.decodeLd1Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3496,8 +3496,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfe0ec00 = 0xd808000";
             stmt.arg1 = helper.decodeLd1Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3516,8 +3516,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfe0dc00 = 0xd808400";
             stmt.arg1 = helper.decodeLd3Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3536,8 +3536,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfe0e400 = 0xd804000";
             stmt.arg1 = helper.decodeLd1Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3556,8 +3556,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfe0cc00 = 0xd808000";
             stmt.arg1 = helper.decodeLd3Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3576,8 +3576,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST1";
             stmt.key = "opcode & 0xbfe0e000 = 0xd800000";
             stmt.arg1 = helper.decodeLd1Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3596,8 +3596,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfe0c400 = 0xd804000";
             stmt.arg1 = helper.decodeLd3Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3616,8 +3616,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST3";
             stmt.key = "opcode & 0xbfe0c000 = 0xd800000";
             stmt.arg1 = helper.decodeLd3Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3647,7 +3647,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbffffc00 = 0xdbf8400";
             stmt.arg1 = helper.decodeLd2Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#16";
             return stmt;
         }
@@ -3666,7 +3666,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfffec00 = 0xdbf8000";
             stmt.arg1 = helper.decodeLd2Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#8";
             return stmt;
         }
@@ -3685,7 +3685,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfffdc00 = 0xdbf8400";
             stmt.arg1 = helper.decodeLd4Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#32";
             return stmt;
         }
@@ -3704,7 +3704,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfffe400 = 0xdbf4000";
             stmt.arg1 = helper.decodeLd2Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#4";
             return stmt;
         }
@@ -3723,7 +3723,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfffcc00 = 0xdbf8000";
             stmt.arg1 = helper.decodeLd4Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#16";
             return stmt;
         }
@@ -3742,7 +3742,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfffe000 = 0xdbf0000";
             stmt.arg1 = helper.decodeLd2Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#2";
             return stmt;
         }
@@ -3761,7 +3761,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfffc400 = 0xdbf4000";
             stmt.arg1 = helper.decodeLd4Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#8";
             return stmt;
         }
@@ -3780,7 +3780,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfffc000 = 0xdbf0000";
             stmt.arg1 = helper.decodeLd4Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#4";
             return stmt;
         }
@@ -3800,8 +3800,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfe0fc00 = 0xda08400";
             stmt.arg1 = helper.decodeLd2Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3820,8 +3820,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfe0ec00 = 0xda08000";
             stmt.arg1 = helper.decodeLd2Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3840,8 +3840,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfe0dc00 = 0xda08400";
             stmt.arg1 = helper.decodeLd4Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3860,8 +3860,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfe0e400 = 0xda04000";
             stmt.arg1 = helper.decodeLd2Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3880,8 +3880,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfe0cc00 = 0xda08000";
             stmt.arg1 = helper.decodeLd4Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3900,8 +3900,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST2";
             stmt.key = "opcode & 0xbfe0e000 = 0xda00000";
             stmt.arg1 = helper.decodeLd2Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3920,8 +3920,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfe0c400 = 0xda04000";
             stmt.arg1 = helper.decodeLd4Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3940,8 +3940,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "ST4";
             stmt.key = "opcode & 0xbfe0c000 = 0xda00000";
             stmt.arg1 = helper.decodeLd4Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -3970,9 +3970,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x6d800000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -3989,9 +3989,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0xad800000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -4008,9 +4008,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x2d800000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -4027,9 +4027,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0x29800000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -4046,9 +4046,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "STP";
             stmt.key = "opcode & 0xffc00000 = 0xa9800000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -4078,7 +4078,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbffffc00 = 0xd408400";
             stmt.arg1 = helper.decodeLd1Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4096,7 +4096,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbffffc00 = 0xd608400";
             stmt.arg1 = helper.decodeLd2Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4114,7 +4114,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbffffc00 = 0xd40a400";
             stmt.arg1 = helper.decodeLd3Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4132,7 +4132,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbffffc00 = 0xd60a400";
             stmt.arg1 = helper.decodeLd4Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4150,7 +4150,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfffec00 = 0xd408000";
             stmt.arg1 = helper.decodeLd1Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4168,7 +4168,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfffec00 = 0xd608000";
             stmt.arg1 = helper.decodeLd2Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4186,7 +4186,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfffec00 = 0xd40a000";
             stmt.arg1 = helper.decodeLd3Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4204,7 +4204,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfffec00 = 0xd60a000";
             stmt.arg1 = helper.decodeLd4Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4222,7 +4222,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfffe400 = 0xd404000";
             stmt.arg1 = helper.decodeLd1Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4239,7 +4239,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xd40c000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4257,7 +4257,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfffe400 = 0xd604000";
             stmt.arg1 = helper.decodeLd2Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4274,7 +4274,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xd60c000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4292,7 +4292,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfffe400 = 0xd406000";
             stmt.arg1 = helper.decodeLd3Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4309,7 +4309,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xd40e000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4327,7 +4327,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfffe400 = 0xd606000";
             stmt.arg1 = helper.decodeLd4Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4344,7 +4344,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xd60e000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4362,7 +4362,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfffe000 = 0xd400000";
             stmt.arg1 = helper.decodeLd1Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4380,7 +4380,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfffe000 = 0xd600000";
             stmt.arg1 = helper.decodeLd2Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4398,7 +4398,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfffe000 = 0xd402000";
             stmt.arg1 = helper.decodeLd3Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4416,7 +4416,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfffe000 = 0xd602000";
             stmt.arg1 = helper.decodeLd4Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -4445,9 +4445,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x6d400000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -4464,9 +4464,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0xad400000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -4483,9 +4483,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x2d400000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -4502,9 +4502,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x29400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -4521,9 +4521,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0xa9400000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -4541,9 +4541,9 @@ public class ArmDisasmDecoder {
             if ((Rt != Rt2)) {
                 stmt.opcode = "LDPSW";
                 stmt.key = "opcode & 0xffc00000 = 0x69400000";
-                stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-                stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, imm7Signed<<(2 + opc/2));
+                stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+                stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, imm7Signed<<(2 + opc/2));
                 return stmt;
             }
         }
@@ -4574,7 +4574,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbffffc00 = 0xddf8400";
             stmt.arg1 = helper.decodeLd1Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#8";
             return stmt;
         }
@@ -4593,7 +4593,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbffffc00 = 0xddfa400";
             stmt.arg1 = helper.decodeLd3Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#24";
             return stmt;
         }
@@ -4612,7 +4612,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfffec00 = 0xddf8000";
             stmt.arg1 = helper.decodeLd1Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#4";
             return stmt;
         }
@@ -4631,7 +4631,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfffec00 = 0xddfa000";
             stmt.arg1 = helper.decodeLd3Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#12";
             return stmt;
         }
@@ -4650,7 +4650,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfffe400 = 0xddf4000";
             stmt.arg1 = helper.decodeLd1Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#2";
             return stmt;
         }
@@ -4668,7 +4668,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xddfc000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, 1 << size);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, 1 << size);
             return stmt;
         }
 
@@ -4686,7 +4686,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfffe400 = 0xddf6000";
             stmt.arg1 = helper.decodeLd3Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#6";
             return stmt;
         }
@@ -4704,7 +4704,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xddfe000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, 3 << size);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, 3 << size);
             return stmt;
         }
 
@@ -4722,7 +4722,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfffe000 = 0xddf0000";
             stmt.arg1 = helper.decodeLd1Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#1";
             return stmt;
         }
@@ -4741,7 +4741,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfffe000 = 0xddf2000";
             stmt.arg1 = helper.decodeLd3Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#3";
             return stmt;
         }
@@ -4761,8 +4761,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfe0fc00 = 0xdc08400";
             stmt.arg1 = helper.decodeLd1Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4781,8 +4781,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfe0fc00 = 0xdc0a400";
             stmt.arg1 = helper.decodeLd3Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4801,8 +4801,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfe0ec00 = 0xdc08000";
             stmt.arg1 = helper.decodeLd1Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4821,8 +4821,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfe0ec00 = 0xdc0a000";
             stmt.arg1 = helper.decodeLd3Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4841,8 +4841,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfe0e400 = 0xdc04000";
             stmt.arg1 = helper.decodeLd1Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4860,8 +4860,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xdc0c000";
             final int numRegs = 1;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4880,8 +4880,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfe0e400 = 0xdc06000";
             stmt.arg1 = helper.decodeLd3Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4899,8 +4899,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xdc0e000";
             final int numRegs = 3;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4919,8 +4919,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD1";
             stmt.key = "opcode & 0xbfe0e000 = 0xdc00000";
             stmt.arg1 = helper.decodeLd1Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4939,8 +4939,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD3";
             stmt.key = "opcode & 0xbfe0e000 = 0xdc02000";
             stmt.arg1 = helper.decodeLd3Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -4970,7 +4970,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbffffc00 = 0xdff8400";
             stmt.arg1 = helper.decodeLd2Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#16";
             return stmt;
         }
@@ -4989,7 +4989,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbffffc00 = 0xdffa400";
             stmt.arg1 = helper.decodeLd4Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#32";
             return stmt;
         }
@@ -5008,7 +5008,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfffec00 = 0xdff8000";
             stmt.arg1 = helper.decodeLd2Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#8";
             return stmt;
         }
@@ -5027,7 +5027,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfffec00 = 0xdffa000";
             stmt.arg1 = helper.decodeLd4Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#16";
             return stmt;
         }
@@ -5046,7 +5046,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfffe400 = 0xdff4000";
             stmt.arg1 = helper.decodeLd2Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#4";
             return stmt;
         }
@@ -5064,7 +5064,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xdffc000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, 2 << size);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, 2 << size);
             return stmt;
         }
 
@@ -5082,7 +5082,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfffe400 = 0xdff6000";
             stmt.arg1 = helper.decodeLd4Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#8";
             return stmt;
         }
@@ -5100,7 +5100,7 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbffff000 = 0xdffe000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, 4 << size);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, 4 << size);
             return stmt;
         }
 
@@ -5118,7 +5118,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfffe000 = 0xdff0000";
             stmt.arg1 = helper.decodeLd2Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#2";
             return stmt;
         }
@@ -5137,7 +5137,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfffe000 = 0xdff2000";
             stmt.arg1 = helper.decodeLd4Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             stmt.arg3 = "#4";
             return stmt;
         }
@@ -5157,8 +5157,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfe0fc00 = 0xde08400";
             stmt.arg1 = helper.decodeLd2Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5177,8 +5177,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfe0fc00 = 0xde0a400";
             stmt.arg1 = helper.decodeLd4Index("D", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5197,8 +5197,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfe0ec00 = 0xde08000";
             stmt.arg1 = helper.decodeLd2Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5217,8 +5217,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfe0ec00 = 0xde0a000";
             stmt.arg1 = helper.decodeLd4Index("S", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5237,8 +5237,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfe0e400 = 0xde04000";
             stmt.arg1 = helper.decodeLd2Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5256,8 +5256,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xde0c000";
             final int numRegs = 2;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5276,8 +5276,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfe0e400 = 0xde06000";
             stmt.arg1 = helper.decodeLd4Index("H", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5295,8 +5295,8 @@ public class ArmDisasmDecoder {
             stmt.key = "opcode & 0xbfe0f000 = 0xde0e000";
             final int numRegs = 4;
             stmt.arg1 = helper.decodeLd1(Q, size, Rt, numRegs, true);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5315,8 +5315,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD2";
             stmt.key = "opcode & 0xbfe0e000 = 0xde00000";
             stmt.arg1 = helper.decodeLd2Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5335,8 +5335,8 @@ public class ArmDisasmDecoder {
             stmt.opcode = "LD4";
             stmt.key = "opcode & 0xbfe0e000 = 0xde02000";
             stmt.arg1 = helper.decodeLd4Index("B", Rt, Q, S, size);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -5365,9 +5365,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x6dc00000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -5384,9 +5384,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0xadc00000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -5403,9 +5403,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x2dc00000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc));
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc));
             return stmt;
         }
 
@@ -5422,9 +5422,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0x29c00000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -5441,9 +5441,9 @@ public class ArmDisasmDecoder {
             final int imm7Signed = helper.asSigned(imm7, 7);
             stmt.opcode = "LDP";
             stmt.key = "opcode & 0xffc00000 = 0xa9c00000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-            stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+            stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2));
             return stmt;
         }
 
@@ -5461,9 +5461,9 @@ public class ArmDisasmDecoder {
             if (((Rn != Rt && Rn != Rt2) || Rn == 31) && (Rt != Rt2)) {
                 stmt.opcode = "LDPSW";
                 stmt.key = "opcode & 0xffc00000 = 0x69c00000";
-                stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rt2, false, -1);
-                stmt.arg3 = helper.formatPreIndexMemAccess("X", Rn, imm7Signed<<(2 + opc/2));
+                stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rt2, false, -1);
+                stmt.arg3 = helper.formatPreIndexMemAccess('X', Rn, imm7Signed<<(2 + opc/2));
                 return stmt;
             }
         }
@@ -5492,9 +5492,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AND";
             stmt.key = "opcode & 0xff200000 = 0xa000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -5510,9 +5510,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "EOR";
             stmt.key = "opcode & 0xff200000 = 0x4a000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -5843,7 +5843,7 @@ public class ArmDisasmDecoder {
             if (((imm5 & 0b1111) == 0b1000)) {
                 stmt.opcode = "MOV";
                 stmt.key = "opcode & 0xffeffc00 = 0x4e083c00";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
                 stmt.arg2 = helper.decodeVectorRegWithIndex1(Rn, imm5, false, false, false, true);
                 return stmt;
             }
@@ -5860,7 +5860,7 @@ public class ArmDisasmDecoder {
             if ((!((imm5 & 0b1111) == 0b1000))) {
                 stmt.opcode = "UMOV";
                 stmt.key = "opcode & 0xffeffc00 = 0x4e083c00";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
                 stmt.arg2 = helper.decodeVectorRegWithIndex1(Rn, imm5, false, false, false, true);
                 return stmt;
             }
@@ -5877,7 +5877,7 @@ public class ArmDisasmDecoder {
             if (((imm5 & 0b111) == 0b100)) {
                 stmt.opcode = "MOV";
                 stmt.key = "opcode & 0xffe7fc00 = 0xe043c00";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
                 stmt.arg2 = helper.decodeVectorRegWithIndex1(Rn, imm5, true, true, true, false);
                 return stmt;
             }
@@ -5893,7 +5893,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SMOV";
             stmt.key = "opcode & 0xffe0fc00 = 0xe002c00";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
             stmt.arg2 = helper.decodeVectorRegWithIndex1(Rn, imm5, true, true, false, false);
             return stmt;
         }
@@ -5908,7 +5908,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SMOV";
             stmt.key = "opcode & 0xffe0fc00 = 0x4e002c00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             stmt.arg2 = helper.decodeVectorRegWithIndex1(Rn, imm5, true, true, true, false);
             return stmt;
         }
@@ -5924,7 +5924,7 @@ public class ArmDisasmDecoder {
             if ((!((imm5 & 0b111) == 0b100))) {
                 stmt.opcode = "UMOV";
                 stmt.key = "opcode & 0xffe0fc00 = 0xe003c00";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
                 stmt.arg2 = helper.decodeVectorRegWithIndex1(Rn, imm5, true, true, true, false);
                 return stmt;
             }
@@ -6333,9 +6333,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AND";
             stmt.key = "opcode & 0xff200000 = 0x8a000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -6351,9 +6351,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "EOR";
             stmt.key = "opcode & 0xff200000 = 0xca000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -6381,9 +6381,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "BIC";
             stmt.key = "opcode & 0xff200000 = 0xa200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -6399,9 +6399,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "EON";
             stmt.key = "opcode & 0xff200000 = 0x4a200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -8457,8 +8457,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SHA512H";
             stmt.key = "opcode & 0xffe0fc00 = 0xce608000";
-            stmt.arg1 = helper.getRegisterName("Q", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('Q', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rn, false, -1);
             stmt.arg3 = helper.formatVectorRegister(Rm, "2D");
             return stmt;
         }
@@ -8473,8 +8473,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SHA512H2";
             stmt.key = "opcode & 0xffe0fc00 = 0xce608400";
-            stmt.arg1 = helper.getRegisterName("Q", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('Q', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rn, false, -1);
             stmt.arg3 = helper.formatVectorRegister(Rm, "2D");
             return stmt;
         }
@@ -8573,9 +8573,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "BIC";
             stmt.key = "opcode & 0xff200000 = 0x8a200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -8591,9 +8591,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "EON";
             stmt.key = "opcode & 0xff200000 = 0xca200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -8620,8 +8620,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "NEG";
             stmt.key = "opcode & 0xff2003e0 = 0x4b0003e0";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.decodeShiftedRegister("W", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.decodeShiftedRegister('W', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -8636,8 +8636,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "NEG";
             stmt.key = "opcode & 0xff2003e0 = 0xcb0003e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.decodeShiftedRegister("X", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.decodeShiftedRegister('X', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -8653,9 +8653,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADD";
             stmt.key = "opcode & 0xffe00000 = 0xb200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
-            stmt.arg3 = helper.decodeRegisterWithExtend("W", Rm, option, imm3, Rn == 31 || Rd == 31, false);
+            stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
+            stmt.arg3 = helper.decodeRegisterWithExtend('W', Rm, option, imm3, Rn == 31 || Rd == 31, false);
             return stmt;
         }
 
@@ -8671,9 +8671,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADD";
             stmt.key = "opcode & 0xffe00000 = 0x8b200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
-            stmt.arg3 = helper.decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, Rn == 31 || Rd == 31, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
+            stmt.arg3 = helper.decodeRegisterWithExtend((option&3)==3 ? 'X' : 'W', Rm, option, imm3, Rn == 31 || Rd == 31, true);
             return stmt;
         }
 
@@ -8689,9 +8689,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUB";
             stmt.key = "opcode & 0xffe00000 = 0x4b200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
-            stmt.arg3 = helper.decodeRegisterWithExtend("W", Rm, option, imm3, Rn == 31 || Rd == 31, false);
+            stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
+            stmt.arg3 = helper.decodeRegisterWithExtend('W', Rm, option, imm3, Rn == 31 || Rd == 31, false);
             return stmt;
         }
 
@@ -8707,9 +8707,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUB";
             stmt.key = "opcode & 0xffe00000 = 0xcb200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
-            stmt.arg3 = helper.decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, Rn == 31 || Rd == 31, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
+            stmt.arg3 = helper.decodeRegisterWithExtend((option&3)==3 ? 'X' : 'W', Rm, option, imm3, Rn == 31 || Rd == 31, true);
             return stmt;
         }
 
@@ -8725,9 +8725,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADD";
             stmt.key = "opcode & 0xff200000 = 0xb000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -8743,9 +8743,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADD";
             stmt.key = "opcode & 0xff200000 = 0x8b000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -8761,9 +8761,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUB";
             stmt.key = "opcode & 0xff200000 = 0x4b000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -8779,9 +8779,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUB";
             stmt.key = "opcode & 0xff200000 = 0xcb000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -9605,8 +9605,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MOV";
             stmt.key = "opcode & 0xffe0ffe0 = 0x2a0003e0";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -9619,8 +9619,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MOV";
             stmt.key = "opcode & 0xffe0ffe0 = 0xaa0003e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -9635,8 +9635,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "TST";
             stmt.key = "opcode & 0xff20001f = 0x6a00001f";
-            stmt.arg1 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg2 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg2 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -9651,8 +9651,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "TST";
             stmt.key = "opcode & 0xff20001f = 0xea00001f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg2 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg2 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -9668,9 +9668,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ANDS";
             stmt.key = "opcode & 0xff200000 = 0x6a000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -9686,9 +9686,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ANDS";
             stmt.key = "opcode & 0xff200000 = 0xea000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -9704,9 +9704,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ORR";
             stmt.key = "opcode & 0xff200000 = 0x2a000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -9722,9 +9722,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ORR";
             stmt.key = "opcode & 0xff200000 = 0xaa000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -10096,8 +10096,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MVN";
             stmt.key = "opcode & 0xff2003e0 = 0x2a2003e0";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -10112,8 +10112,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MVN";
             stmt.key = "opcode & 0xff2003e0 = 0xaa2003e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -10129,9 +10129,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "BICS";
             stmt.key = "opcode & 0xff200000 = 0x6a200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -10147,9 +10147,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "BICS";
             stmt.key = "opcode & 0xff200000 = 0xea200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -10165,9 +10165,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ORN";
             stmt.key = "opcode & 0xff200000 = 0x2a200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -10183,9 +10183,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ORN";
             stmt.key = "opcode & 0xff200000 = 0xaa200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, true);
             return stmt;
         }
 
@@ -11970,8 +11970,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMN";
             stmt.key = "opcode & 0xffe0001f = 0x2b20001f";
-            stmt.arg1 = helper.getRegisterName("W", Rn, true, -1);
-            stmt.arg2 = helper.decodeRegisterWithExtend("W", Rm, option, imm3, Rn == 31, false);
+            stmt.arg1 = helper.getRegisterName('W', Rn, true, -1);
+            stmt.arg2 = helper.decodeRegisterWithExtend('W', Rm, option, imm3, Rn == 31, false);
             return stmt;
         }
 
@@ -11987,8 +11987,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMN";
             stmt.key = "opcode & 0xffe0001f = 0xab20001f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, true, -1);
-            stmt.arg2 = helper.decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, Rn == 31, true);
+            stmt.arg1 = helper.getRegisterName('X', Rn, true, -1);
+            stmt.arg2 = helper.decodeRegisterWithExtend((option&3)==3 ? 'X' : 'W', Rm, option, imm3, Rn == 31, true);
             return stmt;
         }
 
@@ -12004,8 +12004,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMP";
             stmt.key = "opcode & 0xffe0001f = 0x6b20001f";
-            stmt.arg1 = helper.getRegisterName("W", Rn, true, -1);
-            stmt.arg2 = helper.decodeRegisterWithExtend("W", Rm, option, imm3, Rn == 31, false);
+            stmt.arg1 = helper.getRegisterName('W', Rn, true, -1);
+            stmt.arg2 = helper.decodeRegisterWithExtend('W', Rm, option, imm3, Rn == 31, false);
             return stmt;
         }
 
@@ -12021,8 +12021,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMP";
             stmt.key = "opcode & 0xffe0001f = 0xeb20001f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, true, -1);
-            stmt.arg2 = helper.decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, Rn == 31, true);
+            stmt.arg1 = helper.getRegisterName('X', Rn, true, -1);
+            stmt.arg2 = helper.decodeRegisterWithExtend((option&3)==3 ? 'X' : 'W', Rm, option, imm3, Rn == 31, true);
             return stmt;
         }
 
@@ -12038,8 +12038,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMN";
             stmt.key = "opcode & 0xff20001f = 0x2b00001f";
-            stmt.arg1 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg2 = helper.decodeShiftedRegister("W", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg2 = helper.decodeShiftedRegister('W', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -12055,8 +12055,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMN";
             stmt.key = "opcode & 0xff20001f = 0xab00001f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg2 = helper.decodeShiftedRegister("X", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg2 = helper.decodeShiftedRegister('X', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -12073,8 +12073,8 @@ public class ArmDisasmDecoder {
             if ((Rd == 31 && Rn != 31)) {
                 stmt.opcode = "CMP";
                 stmt.key = "opcode & 0xff20001f = 0x6b00001f";
-                stmt.arg1 = helper.getRegisterName("W", Rn, false, -1);
-                stmt.arg2 = helper.decodeShiftedRegister("W", Rm, shift, imm6, false);
+                stmt.arg1 = helper.getRegisterName('W', Rn, false, -1);
+                stmt.arg2 = helper.decodeShiftedRegister('W', Rm, shift, imm6, false);
                 return stmt;
             }
         }
@@ -12092,8 +12092,8 @@ public class ArmDisasmDecoder {
             if ((Rd == 31 && Rn != 31)) {
                 stmt.opcode = "CMP";
                 stmt.key = "opcode & 0xff20001f = 0xeb00001f";
-                stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-                stmt.arg2 = helper.decodeShiftedRegister("X", Rm, shift, imm6, false);
+                stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+                stmt.arg2 = helper.decodeShiftedRegister('X', Rm, shift, imm6, false);
                 return stmt;
             }
         }
@@ -12111,8 +12111,8 @@ public class ArmDisasmDecoder {
             if ((Rn == 31)) {
                 stmt.opcode = "NEGS";
                 stmt.key = "opcode & 0xff2003e0 = 0x6b0003e0";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.decodeShiftedRegister("W", Rm, shift, imm6, false);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.decodeShiftedRegister('W', Rm, shift, imm6, false);
                 return stmt;
             }
         }
@@ -12130,8 +12130,8 @@ public class ArmDisasmDecoder {
             if ((Rn == 31)) {
                 stmt.opcode = "NEGS";
                 stmt.key = "opcode & 0xff2003e0 = 0xeb0003e0";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.decodeShiftedRegister("X", Rm, shift, imm6, false);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.decodeShiftedRegister('X', Rm, shift, imm6, false);
                 return stmt;
             }
         }
@@ -12148,9 +12148,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADDS";
             stmt.key = "opcode & 0xffe00000 = 0x2b200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
-            stmt.arg3 = helper.decodeRegisterWithExtend("W", Rm, option, imm3, Rn == 31 || Rd == 31, false);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
+            stmt.arg3 = helper.decodeRegisterWithExtend('W', Rm, option, imm3, Rn == 31 || Rd == 31, false);
             return stmt;
         }
 
@@ -12166,9 +12166,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADDS";
             stmt.key = "opcode & 0xffe00000 = 0xab200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
-            stmt.arg3 = helper.decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, Rn == 31 || Rd == 31, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
+            stmt.arg3 = helper.decodeRegisterWithExtend((option&3)==3 ? 'X' : 'W', Rm, option, imm3, Rn == 31 || Rd == 31, true);
             return stmt;
         }
 
@@ -12184,9 +12184,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUBS";
             stmt.key = "opcode & 0xffe00000 = 0x6b200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
-            stmt.arg3 = helper.decodeRegisterWithExtend("W", Rm, option, imm3, Rn == 31 || Rd == 31, false);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
+            stmt.arg3 = helper.decodeRegisterWithExtend('W', Rm, option, imm3, Rn == 31 || Rd == 31, false);
             return stmt;
         }
 
@@ -12202,9 +12202,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUBS";
             stmt.key = "opcode & 0xffe00000 = 0xeb200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
-            stmt.arg3 = helper.decodeRegisterWithExtend((option&3)==3 ? "X" : "W", Rm, option, imm3, Rn == 31 || Rd == 31, true);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
+            stmt.arg3 = helper.decodeRegisterWithExtend((option&3)==3 ? 'X' : 'W', Rm, option, imm3, Rn == 31 || Rd == 31, true);
             return stmt;
         }
 
@@ -12220,9 +12220,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADDS";
             stmt.key = "opcode & 0xff200000 = 0x2b000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -12238,9 +12238,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADDS";
             stmt.key = "opcode & 0xff200000 = 0xab000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, false);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, false);
             return stmt;
         }
 
@@ -12257,9 +12257,9 @@ public class ArmDisasmDecoder {
             if ((!(Rd == 31 && Rn != 31)) && (!(Rn == 31))) {
                 stmt.opcode = "SUBS";
                 stmt.key = "opcode & 0xff200000 = 0x6b000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-                stmt.arg3 = helper.decodeShiftedRegister("W", Rm, shift, imm6, false);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+                stmt.arg3 = helper.decodeShiftedRegister('W', Rm, shift, imm6, false);
                 return stmt;
             }
         }
@@ -12277,9 +12277,9 @@ public class ArmDisasmDecoder {
             if ((!(Rd == 31 && Rn != 31)) && (!(Rn == 31))) {
                 stmt.opcode = "SUBS";
                 stmt.key = "opcode & 0xff200000 = 0xeb000000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-                stmt.arg3 = helper.decodeShiftedRegister("X", Rm, shift, imm6, false);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+                stmt.arg3 = helper.decodeShiftedRegister('X', Rm, shift, imm6, false);
                 return stmt;
             }
         }
@@ -12671,7 +12671,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MOVI";
             stmt.key = "opcode & 0xfff8fc00 = 0x2f00e400";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
             stmt.arg2 = helper.decodeMovi64Constant(a,b,c,d,e,f,g,h);
             return stmt;
         }
@@ -13063,7 +13063,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADR";
             stmt.key = "opcode & 0x9f000000 = 0x10000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             stmt.arg2 = helper.decodeAdrLabel(pc, helper.asSigned((immhi<<2)+immlo, 21), false);
             return stmt;
         }
@@ -13078,7 +13078,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADRP";
             stmt.key = "opcode & 0x9f000000 = 0x90000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             stmt.arg2 = helper.decodeAdrLabel(pc, helper.asSigned((immhi<<2)+immlo, 21), true);
             return stmt;
         }
@@ -13105,7 +13105,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "LDRSW";
             stmt.key = "opcode & 0xff000000 = 0x98000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -13121,7 +13121,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7f000000 = 0x18000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -13149,8 +13149,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSW";
             stmt.key = "opcode & 0xffe00c00 = 0xb8800c00";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13165,8 +13165,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSW";
             stmt.key = "opcode & 0xffe00c00 = 0xb8800400";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13181,8 +13181,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTRSW";
             stmt.key = "opcode & 0xffe00c00 = 0xb8800800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13197,8 +13197,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDURSW";
             stmt.key = "opcode & 0xffe00c00 = 0xb8800000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13213,8 +13213,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STRB";
             stmt.key = "opcode & 0xffe00c00 = 0x38000c00";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13229,8 +13229,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STRB";
             stmt.key = "opcode & 0xffe00c00 = 0x38000400";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13245,8 +13245,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STTRB";
             stmt.key = "opcode & 0xffe00c00 = 0x38000800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13261,8 +13261,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STURB";
             stmt.key = "opcode & 0xffe00c00 = 0x38000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13278,8 +13278,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff600c00 = 0x38000c00";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13295,8 +13295,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff600c00 = 0x38000400";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13312,8 +13312,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTRSB";
             stmt.key = "opcode & 0xff600c00 = 0x38000800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13329,8 +13329,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDURSB";
             stmt.key = "opcode & 0xff600c00 = 0x38000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13346,8 +13346,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38000c00";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13363,8 +13363,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38000400";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13380,8 +13380,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STTR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38000800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13397,8 +13397,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STUR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -13423,8 +13423,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STADDB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3820001f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13437,8 +13437,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STCLRB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3820101f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13452,8 +13452,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STADD";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3820001f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13467,8 +13467,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STCLR";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3820101f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13482,9 +13482,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a00000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13498,9 +13498,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38200000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13514,9 +13514,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a01000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13530,9 +13530,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38201000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13546,9 +13546,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a08000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13562,9 +13562,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38208000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13579,9 +13579,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADD";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38200000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13596,9 +13596,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a00000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13613,9 +13613,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLR";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38201000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13630,9 +13630,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a01000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13647,9 +13647,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWP";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38208000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13664,9 +13664,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a08000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13691,8 +13691,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STEORB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3820201f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13705,8 +13705,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSETB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3820301f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13720,8 +13720,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STEOR";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3820201f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13735,8 +13735,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSET";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3820301f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13750,9 +13750,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a02000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13766,9 +13766,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38202000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13782,9 +13782,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a03000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13798,9 +13798,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38203000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13815,9 +13815,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEOR";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38202000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13832,9 +13832,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a02000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13849,9 +13849,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSET";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38203000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13866,9 +13866,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a03000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13893,8 +13893,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMAXB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3820401f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13907,8 +13907,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMINB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3820501f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13922,8 +13922,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMAX";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3820401f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13937,8 +13937,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMIN";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3820501f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13953,8 +13953,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAPR";
             stmt.key = "opcode & 0xffe0fc00 = 0xb8a0c000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13968,8 +13968,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAPRB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a0c000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13983,9 +13983,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a04000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -13999,9 +13999,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38204000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14015,9 +14015,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a05000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14031,9 +14031,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38205000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14048,9 +14048,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAX";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38204000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14065,9 +14065,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a04000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14082,9 +14082,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMIN";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38205000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14099,9 +14099,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a05000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14126,8 +14126,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMAXB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3820601f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14140,8 +14140,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMINB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3820701f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14155,8 +14155,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMAX";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3820601f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14170,8 +14170,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMIN";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3820701f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14185,9 +14185,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a06000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14201,9 +14201,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38206000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14217,9 +14217,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINAB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38a07000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14233,9 +14233,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38207000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14250,9 +14250,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAX";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38206000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14267,9 +14267,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a06000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14284,9 +14284,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMIN";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38207000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14301,9 +14301,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38a07000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14331,8 +14331,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STRB";
             stmt.key = "opcode & 0xffe0ec00 = 0x38206800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl("X", Rn, Rm, S==1?size:0, S);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl('X', Rn, Rm, S==1?size:0, S);
             return stmt;
         }
 
@@ -14349,8 +14349,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff60ec00 = 0x38206800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl("X", Rn, Rm, S==1?size:0, S);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl('X', Rn, Rm, S==1?size:0, S);
             return stmt;
         }
 
@@ -14367,8 +14367,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSW";
             stmt.key = "opcode & 0xffe00c00 = 0xb8a00800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -14385,8 +14385,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STRB";
             stmt.key = "opcode & 0xffe00c00 = 0x38200800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -14404,8 +14404,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff600c00 = 0x38200800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -14422,8 +14422,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38200800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -14450,8 +14450,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRB";
             stmt.key = "opcode & 0xffe00c00 = 0x38400c00";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14466,8 +14466,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRB";
             stmt.key = "opcode & 0xffe00c00 = 0x38400400";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14482,8 +14482,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTRB";
             stmt.key = "opcode & 0xffe00c00 = 0x38400800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14498,8 +14498,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDURB";
             stmt.key = "opcode & 0xffe00c00 = 0x38400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14515,8 +14515,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38400c00";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14532,8 +14532,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38400400";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14549,8 +14549,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff600c00 = 0x38400c00";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14566,8 +14566,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff600c00 = 0x38400400";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14583,8 +14583,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38400800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14600,8 +14600,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTRSB";
             stmt.key = "opcode & 0xff600c00 = 0x38400800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14617,8 +14617,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDUR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14634,8 +14634,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDURSB";
             stmt.key = "opcode & 0xff600c00 = 0x38400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -14660,8 +14660,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STADDLB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3860001f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14674,8 +14674,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STCLRLB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3860101f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14689,8 +14689,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STADDL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3860001f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14704,8 +14704,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STCLRL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3860101f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14719,9 +14719,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e00000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14735,9 +14735,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38600000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14751,9 +14751,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e01000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14767,9 +14767,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38601000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14783,9 +14783,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e08000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14799,9 +14799,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38608000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14816,9 +14816,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e00000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14833,9 +14833,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38600000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14850,9 +14850,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e01000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14867,9 +14867,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38601000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14884,9 +14884,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e08000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14901,9 +14901,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38608000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14928,8 +14928,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STEORLB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3860201f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14942,8 +14942,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSETLB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3860301f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14957,8 +14957,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STEORL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3860201f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14972,8 +14972,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSETL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3860301f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -14987,9 +14987,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e02000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15003,9 +15003,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38602000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15019,9 +15019,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e03000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15035,9 +15035,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38603000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15052,9 +15052,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e02000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15069,9 +15069,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38602000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15086,9 +15086,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e03000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15103,9 +15103,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38603000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15130,8 +15130,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMAXLB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3860401f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15144,8 +15144,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMINLB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3860501f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15158,8 +15158,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMAXLB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3860601f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15172,8 +15172,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMINLB";
             stmt.key = "opcode & 0xffe0fc1f = 0x3860701f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15187,8 +15187,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMAXL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3860401f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15202,8 +15202,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMINL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3860501f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15217,8 +15217,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMAXL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3860601f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15232,8 +15232,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMINL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x3860701f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15247,9 +15247,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e04000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15263,9 +15263,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38604000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15279,9 +15279,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e05000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15295,9 +15295,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38605000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15311,9 +15311,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e06000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15327,9 +15327,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38606000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15343,9 +15343,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINALB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38e07000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15359,9 +15359,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINLB";
             stmt.key = "opcode & 0xffe0fc00 = 0x38607000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15376,9 +15376,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e04000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15393,9 +15393,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38604000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15410,9 +15410,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e05000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15427,9 +15427,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38605000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15444,9 +15444,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e06000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15461,9 +15461,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38606000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15478,9 +15478,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38e07000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15495,9 +15495,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x38607000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -15525,8 +15525,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRB";
             stmt.key = "opcode & 0xffe0ec00 = 0x38606800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl("X", Rn, Rm, S==1?size:0, S);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl('X', Rn, Rm, S==1?size:0, S);
             return stmt;
         }
 
@@ -15543,8 +15543,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff60ec00 = 0x38606800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl("X", Rn, Rm, S==1?size:0, S);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl('X', Rn, Rm, S==1?size:0, S);
             return stmt;
         }
 
@@ -15561,8 +15561,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRB";
             stmt.key = "opcode & 0xffe00c00 = 0x38600800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -15579,8 +15579,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7fe00c00 = 0x38600800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -15598,8 +15598,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff600c00 = 0x38600800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -15641,7 +15641,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7f000000 = 0x58000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -15670,7 +15670,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "PRFUM";
             stmt.key = "opcode & 0xffe00c00 = 0xf8800000";
             stmt.arg1 = helper.decodePrefetchOp(Rt);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15685,8 +15685,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STRH";
             stmt.key = "opcode & 0xffe00c00 = 0x78000c00";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15701,8 +15701,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STRH";
             stmt.key = "opcode & 0xffe00c00 = 0x78000400";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15717,8 +15717,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STTRH";
             stmt.key = "opcode & 0xffe00c00 = 0x78000800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15733,8 +15733,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STURH";
             stmt.key = "opcode & 0xffe00c00 = 0x78000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15750,8 +15750,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSH";
             stmt.key = "opcode & 0xff600c00 = 0x78000c00";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15767,8 +15767,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSH";
             stmt.key = "opcode & 0xff600c00 = 0x78000400";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15784,8 +15784,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTRSH";
             stmt.key = "opcode & 0xff600c00 = 0x78000800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15801,8 +15801,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDURSH";
             stmt.key = "opcode & 0xff600c00 = 0x78000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15818,8 +15818,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78000c00";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15835,8 +15835,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78000400";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15852,8 +15852,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STTR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78000800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15869,8 +15869,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STUR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15897,8 +15897,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRH";
             stmt.key = "opcode & 0xffe00c00 = 0x78400c00";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15913,8 +15913,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRH";
             stmt.key = "opcode & 0xffe00c00 = 0x78400400";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15929,8 +15929,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTRH";
             stmt.key = "opcode & 0xffe00c00 = 0x78400800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15945,8 +15945,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDURH";
             stmt.key = "opcode & 0xffe00c00 = 0x78400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15962,8 +15962,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78400c00";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15979,8 +15979,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78400400";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -15996,8 +15996,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSH";
             stmt.key = "opcode & 0xff600c00 = 0x78400c00";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -16013,8 +16013,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDRSH";
             stmt.key = "opcode & 0xff600c00 = 0x78400400";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -16030,8 +16030,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78400800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -16047,8 +16047,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDTRSH";
             stmt.key = "opcode & 0xff600c00 = 0x78400800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -16064,8 +16064,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDUR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78400000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -16081,8 +16081,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDURSH";
             stmt.key = "opcode & 0xff600c00 = 0x78400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -16107,8 +16107,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STADDH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7820001f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16121,8 +16121,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STCLRH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7820101f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16135,8 +16135,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STEORH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7820201f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16149,8 +16149,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSETH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7820301f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16164,8 +16164,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STADD";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7820001f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16179,8 +16179,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STCLR";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7820101f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16194,8 +16194,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STEOR";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7820201f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16209,8 +16209,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSET";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7820301f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16224,9 +16224,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78200000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16240,9 +16240,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78201000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16256,9 +16256,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78202000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16272,9 +16272,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78203000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16288,9 +16288,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78208000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16305,9 +16305,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADD";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78200000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16322,9 +16322,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLR";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78201000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16339,9 +16339,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEOR";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78202000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16356,9 +16356,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSET";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78203000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16373,9 +16373,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWP";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78208000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16400,8 +16400,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMAXH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7820401f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16414,8 +16414,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMINH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7820501f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16428,8 +16428,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMAXH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7820601f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16442,8 +16442,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMINH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7820701f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16457,8 +16457,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMAX";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7820401f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16472,8 +16472,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMIN";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7820501f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16487,8 +16487,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMAX";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7820601f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16502,8 +16502,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMIN";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7820701f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16517,9 +16517,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78204000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16533,9 +16533,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78205000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16549,9 +16549,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78206000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16565,9 +16565,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78207000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16582,9 +16582,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAX";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78204000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16599,9 +16599,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMIN";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78205000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16616,9 +16616,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAX";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78206000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16633,9 +16633,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMIN";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78207000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16660,8 +16660,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STADDLH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7860001f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16674,8 +16674,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STCLRLH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7860101f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16688,8 +16688,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STEORLH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7860201f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16702,8 +16702,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSETLH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7860301f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16717,8 +16717,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STADDL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7860001f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16732,8 +16732,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STCLRL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7860101f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16747,8 +16747,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STEORL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7860201f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16762,8 +16762,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSETL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7860301f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16777,9 +16777,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78600000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16793,9 +16793,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78601000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16809,9 +16809,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78602000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16825,9 +16825,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78603000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16841,9 +16841,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78608000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16858,9 +16858,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78600000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16875,9 +16875,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78601000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16892,9 +16892,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78602000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16909,9 +16909,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78603000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16926,9 +16926,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78608000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16953,8 +16953,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMAXLH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7860401f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16967,8 +16967,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMINLH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7860501f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16981,8 +16981,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMAXLH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7860601f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -16995,8 +16995,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMINLH";
             stmt.key = "opcode & 0xffe0fc1f = 0x7860701f";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17010,8 +17010,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMAXL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7860401f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17025,8 +17025,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STSMINL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7860501f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17040,8 +17040,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMAXL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7860601f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17055,8 +17055,8 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "STUMINL";
             stmt.key = "opcode & 0x7fe0fc1f = 0x7860701f";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17070,9 +17070,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78604000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17086,9 +17086,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78605000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17102,9 +17102,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78606000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17118,9 +17118,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINLH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78607000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17135,9 +17135,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78604000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17152,9 +17152,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78605000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17169,9 +17169,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78606000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17186,9 +17186,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78607000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17215,8 +17215,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDRAA";
             stmt.key = "opcode & 0xffa00c00 = 0xf8200400";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, helper.decodeLdraaOffset(imm9, S));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, helper.decodeLdraaOffset(imm9, S));
             return stmt;
         }
 
@@ -17242,9 +17242,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a00000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17259,8 +17259,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAPR";
             stmt.key = "opcode & 0xffe0fc00 = 0xf8a0c000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17274,8 +17274,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDAPRH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a0c000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17289,9 +17289,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a01000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17305,9 +17305,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a02000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17321,9 +17321,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a03000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17337,9 +17337,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a04000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17353,9 +17353,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a05000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17369,9 +17369,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a06000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17385,9 +17385,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a07000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17401,9 +17401,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPAH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78a08000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17418,9 +17418,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a00000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17435,9 +17435,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a01000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17452,9 +17452,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a02000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17469,9 +17469,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a03000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17486,9 +17486,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a04000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17503,9 +17503,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a05000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17520,9 +17520,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a06000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17537,9 +17537,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a07000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17554,9 +17554,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPA";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78a08000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17582,9 +17582,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e00000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17598,9 +17598,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e01000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17614,9 +17614,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e02000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17630,9 +17630,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e03000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17646,9 +17646,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e04000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17662,9 +17662,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e05000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17678,9 +17678,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e06000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17694,9 +17694,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e07000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17710,9 +17710,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPALH";
             stmt.key = "opcode & 0xffe0fc00 = 0x78e08000";
-            stmt.arg1 = helper.getRegisterName("W", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('W', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17727,9 +17727,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDADDAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e00000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17744,9 +17744,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDCLRAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e01000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17761,9 +17761,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDEORAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e02000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17778,9 +17778,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSETAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e03000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17795,9 +17795,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMAXAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e04000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17812,9 +17812,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDSMINAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e05000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17829,9 +17829,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMAXAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e06000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17846,9 +17846,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDUMINAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e07000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17863,9 +17863,9 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SWPAL";
             stmt.key = "opcode & 0x7fe0fc00 = 0x78e08000";
-            stmt.arg1 = helper.getRegisterName("X", Rs, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg3 = helper.formatMemAccessWithOffset("X", Rn, 0);
+            stmt.arg1 = helper.getRegisterName('X', Rs, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg3 = helper.formatMemAccessWithOffset('X', Rn, 0);
             return stmt;
         }
 
@@ -17892,8 +17892,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDRAB";
             stmt.key = "opcode & 0xffa00c00 = 0xf8a00400";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, helper.decodeLdraaOffset(imm9, S));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, helper.decodeLdraaOffset(imm9, S));
             return stmt;
         }
 
@@ -17922,8 +17922,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRH";
             stmt.key = "opcode & 0xffe00c00 = 0x78600800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -17941,7 +17941,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "PRFM";
             stmt.key = "opcode & 0xffe00c00 = 0xf8a00800";
             stmt.arg1 = helper.decodePrefetchOp(Rt);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -17958,8 +17958,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STRH";
             stmt.key = "opcode & 0xffe00c00 = 0x78200800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -17976,8 +17976,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78600800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -17992,8 +17992,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDRAA";
             stmt.key = "opcode & 0xffa00c00 = 0xf8200c00";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, helper.decodeLdraaOffset(imm9, S));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, helper.decodeLdraaOffset(imm9, S));
             return stmt;
         }
 
@@ -18008,8 +18008,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDRAB";
             stmt.key = "opcode & 0xffa00c00 = 0xf8a00c00";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, helper.decodeLdraaOffset(imm9, S));
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, helper.decodeLdraaOffset(imm9, S));
             return stmt;
         }
 
@@ -18027,8 +18027,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSH";
             stmt.key = "opcode & 0xff600c00 = 0x78600800";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -18046,8 +18046,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSH";
             stmt.key = "opcode & 0xff600c00 = 0x78200800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -18064,8 +18064,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0x7fe00c00 = 0x78200800";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?size:0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?size:0, false, S, false);
             return stmt;
         }
 
@@ -18093,8 +18093,8 @@ public class ArmDisasmDecoder {
             if ((shift == 0 && imm12 == 0 && (Rd == 31 || Rn == 31))) {
                 stmt.opcode = "MOV";
                 stmt.key = "opcode & 0xfffffc00 = 0x11000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
                 return stmt;
             }
         }
@@ -18111,8 +18111,8 @@ public class ArmDisasmDecoder {
             if ((shift == 0 && imm12 == 0 && (Rd == 31 || Rn == 31)) && (Rd != Rn)) {
                 stmt.opcode = "MOV";
                 stmt.key = "opcode & 0xfffffc00 = 0x91000000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
                 return stmt;
             }
         }
@@ -18128,7 +18128,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMN";
             stmt.key = "opcode & 0xff00001f = 0x3100001f";
-            stmt.arg1 = helper.getRegisterName("W", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rn, true, -1);
             stmt.arg2 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18144,7 +18144,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMN";
             stmt.key = "opcode & 0xff00001f = 0xb100001f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, true, -1);
             stmt.arg2 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18160,7 +18160,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMP";
             stmt.key = "opcode & 0xff00001f = 0x7100001f";
-            stmt.arg1 = helper.getRegisterName("W", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rn, true, -1);
             stmt.arg2 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18176,7 +18176,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CMP";
             stmt.key = "opcode & 0xff00001f = 0xf100001f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, true, -1);
             stmt.arg2 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18193,8 +18193,8 @@ public class ArmDisasmDecoder {
             if ((!(shift == 0 && imm12 == 0 && (Rd == 31 || Rn == 31)))) {
                 stmt.opcode = "ADD";
                 stmt.key = "opcode & 0xff000000 = 0x11000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
                 stmt.arg3 = helper.decodeShiftedImm12(imm12, shift);
                 return stmt;
             }
@@ -18212,8 +18212,8 @@ public class ArmDisasmDecoder {
             if ((!(shift == 0 && imm12 == 0 && (Rd == 31 || Rn == 31)))) {
                 stmt.opcode = "ADD";
                 stmt.key = "opcode & 0xff000000 = 0x91000000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
                 stmt.arg3 = helper.decodeShiftedImm12(imm12, shift);
                 return stmt;
             }
@@ -18230,8 +18230,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADDS";
             stmt.key = "opcode & 0xff000000 = 0x31000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
             stmt.arg3 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18247,8 +18247,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADDS";
             stmt.key = "opcode & 0xff000000 = 0xb1000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             stmt.arg3 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18264,8 +18264,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUB";
             stmt.key = "opcode & 0xff000000 = 0x51000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
             stmt.arg3 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18281,8 +18281,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUB";
             stmt.key = "opcode & 0xff000000 = 0xd1000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             stmt.arg3 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18298,8 +18298,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUBS";
             stmt.key = "opcode & 0xff000000 = 0x71000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, true, -1);
             stmt.arg3 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18315,8 +18315,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SUBS";
             stmt.key = "opcode & 0xff000000 = 0xf1000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             stmt.arg3 = helper.decodeShiftedImm12(imm12, shift);
             return stmt;
         }
@@ -18343,8 +18343,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDRB";
             stmt.key = "opcode & 0xffc00000 = 0x39400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << 0);
             return stmt;
         }
 
@@ -18359,8 +18359,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRH";
             stmt.key = "opcode & 0xffc00000 = 0x79400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18375,8 +18375,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSW";
             stmt.key = "opcode & 0xffc00000 = 0xb9800000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18392,7 +18392,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "PRFM";
             stmt.key = "opcode & 0xffc00000 = 0xf9800000";
             stmt.arg1 = helper.decodePrefetchOp(Rt);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18406,8 +18406,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STRB";
             stmt.key = "opcode & 0xffc00000 = 0x39000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << 0);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << 0);
             return stmt;
         }
 
@@ -18422,8 +18422,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STRH";
             stmt.key = "opcode & 0xffc00000 = 0x79000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18438,8 +18438,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7fc00000 = 0x39400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18454,8 +18454,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0x7fc00000 = 0x79400000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18471,8 +18471,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff400000 = 0x39400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18488,8 +18488,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSB";
             stmt.key = "opcode & 0xff400000 = 0x39000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18505,8 +18505,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSH";
             stmt.key = "opcode & 0xff400000 = 0x79400000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18522,8 +18522,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDRSH";
             stmt.key = "opcode & 0xff400000 = 0x79000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18538,8 +18538,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0x7fc00000 = 0x39000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18554,8 +18554,8 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0x7fc00000 = 0x79000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << size);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << size);
             return stmt;
         }
 
@@ -18583,8 +18583,8 @@ public class ArmDisasmDecoder {
             if ((immr == 0 && imms == 7)) {
                 stmt.opcode = "SXTB";
                 stmt.key = "opcode & 0xfffffc00 = 0x13001c00";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 return stmt;
             }
         }
@@ -18601,8 +18601,8 @@ public class ArmDisasmDecoder {
             if ((immr == 0 && imms == 15)) {
                 stmt.opcode = "SXTH";
                 stmt.key = "opcode & 0xfffffc00 = 0x13003c00";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 return stmt;
             }
         }
@@ -18617,9 +18617,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADC";
             stmt.key = "opcode & 0xffe0fc00 = 0x1a000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -18633,9 +18633,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADCS";
             stmt.key = "opcode & 0xffe0fc00 = 0x3a000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -18649,9 +18649,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MNEG";
             stmt.key = "opcode & 0xffe0fc00 = 0x1b00fc00";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -18665,9 +18665,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MUL";
             stmt.key = "opcode & 0xffe0fc00 = 0x1b007c00";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -18684,7 +18684,7 @@ public class ArmDisasmDecoder {
             if ((Rn == 31 && imms < immr)) {
                 stmt.opcode = "BFC";
                 stmt.key = "opcode & 0xffc003e0 = 0x330003e0";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
                 stmt.arg2 = helper.decodeLsb(immr, imms, sf==0?32:64, false);
                 stmt.arg3 = helper.decodeWidth(immr, imms, sf==0?32:64, false);
                 return stmt;
@@ -18703,7 +18703,7 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "MOV";
             stmt.key = "opcode & 0xffc003e0 = 0x320003e0";
-            stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
             stmt.arg2 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -18719,7 +18719,7 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "CCMN";
             stmt.key = "opcode & 0xffe00c10 = 0x3a400800";
-            stmt.arg1 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rn, false, -1);
             stmt.arg2 = helper.formatHexImm(imm5);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
@@ -18737,8 +18737,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "CCMN";
             stmt.key = "opcode & 0xffe00c10 = 0x3a400000";
-            stmt.arg1 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -18756,10 +18756,10 @@ public class ArmDisasmDecoder {
             if ((Ra != 31)) {
                 stmt.opcode = "MADD";
                 stmt.key = "opcode & 0xffe08000 = 0x1b000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
-                stmt.arg4 = helper.getRegisterName("W", Ra, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
+                stmt.arg4 = helper.getRegisterName('W', Ra, false, -1);
                 return stmt;
             }
         }
@@ -18775,10 +18775,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MSUB";
             stmt.key = "opcode & 0xffe08000 = 0x1b008000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("W", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('W', Ra, false, -1);
             return stmt;
         }
 
@@ -18794,8 +18794,8 @@ public class ArmDisasmDecoder {
             if ((imms == 31)) {
                 stmt.opcode = "ASR";
                 stmt.key = "opcode & 0xffc08000 = 0x13000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeShift(immr, imms, 32);
                 return stmt;
             }
@@ -18814,8 +18814,8 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "AND";
             stmt.key = "opcode & 0xffc00000 = 0x12000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             stmt.arg3 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -18833,8 +18833,8 @@ public class ArmDisasmDecoder {
             if ((Rn != 31 && imms < immr)) {
                 stmt.opcode = "BFI";
                 stmt.key = "opcode & 0xffc00000 = 0x33000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, false);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, false);
                 return stmt;
@@ -18853,8 +18853,8 @@ public class ArmDisasmDecoder {
             if ((!(Rn == 31 && imms < immr)) && (!(Rn != 31 && imms < immr)) && (!(imms >= immr))) {
                 stmt.opcode = "BFM";
                 stmt.key = "opcode & 0xffc00000 = 0x33000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.formatDecimalImm(immr);
                 stmt.arg4 = helper.formatDecimalImm(imms);
                 return stmt;
@@ -18874,8 +18874,8 @@ public class ArmDisasmDecoder {
             if ((imms >= immr)) {
                 stmt.opcode = "BFXIL";
                 stmt.key = "opcode & 0xffc00000 = 0x33000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, true);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, true);
                 return stmt;
@@ -18895,8 +18895,8 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "ORR";
             stmt.key = "opcode & 0xffc00000 = 0x32000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             stmt.arg3 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -18914,8 +18914,8 @@ public class ArmDisasmDecoder {
             if ((imms < immr)) {
                 stmt.opcode = "SBFIZ";
                 stmt.key = "opcode & 0xffc00000 = 0x13000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, false);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, false);
                 return stmt;
@@ -18935,8 +18935,8 @@ public class ArmDisasmDecoder {
             if ((!(imms == 31)) && (!(imms == 63)) && (!(imms < immr)) && (!(helper.isBfxPreferred(sf, 0, imms, immr))) && (!(immr == 0 && imms == 7)) && (!(immr == 0 && imms == 15)) && (!(immr == 0 && imms == 31))) {
                 stmt.opcode = "SBFM";
                 stmt.key = "opcode & 0xffc00000 = 0x13000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.formatDecimalImm(immr);
                 stmt.arg4 = helper.formatDecimalImm(imms);
                 return stmt;
@@ -18956,8 +18956,8 @@ public class ArmDisasmDecoder {
             if ((helper.isBfxPreferred(sf, 0, imms, immr))) {
                 stmt.opcode = "SBFX";
                 stmt.key = "opcode & 0xffc00000 = 0x13000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, true);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, true);
                 return stmt;
@@ -18985,8 +18985,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "NGC";
             stmt.key = "opcode & 0xffe0ffe0 = 0x5a0003e0";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -19001,8 +19001,8 @@ public class ArmDisasmDecoder {
             if ((Rn == 31)) {
                 stmt.opcode = "NGCS";
                 stmt.key = "opcode & 0xffe0ffe0 = 0x7a0003e0";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rm, false, -1);
                 return stmt;
             }
         }
@@ -19019,8 +19019,8 @@ public class ArmDisasmDecoder {
             if ((immr == 0 && imms == 7)) {
                 stmt.opcode = "UXTB";
                 stmt.key = "opcode & 0xfffffc00 = 0x53001c00";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 return stmt;
             }
         }
@@ -19037,8 +19037,8 @@ public class ArmDisasmDecoder {
             if ((immr == 0 && imms == 15)) {
                 stmt.opcode = "UXTH";
                 stmt.key = "opcode & 0xfffffc00 = 0x53003c00";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 return stmt;
             }
         }
@@ -19053,9 +19053,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SBC";
             stmt.key = "opcode & 0xffe0fc00 = 0x5a000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -19070,9 +19070,9 @@ public class ArmDisasmDecoder {
             if ((!(Rn == 31))) {
                 stmt.opcode = "SBCS";
                 stmt.key = "opcode & 0xffe0fc00 = 0x7a000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
                 return stmt;
             }
         }
@@ -19089,7 +19089,7 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "TST";
             stmt.key = "opcode & 0xffc0001f = 0x7200001f";
-            stmt.arg1 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rn, false, -1);
             stmt.arg2 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19105,7 +19105,7 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "CCMP";
             stmt.key = "opcode & 0xffe00c10 = 0x7a400800";
-            stmt.arg1 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rn, false, -1);
             stmt.arg2 = helper.formatHexImm(imm5);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
@@ -19123,8 +19123,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "CCMP";
             stmt.key = "opcode & 0xffe00c10 = 0x7a400000";
-            stmt.arg1 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -19143,8 +19143,8 @@ public class ArmDisasmDecoder {
             if ((imms != 31 && imms + 1 == immr) && (imms +1 == immr) && (!((n == 0 && imms == 0b11111) || (n == 1 && imms == 0b111111)))) {
                 stmt.opcode = "LSL";
                 stmt.key = "opcode & 0xffc08000 = 0x53000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeShift(immr, imms, 32);
                 return stmt;
             }
@@ -19163,8 +19163,8 @@ public class ArmDisasmDecoder {
             if ((imms == 31) && ((n == 0 && imms == 0b11111) || (n == 1 && imms == 0b111111))) {
                 stmt.opcode = "LSR";
                 stmt.key = "opcode & 0xffc08000 = 0x53000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeShift(immr, imms, 32);
                 return stmt;
             }
@@ -19183,8 +19183,8 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "ANDS";
             stmt.key = "opcode & 0xffc00000 = 0x72000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             stmt.arg3 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19202,8 +19202,8 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "EOR";
             stmt.key = "opcode & 0xffc00000 = 0x52000000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             stmt.arg3 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19221,8 +19221,8 @@ public class ArmDisasmDecoder {
             if ((imms < immr && imms + 1 != immr)) {
                 stmt.opcode = "UBFIZ";
                 stmt.key = "opcode & 0xffc00000 = 0x53000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, false);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, false);
                 return stmt;
@@ -19242,8 +19242,8 @@ public class ArmDisasmDecoder {
             if ((!(imms != 31 && imms + 1 == immr)) && (!(imms != 63 && imms + 1 == immr)) && (!(imms == 31)) && (!(imms == 63)) && (!(imms < immr && imms + 1 != immr)) && (!(helper.isBfxPreferred(sf, 0, imms, immr))) && (!(immr == 0 && imms == 7)) && (!(immr == 0 && imms == 15))) {
                 stmt.opcode = "UBFM";
                 stmt.key = "opcode & 0xffc00000 = 0x53000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.formatDecimalImm(immr);
                 stmt.arg4 = helper.formatDecimalImm(imms);
                 return stmt;
@@ -19263,8 +19263,8 @@ public class ArmDisasmDecoder {
             if ((helper.isBfxPreferred(sf, 0, imms, immr))) {
                 stmt.opcode = "UBFX";
                 stmt.key = "opcode & 0xffc00000 = 0x53000000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, true);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, true);
                 return stmt;
@@ -19295,8 +19295,8 @@ public class ArmDisasmDecoder {
             if ((immr == 0 && imms == 7)) {
                 stmt.opcode = "SXTB";
                 stmt.key = "opcode & 0xfffffc00 = 0x93401c00";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 return stmt;
             }
         }
@@ -19313,8 +19313,8 @@ public class ArmDisasmDecoder {
             if ((immr == 0 && imms == 15)) {
                 stmt.opcode = "SXTH";
                 stmt.key = "opcode & 0xfffffc00 = 0x93403c00";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 return stmt;
             }
         }
@@ -19331,8 +19331,8 @@ public class ArmDisasmDecoder {
             if ((immr == 0 && imms == 31)) {
                 stmt.opcode = "SXTW";
                 stmt.key = "opcode & 0xfffffc00 = 0x93407c00";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 return stmt;
             }
         }
@@ -19350,7 +19350,7 @@ public class ArmDisasmDecoder {
             if ((Rn == 31 && imms < immr)) {
                 stmt.opcode = "BFC";
                 stmt.key = "opcode & 0xffc003e0 = 0xb34003e0";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
                 stmt.arg2 = helper.decodeLsb(immr, imms, sf==0?32:64, false);
                 stmt.arg3 = helper.decodeWidth(immr, imms, sf==0?32:64, false);
                 return stmt;
@@ -19369,7 +19369,7 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "MOV";
             stmt.key = "opcode & 0xff8003e0 = 0xb20003e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
             stmt.arg2 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19386,7 +19386,7 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "TST";
             stmt.key = "opcode & 0xff80001f = 0xf200001f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             stmt.arg2 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19403,8 +19403,8 @@ public class ArmDisasmDecoder {
             if ((imms == 63)) {
                 stmt.opcode = "ASR";
                 stmt.key = "opcode & 0xffc08000 = 0x93408000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeShift(immr, imms, 64);
                 return stmt;
             }
@@ -19423,8 +19423,8 @@ public class ArmDisasmDecoder {
             if ((imms == 63) && ((n == 0 && imms == 0b11111) || (n == 1 && imms == 0b111111))) {
                 stmt.opcode = "LSR";
                 stmt.key = "opcode & 0xffc08000 = 0xd3408000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeShift(immr, imms, 64);
                 return stmt;
             }
@@ -19443,8 +19443,8 @@ public class ArmDisasmDecoder {
             if ((Rn != 31 && imms < immr)) {
                 stmt.opcode = "BFI";
                 stmt.key = "opcode & 0xffc00000 = 0xb3400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, false);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, false);
                 return stmt;
@@ -19463,8 +19463,8 @@ public class ArmDisasmDecoder {
             if ((!(Rn == 31 && imms < immr)) && (!(Rn != 31 && imms < immr)) && (!(imms >= immr))) {
                 stmt.opcode = "BFM";
                 stmt.key = "opcode & 0xffc00000 = 0xb3400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.formatDecimalImm(immr);
                 stmt.arg4 = helper.formatDecimalImm(imms);
                 return stmt;
@@ -19484,8 +19484,8 @@ public class ArmDisasmDecoder {
             if ((imms >= immr)) {
                 stmt.opcode = "BFXIL";
                 stmt.key = "opcode & 0xffc00000 = 0xb3400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, true);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, true);
                 return stmt;
@@ -19505,8 +19505,8 @@ public class ArmDisasmDecoder {
             if ((imms != 63 && imms + 1 == immr) && (imms +1 == immr) && (!((n == 0 && imms == 0b11111) || (n == 1 && imms == 0b111111)))) {
                 stmt.opcode = "LSL";
                 stmt.key = "opcode & 0xffc00000 = 0xd3400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeShift(immr, imms, 64);
                 return stmt;
             }
@@ -19525,8 +19525,8 @@ public class ArmDisasmDecoder {
             if ((imms < immr)) {
                 stmt.opcode = "SBFIZ";
                 stmt.key = "opcode & 0xffc00000 = 0x93400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, false);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, false);
                 return stmt;
@@ -19546,8 +19546,8 @@ public class ArmDisasmDecoder {
             if ((!(imms == 31)) && (!(imms == 63)) && (!(imms < immr)) && (!(helper.isBfxPreferred(sf, 0, imms, immr))) && (!(immr == 0 && imms == 7)) && (!(immr == 0 && imms == 15)) && (!(immr == 0 && imms == 31))) {
                 stmt.opcode = "SBFM";
                 stmt.key = "opcode & 0xffc00000 = 0x93400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.formatDecimalImm(immr);
                 stmt.arg4 = helper.formatDecimalImm(imms);
                 return stmt;
@@ -19567,8 +19567,8 @@ public class ArmDisasmDecoder {
             if ((helper.isBfxPreferred(sf, 0, imms, immr))) {
                 stmt.opcode = "SBFX";
                 stmt.key = "opcode & 0xffc00000 = 0x93400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, true);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, true);
                 return stmt;
@@ -19588,8 +19588,8 @@ public class ArmDisasmDecoder {
             if ((imms < immr && imms + 1 != immr)) {
                 stmt.opcode = "UBFIZ";
                 stmt.key = "opcode & 0xffc00000 = 0xd3400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, false);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, false);
                 return stmt;
@@ -19609,8 +19609,8 @@ public class ArmDisasmDecoder {
             if ((!(imms != 31 && imms + 1 == immr)) && (!(imms != 63 && imms + 1 == immr)) && (!(imms == 31)) && (!(imms == 63)) && (!(imms < immr && imms + 1 != immr)) && (!(helper.isBfxPreferred(sf, 0, imms, immr))) && (!(immr == 0 && imms == 7)) && (!(immr == 0 && imms == 15))) {
                 stmt.opcode = "UBFM";
                 stmt.key = "opcode & 0xffc00000 = 0xd3400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.formatDecimalImm(immr);
                 stmt.arg4 = helper.formatDecimalImm(imms);
                 return stmt;
@@ -19630,8 +19630,8 @@ public class ArmDisasmDecoder {
             if ((helper.isBfxPreferred(sf, 0, imms, immr))) {
                 stmt.opcode = "UBFX";
                 stmt.key = "opcode & 0xffc00000 = 0xd3400000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeLsb(immr, imms, sf==0?32:64, true);
                 stmt.arg4 = helper.decodeWidth(immr, imms, sf==0?32:64, true);
                 return stmt;
@@ -19651,8 +19651,8 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "AND";
             stmt.key = "opcode & 0xff800000 = 0x92000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             stmt.arg3 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19670,8 +19670,8 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "ANDS";
             stmt.key = "opcode & 0xff800000 = 0xf2000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             stmt.arg3 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19689,8 +19689,8 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "EOR";
             stmt.key = "opcode & 0xff800000 = 0xd2000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             stmt.arg3 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19708,8 +19708,8 @@ public class ArmDisasmDecoder {
             final int sf = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "ORR";
             stmt.key = "opcode & 0xff800000 = 0xb2000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, true, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, true, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             stmt.arg3 = helper.decodeAluImm(N, immr, imms, sf==0?32:64);
             return stmt;
         }
@@ -19735,8 +19735,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "NGC";
             stmt.key = "opcode & 0xffe0ffe0 = 0xda0003e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -19751,8 +19751,8 @@ public class ArmDisasmDecoder {
             if ((Rn == 31)) {
                 stmt.opcode = "NGCS";
                 stmt.key = "opcode & 0xffe0ffe0 = 0xfa0003e0";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rm, false, -1);
                 return stmt;
             }
         }
@@ -19767,9 +19767,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADC";
             stmt.key = "opcode & 0xffe0fc00 = 0x9a000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -19783,9 +19783,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ADCS";
             stmt.key = "opcode & 0xffe0fc00 = 0xba000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -19799,9 +19799,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MNEG";
             stmt.key = "opcode & 0xffe0fc00 = 0x9b00fc00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -19815,9 +19815,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MUL";
             stmt.key = "opcode & 0xffe0fc00 = 0x9b007c00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -19831,9 +19831,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SBC";
             stmt.key = "opcode & 0xffe0fc00 = 0xda000000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -19848,9 +19848,9 @@ public class ArmDisasmDecoder {
             if ((!(Rn == 31))) {
                 stmt.opcode = "SBCS";
                 stmt.key = "opcode & 0xffe0fc00 = 0xfa000000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
                 return stmt;
             }
         }
@@ -19865,9 +19865,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SMNEGL";
             stmt.key = "opcode & 0xffe0fc00 = 0x9b20fc00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -19881,9 +19881,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SMULL";
             stmt.key = "opcode & 0xffe0fc00 = 0x9b207c00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -19898,7 +19898,7 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "CCMN";
             stmt.key = "opcode & 0xffe00c10 = 0xba400800";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             stmt.arg2 = helper.formatHexImm(imm5);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
@@ -19916,8 +19916,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "CCMN";
             stmt.key = "opcode & 0xffe00c10 = 0xba400000";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -19934,7 +19934,7 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "CCMP";
             stmt.key = "opcode & 0xffe00c10 = 0xfa400800";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             stmt.arg2 = helper.formatHexImm(imm5);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
@@ -19952,8 +19952,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "CCMP";
             stmt.key = "opcode & 0xffe00c10 = 0xfa400000";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -19971,10 +19971,10 @@ public class ArmDisasmDecoder {
             if ((Ra != 31)) {
                 stmt.opcode = "MADD";
                 stmt.key = "opcode & 0xffe08000 = 0x9b000000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
-                stmt.arg4 = helper.getRegisterName("X", Ra, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
+                stmt.arg4 = helper.getRegisterName('X', Ra, false, -1);
                 return stmt;
             }
         }
@@ -19990,10 +19990,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MSUB";
             stmt.key = "opcode & 0xffe08000 = 0x9b008000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', Ra, false, -1);
             return stmt;
         }
 
@@ -20008,10 +20008,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SMADDL";
             stmt.key = "opcode & 0xffe08000 = 0x9b200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', Ra, false, -1);
             return stmt;
         }
 
@@ -20026,10 +20026,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SMSUBL";
             stmt.key = "opcode & 0xffe08000 = 0x9b208000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', Ra, false, -1);
             return stmt;
         }
 
@@ -20044,9 +20044,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SMULH";
             stmt.key = "opcode & 0xffe08000 = 0x9b400000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20074,7 +20074,7 @@ public class ArmDisasmDecoder {
             if ((Rm == 31 && Rn == 31 && ((cond >> 1) & 7) != 7)) {
                 stmt.opcode = "CSET";
                 stmt.key = "opcode & 0xffff0fe0 = 0x1a9f07e0";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
                 stmt.arg2 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -20090,9 +20090,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ASR";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac02800";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20106,9 +20106,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CRC32B";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac04000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20122,9 +20122,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CRC32CB";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac05000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20138,9 +20138,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CRC32CH";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac05400";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20154,9 +20154,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CRC32CW";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac05800";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20170,9 +20170,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CRC32H";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac04400";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20186,9 +20186,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CRC32W";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac04800";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20202,9 +20202,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LSL";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac02000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20218,9 +20218,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LSR";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac02400";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20234,9 +20234,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ROR";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac02c00";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20250,9 +20250,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SDIV";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac00c00";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20266,9 +20266,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UDIV";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ac00800";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20284,8 +20284,8 @@ public class ArmDisasmDecoder {
             if ((Rn == Rm && Rm != 31 && Rn != 31 && ((cond >> 1) & 7) != 7)) {
                 stmt.opcode = "CINC";
                 stmt.key = "opcode & 0xffe00c00 = 0x1a800400";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -20302,9 +20302,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CSEL";
             stmt.key = "opcode & 0xffe00c00 = 0x1a800000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
         }
@@ -20321,9 +20321,9 @@ public class ArmDisasmDecoder {
             if ((!(Rn == Rm && Rm != 31 && Rn != 31 && ((cond >> 1) & 7) != 7)) && (!(Rm == 31 && Rn == 31 && ((cond >> 1) & 7) != 7))) {
                 stmt.opcode = "CSINC";
                 stmt.key = "opcode & 0xffe00c00 = 0x1a800400";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
                 stmt.arg4 = helper.decodeBranchCondition(cond);
                 return stmt;
             }
@@ -20342,9 +20342,9 @@ public class ArmDisasmDecoder {
             if ((Rn != Rm)) {
                 stmt.opcode = "EXTR";
                 stmt.key = "opcode & 0xffe08000 = 0x13800000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
                 stmt.arg4 = helper.decodeLsbRor(imms, sf==0?32:64);
                 return stmt;
             }
@@ -20362,8 +20362,8 @@ public class ArmDisasmDecoder {
             if ((Rn == Rm)) {
                 stmt.opcode = "ROR";
                 stmt.key = "opcode & 0xffe08000 = 0x13800000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.formatDecimalImm(imms);
                 return stmt;
             }
@@ -20380,8 +20380,8 @@ public class ArmDisasmDecoder {
             if ((!(imm16==0 && hw!=0) && imm16!=0xffff)) {
                 stmt.opcode = "MOV";
                 stmt.key = "opcode & 0xff800000 = 0x12800000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.decodeShiftedImm16("W", imm16, hw, true);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.decodeShiftedImm16('W', imm16, hw, true);
                 return stmt;
             }
         }
@@ -20398,7 +20398,7 @@ public class ArmDisasmDecoder {
             if ((!(!(imm16==0 && hw!=0) && imm16!=0xffff))) {
                 stmt.opcode = "MOVN";
                 stmt.key = "opcode & 0xff800000 = 0x12800000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
                 stmt.arg2 = helper.decodeMovShiftedImm16(imm16, hw, s==0?32:64);
                 return stmt;
             }
@@ -20428,7 +20428,7 @@ public class ArmDisasmDecoder {
             if ((Rm == 31 && Rn == 31 && ((cond >> 1) & 7) != 7)) {
                 stmt.opcode = "CSET";
                 stmt.key = "opcode & 0xffff0fe0 = 0x9a9f07e0";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
                 stmt.arg2 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -20444,9 +20444,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ASR";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac02800";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20460,9 +20460,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CRC32CX";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac05c00";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20476,9 +20476,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CRC32X";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac04c00";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20492,9 +20492,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LSL";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac02000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20508,9 +20508,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "LSR";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac02400";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20524,9 +20524,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACGA";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac03000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, true, -1);
             return stmt;
         }
 
@@ -20540,9 +20540,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "ROR";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac02c00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20556,9 +20556,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SDIV";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac00c00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20572,9 +20572,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UDIV";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ac00800";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20588,9 +20588,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UMNEGL";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ba0fc00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20604,9 +20604,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UMULL";
             stmt.key = "opcode & 0xffe0fc00 = 0x9ba07c00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
             return stmt;
         }
 
@@ -20622,8 +20622,8 @@ public class ArmDisasmDecoder {
             if ((Rn == Rm && Rm != 31 && Rn != 31 && ((cond >> 1) & 7) != 7)) {
                 stmt.opcode = "CINC";
                 stmt.key = "opcode & 0xffe00c00 = 0x9a800400";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -20640,9 +20640,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CSEL";
             stmt.key = "opcode & 0xffe00c00 = 0x9a800000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
         }
@@ -20659,9 +20659,9 @@ public class ArmDisasmDecoder {
             if ((!(Rn == Rm && Rm != 31 && Rn != 31 && ((cond >> 1) & 7) != 7)) && (!(Rm == 31 && Rn == 31 && ((cond >> 1) & 7) != 7))) {
                 stmt.opcode = "CSINC";
                 stmt.key = "opcode & 0xffe00c00 = 0x9a800400";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
                 stmt.arg4 = helper.decodeBranchCondition(cond);
                 return stmt;
             }
@@ -20678,10 +20678,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UMADDL";
             stmt.key = "opcode & 0xffe08000 = 0x9ba00000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', Ra, false, -1);
             return stmt;
         }
 
@@ -20696,10 +20696,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UMSUBL";
             stmt.key = "opcode & 0xffe08000 = 0x9ba08000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("X", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('X', Ra, false, -1);
             return stmt;
         }
 
@@ -20714,9 +20714,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UMULH";
             stmt.key = "opcode & 0xffe08000 = 0x9bc00000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
             return stmt;
         }
 
@@ -20733,9 +20733,9 @@ public class ArmDisasmDecoder {
             if ((Rn != Rm)) {
                 stmt.opcode = "EXTR";
                 stmt.key = "opcode & 0xffe00000 = 0x93c00000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
                 stmt.arg4 = helper.decodeLsbRor(imms, sf==0?32:64);
                 return stmt;
             }
@@ -20753,8 +20753,8 @@ public class ArmDisasmDecoder {
             if ((Rn == Rm)) {
                 stmt.opcode = "ROR";
                 stmt.key = "opcode & 0xffe00000 = 0x93c00000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.formatDecimalImm(imms);
                 return stmt;
             }
@@ -20771,8 +20771,8 @@ public class ArmDisasmDecoder {
             if ((!(imm16==0 && hw!=0))) {
                 stmt.opcode = "MOV";
                 stmt.key = "opcode & 0xff800000 = 0x92800000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.decodeShiftedImm16("X", imm16, hw, true);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.decodeShiftedImm16('X', imm16, hw, true);
                 return stmt;
             }
         }
@@ -20789,7 +20789,7 @@ public class ArmDisasmDecoder {
             if ((!(!(imm16==0 && hw!=0)))) {
                 stmt.opcode = "MOVN";
                 stmt.key = "opcode & 0xff800000 = 0x92800000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
                 stmt.arg2 = helper.decodeMovShiftedImm16(imm16, hw, s==0?32:64);
                 return stmt;
             }
@@ -20819,7 +20819,7 @@ public class ArmDisasmDecoder {
             if ((Rm == 31 && Rn == 31 && ((cond >> 1) & 7) != 7)) {
                 stmt.opcode = "CSETM";
                 stmt.key = "opcode & 0xffff0fe0 = 0x5a9f03e0";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
                 stmt.arg2 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -20834,8 +20834,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CLS";
             stmt.key = "opcode & 0xfffffc00 = 0x5ac01400";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -20848,8 +20848,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CLZ";
             stmt.key = "opcode & 0xfffffc00 = 0x5ac01000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -20862,8 +20862,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "RBIT";
             stmt.key = "opcode & 0xfffffc00 = 0x5ac00000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -20876,8 +20876,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "REV16";
             stmt.key = "opcode & 0xfffffc00 = 0x5ac00400";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -20891,8 +20891,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "REV";
             stmt.key = "opcode & 0xfffff400 = 0x5ac00000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -20908,8 +20908,8 @@ public class ArmDisasmDecoder {
             if ((Rn == Rm && Rm != 31 && Rn != 31 && ((cond >> 1) & 7) != 7)) {
                 stmt.opcode = "CINV";
                 stmt.key = "opcode & 0xffe00c00 = 0x5a800000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -20927,8 +20927,8 @@ public class ArmDisasmDecoder {
             if (((cond & 0b1110) != 0b1110  && Rn == Rm)) {
                 stmt.opcode = "CNEG";
                 stmt.key = "opcode & 0xffe00c00 = 0x5a800400";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -20946,9 +20946,9 @@ public class ArmDisasmDecoder {
             if ((!(Rn == Rm && Rm != 31 && Rn != 31 && ((cond >> 1) & 7) != 7)) && (!(Rm == 31 && Rn == 31 && ((cond >> 1) & 7) != 7))) {
                 stmt.opcode = "CSINV";
                 stmt.key = "opcode & 0xffe00c00 = 0x5a800000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
                 stmt.arg4 = helper.decodeBranchCondition(cond);
                 return stmt;
             }
@@ -20966,9 +20966,9 @@ public class ArmDisasmDecoder {
             if ((!((cond & 0b1110) != 0b1110  && Rn == Rm))) {
                 stmt.opcode = "CSNEG";
                 stmt.key = "opcode & 0xffe00c00 = 0x5a800400";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("W", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('W', Rm, false, -1);
                 stmt.arg4 = helper.decodeBranchCondition(cond);
                 return stmt;
             }
@@ -20985,8 +20985,8 @@ public class ArmDisasmDecoder {
             if ((!(imm16==0 && hw!=0))) {
                 stmt.opcode = "MOV";
                 stmt.key = "opcode & 0xff800000 = 0x52800000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.decodeShiftedImm16("W", imm16, hw, false);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.decodeShiftedImm16('W', imm16, hw, false);
                 return stmt;
             }
         }
@@ -21002,7 +21002,7 @@ public class ArmDisasmDecoder {
             final int s = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "MOVK";
             stmt.key = "opcode & 0xff800000 = 0x72800000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
             stmt.arg2 = helper.decodeMovShiftedImm16(imm16, hw, s==0?32:64);
             return stmt;
         }
@@ -21019,7 +21019,7 @@ public class ArmDisasmDecoder {
             if ((!(!(imm16==0 && hw!=0)))) {
                 stmt.opcode = "MOVZ";
                 stmt.key = "opcode & 0xff800000 = 0x52800000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
                 stmt.arg2 = helper.decodeMovShiftedImm16(imm16, hw, s==0?32:64);
                 return stmt;
             }
@@ -21048,8 +21048,8 @@ public class ArmDisasmDecoder {
             if ((!(imm16==0 && hw!=0)) && (!(imm16 == 0 && hw != 0))) {
                 stmt.opcode = "MOV";
                 stmt.key = "opcode & 0xff800000 = 0xd2800000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.decodeShiftedImm16("X", imm16, hw, false);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.decodeShiftedImm16('X', imm16, hw, false);
                 return stmt;
             }
         }
@@ -21065,7 +21065,7 @@ public class ArmDisasmDecoder {
             final int s = helper.getPart(opcode32Bit, 31, 1); // raw
             stmt.opcode = "MOVK";
             stmt.key = "opcode & 0xff800000 = 0xf2800000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             stmt.arg2 = helper.decodeMovShiftedImm16(imm16, hw, s==0?32:64);
             return stmt;
         }
@@ -21082,7 +21082,7 @@ public class ArmDisasmDecoder {
             if ((!(!(imm16==0 && hw!=0)))) {
                 stmt.opcode = "MOVZ";
                 stmt.key = "opcode & 0xff800000 = 0xd2800000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
                 stmt.arg2 = helper.decodeMovShiftedImm16(imm16, hw, s==0?32:64);
                 return stmt;
             }
@@ -21108,7 +21108,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AUTDZA";
             stmt.key = "opcode & 0xffffffe0 = 0xdac13be0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21120,7 +21120,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AUTIZA";
             stmt.key = "opcode & 0xffffffe0 = 0xdac133e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21132,7 +21132,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACDZA";
             stmt.key = "opcode & 0xffffffe0 = 0xdac12be0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21144,7 +21144,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACIZA";
             stmt.key = "opcode & 0xffffffe0 = 0xdac123e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21156,7 +21156,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "XPACI";
             stmt.key = "opcode & 0xffffffe0 = 0xdac143e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21172,7 +21172,7 @@ public class ArmDisasmDecoder {
             if ((Rm == 31 && Rn == 31 && ((cond >> 1) & 7) != 7)) {
                 stmt.opcode = "CSETM";
                 stmt.key = "opcode & 0xffff0fe0 = 0xda9f03e0";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
                 stmt.arg2 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -21187,8 +21187,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AUTDA";
             stmt.key = "opcode & 0xfffffc00 = 0xdac11800";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             return stmt;
         }
 
@@ -21201,8 +21201,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AUTIA";
             stmt.key = "opcode & 0xfffffc00 = 0xdac11000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             return stmt;
         }
 
@@ -21215,8 +21215,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CLZ";
             stmt.key = "opcode & 0xfffffc00 = 0xdac01000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -21229,8 +21229,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACDA";
             stmt.key = "opcode & 0xfffffc00 = 0xdac10800";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             return stmt;
         }
 
@@ -21243,8 +21243,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACIA";
             stmt.key = "opcode & 0xfffffc00 = 0xdac10000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             return stmt;
         }
 
@@ -21257,8 +21257,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "RBIT";
             stmt.key = "opcode & 0xfffffc00 = 0xdac00000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -21271,8 +21271,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "REV32";
             stmt.key = "opcode & 0xfffffc00 = 0xdac00800";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -21288,8 +21288,8 @@ public class ArmDisasmDecoder {
             if ((Rn == Rm && Rm != 31 && Rn != 31 && ((cond >> 1) & 7) != 7)) {
                 stmt.opcode = "CINV";
                 stmt.key = "opcode & 0xffe00c00 = 0xda800000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -21307,9 +21307,9 @@ public class ArmDisasmDecoder {
             if ((!(Rn == Rm && Rm != 31 && Rn != 31 && ((cond >> 1) & 7) != 7)) && (!(Rm == 31 && Rn == 31 && ((cond >> 1) & 7) != 7))) {
                 stmt.opcode = "CSINV";
                 stmt.key = "opcode & 0xffe00c00 = 0xda800000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
                 stmt.arg4 = helper.decodeBranchCondition(cond);
                 return stmt;
             }
@@ -21335,7 +21335,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AUTDZB";
             stmt.key = "opcode & 0xffffffe0 = 0xdac13fe0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21347,7 +21347,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AUTIZB";
             stmt.key = "opcode & 0xffffffe0 = 0xdac137e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21359,7 +21359,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACDZB";
             stmt.key = "opcode & 0xffffffe0 = 0xdac12fe0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21371,7 +21371,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACIZB";
             stmt.key = "opcode & 0xffffffe0 = 0xdac127e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21383,7 +21383,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "XPACD";
             stmt.key = "opcode & 0xffffffe0 = 0xdac147e0";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             return stmt;
         }
 
@@ -21396,8 +21396,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AUTDB";
             stmt.key = "opcode & 0xfffffc00 = 0xdac11c00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             return stmt;
         }
 
@@ -21410,8 +21410,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "AUTIB";
             stmt.key = "opcode & 0xfffffc00 = 0xdac11400";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             return stmt;
         }
 
@@ -21424,8 +21424,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "CLS";
             stmt.key = "opcode & 0xfffffc00 = 0xdac01400";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -21438,8 +21438,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACDB";
             stmt.key = "opcode & 0xfffffc00 = 0xdac10c00";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             return stmt;
         }
 
@@ -21452,8 +21452,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "PACIB";
             stmt.key = "opcode & 0xfffffc00 = 0xdac10400";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, true, -1);
             return stmt;
         }
 
@@ -21466,8 +21466,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "REV16";
             stmt.key = "opcode & 0xfffffc00 = 0xdac00400";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -21481,8 +21481,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "REV";
             stmt.key = "opcode & 0xfffff400 = 0xdac00400";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -21498,8 +21498,8 @@ public class ArmDisasmDecoder {
             if (((cond & 0b1110) != 0b1110  && Rn == Rm)) {
                 stmt.opcode = "CNEG";
                 stmt.key = "opcode & 0xffe00c00 = 0xda800400";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeBranchCondition(cond ^ 1);
                 return stmt;
             }
@@ -21517,9 +21517,9 @@ public class ArmDisasmDecoder {
             if ((!((cond & 0b1110) != 0b1110  && Rn == Rm))) {
                 stmt.opcode = "CSNEG";
                 stmt.key = "opcode & 0xffe00c00 = 0xda800400";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
-                stmt.arg3 = helper.getRegisterName("X", Rm, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
+                stmt.arg3 = helper.getRegisterName('X', Rm, false, -1);
                 stmt.arg4 = helper.decodeBranchCondition(cond);
                 return stmt;
             }
@@ -21572,7 +21572,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xff000000 = 0x1c000000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -21601,8 +21601,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZS";
                 stmt.key = "opcode & 0xffff0000 = 0x1e180000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -21620,8 +21620,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZU";
                 stmt.key = "opcode & 0xffff0000 = 0x1e190000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -21639,8 +21639,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "SCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x1e020000";
-                stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -21658,8 +21658,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "UCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x1e030000";
-                stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -21687,7 +21687,7 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMP";
             stmt.key = "opcode & 0xffe0fc1f = 0x1e202008";
-            stmt.arg1 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rn, false, -1);
             stmt.arg2 = "#0.0";
             return stmt;
         }
@@ -21702,8 +21702,8 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMP";
             stmt.key = "opcode & 0xffe0fc1f = 0x1e202000";
-            stmt.arg1 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -21717,7 +21717,7 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMPE";
             stmt.key = "opcode & 0xffe0fc1f = 0x1e202018";
-            stmt.arg1 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rn, false, -1);
             stmt.arg2 = "#0.0";
             return stmt;
         }
@@ -21732,8 +21732,8 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMPE";
             stmt.key = "opcode & 0xffe0fc1f = 0x1e202010";
-            stmt.arg1 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -21746,8 +21746,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e240000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21760,8 +21760,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e250000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21774,8 +21774,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e300000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21788,8 +21788,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e310000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21802,8 +21802,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e200000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21816,8 +21816,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e210000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21830,8 +21830,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e280000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21844,8 +21844,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e290000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21858,8 +21858,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e380000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21872,8 +21872,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e390000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21888,8 +21888,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x1e270000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -21904,8 +21904,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x1e260000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21918,8 +21918,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x1e220000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -21932,8 +21932,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x1e230000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -21958,8 +21958,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FABS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e20c000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21972,8 +21972,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVT";
             stmt.key = "opcode & 0xfffffc00 = 0x1e22c000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -21986,8 +21986,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVT";
             stmt.key = "opcode & 0xfffffc00 = 0x1e23c000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22000,8 +22000,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x1e204000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22014,8 +22014,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNEG";
             stmt.key = "opcode & 0xfffffc00 = 0x1e214000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22028,8 +22028,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTA";
             stmt.key = "opcode & 0xfffffc00 = 0x1e264000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22042,8 +22042,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTI";
             stmt.key = "opcode & 0xfffffc00 = 0x1e27c000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22056,8 +22056,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTM";
             stmt.key = "opcode & 0xfffffc00 = 0x1e254000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22070,8 +22070,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTN";
             stmt.key = "opcode & 0xfffffc00 = 0x1e244000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22084,8 +22084,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTP";
             stmt.key = "opcode & 0xfffffc00 = 0x1e24c000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22098,8 +22098,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTX";
             stmt.key = "opcode & 0xfffffc00 = 0x1e274000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22112,8 +22112,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTZ";
             stmt.key = "opcode & 0xfffffc00 = 0x1e25c000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22126,8 +22126,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FSQRT";
             stmt.key = "opcode & 0xfffffc00 = 0x1e21c000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -22152,7 +22152,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xffe01fe0 = 0x1e201000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
             stmt.arg2 = helper.decodeFmovConstant(imm8);
             return stmt;
         }
@@ -22180,8 +22180,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "FCCMP";
             stmt.key = "opcode & 0xffe00c10 = 0x1e200400";
-            stmt.arg1 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -22198,8 +22198,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "FCCMPE";
             stmt.key = "opcode & 0xffe00c10 = 0x1e200410";
-            stmt.arg1 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -22227,9 +22227,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FADD";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e202800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22243,9 +22243,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FDIV";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e201800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22259,9 +22259,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMAX";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e204800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22275,9 +22275,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMAXNM";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e206800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22291,9 +22291,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMIN";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e205800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22307,9 +22307,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMINNM";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e207800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22323,9 +22323,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMUL";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e200800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22339,9 +22339,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMUL";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e208800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22355,9 +22355,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FSUB";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e203800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             return stmt;
         }
 
@@ -22372,9 +22372,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCSEL";
             stmt.key = "opcode & 0xffe00c00 = 0x1e200c00";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
         }
@@ -22403,8 +22403,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZS";
                 stmt.key = "opcode & 0xffff0000 = 0x1e580000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -22422,8 +22422,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZU";
                 stmt.key = "opcode & 0xffff0000 = 0x1e590000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -22441,8 +22441,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "SCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x1e420000";
-                stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -22460,8 +22460,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "UCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x1e430000";
-                stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -22489,7 +22489,7 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMP";
             stmt.key = "opcode & 0xffe0fc1f = 0x1e602008";
-            stmt.arg1 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rn, false, -1);
             stmt.arg2 = "#0.0";
             return stmt;
         }
@@ -22504,8 +22504,8 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMP";
             stmt.key = "opcode & 0xffe0fc1f = 0x1e602000";
-            stmt.arg1 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -22519,7 +22519,7 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMPE";
             stmt.key = "opcode & 0xffe0fc1f = 0x1e602018";
-            stmt.arg1 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rn, false, -1);
             stmt.arg2 = "#0.0";
             return stmt;
         }
@@ -22534,8 +22534,8 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMPE";
             stmt.key = "opcode & 0xffe0fc1f = 0x1e602010";
-            stmt.arg1 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -22548,8 +22548,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e640000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22562,8 +22562,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e650000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22576,8 +22576,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e700000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22590,8 +22590,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e710000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22604,8 +22604,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e600000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22618,8 +22618,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e610000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22632,8 +22632,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e680000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22646,8 +22646,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e690000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22660,8 +22660,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e780000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22674,8 +22674,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZU";
             stmt.key = "opcode & 0xfffffc00 = 0x1e790000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22688,8 +22688,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FJCVTZS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e7e0000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22702,8 +22702,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x1e620000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -22716,8 +22716,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x1e630000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -22742,8 +22742,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FABS";
             stmt.key = "opcode & 0xfffffc00 = 0x1e60c000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22756,8 +22756,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVT";
             stmt.key = "opcode & 0xfffffc00 = 0x1e63c000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22770,8 +22770,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVT";
             stmt.key = "opcode & 0xfffffc00 = 0x1e624000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22784,8 +22784,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x1e604000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22798,8 +22798,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNEG";
             stmt.key = "opcode & 0xfffffc00 = 0x1e614000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22812,8 +22812,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTA";
             stmt.key = "opcode & 0xfffffc00 = 0x1e664000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22826,8 +22826,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTI";
             stmt.key = "opcode & 0xfffffc00 = 0x1e67c000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22840,8 +22840,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTM";
             stmt.key = "opcode & 0xfffffc00 = 0x1e654000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22854,8 +22854,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTN";
             stmt.key = "opcode & 0xfffffc00 = 0x1e644000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22868,8 +22868,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTP";
             stmt.key = "opcode & 0xfffffc00 = 0x1e64c000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22882,8 +22882,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTX";
             stmt.key = "opcode & 0xfffffc00 = 0x1e674000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22896,8 +22896,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTZ";
             stmt.key = "opcode & 0xfffffc00 = 0x1e65c000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22910,8 +22910,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FSQRT";
             stmt.key = "opcode & 0xfffffc00 = 0x1e61c000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -22936,7 +22936,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xffe01fe0 = 0x1e601000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
             stmt.arg2 = helper.decodeFmovConstant(imm8);
             return stmt;
         }
@@ -22964,8 +22964,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "FCCMP";
             stmt.key = "opcode & 0xffe00c10 = 0x1e600400";
-            stmt.arg1 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -22982,8 +22982,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "FCCMPE";
             stmt.key = "opcode & 0xffe00c10 = 0x1e600410";
-            stmt.arg1 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -23011,9 +23011,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FADD";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e602800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23027,9 +23027,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FDIV";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e601800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23043,9 +23043,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMAX";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e604800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23059,9 +23059,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMAXNM";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e606800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23075,9 +23075,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMIN";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e605800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23091,9 +23091,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMINNM";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e607800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23107,9 +23107,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMUL";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e600800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23123,9 +23123,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMUL";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e608800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23139,9 +23139,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FSUB";
             stmt.key = "opcode & 0xffe0fc00 = 0x1e603800";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             return stmt;
         }
 
@@ -23156,9 +23156,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCSEL";
             stmt.key = "opcode & 0xffe00c00 = 0x1e600c00";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
         }
@@ -23187,8 +23187,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZS";
                 stmt.key = "opcode & 0xffff0000 = 0x1ed80000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -23206,8 +23206,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZU";
                 stmt.key = "opcode & 0xffff0000 = 0x1ed90000";
-                stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -23225,8 +23225,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "SCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x1ec20000";
-                stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -23244,8 +23244,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "UCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x1ec30000";
-                stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -23273,7 +23273,7 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMP";
             stmt.key = "opcode & 0xffe0fc1f = 0x1ee02008";
-            stmt.arg1 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg2 = "#0.0";
             return stmt;
         }
@@ -23288,8 +23288,8 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMP";
             stmt.key = "opcode & 0xffe0fc1f = 0x1ee02000";
-            stmt.arg1 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23303,7 +23303,7 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMPE";
             stmt.key = "opcode & 0xffe0fc1f = 0x1ee02018";
-            stmt.arg1 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg2 = "#0.0";
             return stmt;
         }
@@ -23318,8 +23318,8 @@ public class ArmDisasmDecoder {
             final int opc = helper.getPart(opcode32Bit, 3, 2);
             stmt.opcode = "FCMPE";
             stmt.key = "opcode & 0xffe0fc1f = 0x1ee02010";
-            stmt.arg1 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23332,8 +23332,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAS";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee40000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23346,8 +23346,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAU";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee50000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23360,8 +23360,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMS";
             stmt.key = "opcode & 0xfffffc00 = 0x1ef00000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23374,8 +23374,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMU";
             stmt.key = "opcode & 0xfffffc00 = 0x1ef10000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23388,8 +23388,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNS";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee00000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23402,8 +23402,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNU";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee10000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23416,8 +23416,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPS";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee80000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23430,8 +23430,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPU";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee90000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23444,8 +23444,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZS";
             stmt.key = "opcode & 0xfffffc00 = 0x1ef80000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23458,8 +23458,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZU";
             stmt.key = "opcode & 0xfffffc00 = 0x1ef90000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23474,8 +23474,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee70000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -23490,8 +23490,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee60000";
-            stmt.arg1 = helper.getRegisterName("W", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23504,8 +23504,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee20000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -23518,8 +23518,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee30000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("W", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('W', Rn, false, -1);
             return stmt;
         }
 
@@ -23544,8 +23544,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FABS";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee0c000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23558,8 +23558,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVT";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee2c000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23572,8 +23572,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVT";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee24000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23586,8 +23586,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee04000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23600,8 +23600,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNEG";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee14000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23614,8 +23614,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTA";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee64000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23628,8 +23628,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTI";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee7c000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23642,8 +23642,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTM";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee54000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23656,8 +23656,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTN";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee44000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23670,8 +23670,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTP";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee4c000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23684,8 +23684,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTX";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee74000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23698,8 +23698,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRINTZ";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee5c000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23712,8 +23712,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FSQRT";
             stmt.key = "opcode & 0xfffffc00 = 0x1ee1c000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -23738,7 +23738,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xffe01fe0 = 0x1ee01000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
             stmt.arg2 = helper.decodeFmovConstant(imm8);
             return stmt;
         }
@@ -23766,8 +23766,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "FCCMP";
             stmt.key = "opcode & 0xffe00c10 = 0x1ee00400";
-            stmt.arg1 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -23784,8 +23784,8 @@ public class ArmDisasmDecoder {
             final int nzcv = helper.getPart(opcode32Bit, 0, 4);
             stmt.opcode = "FCCMPE";
             stmt.key = "opcode & 0xffe00c10 = 0x1ee00410";
-            stmt.arg1 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rm, false, -1);
             stmt.arg3 = helper.formatHexImm(nzcv);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
@@ -23813,9 +23813,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FADD";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee02800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23829,9 +23829,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FDIV";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee01800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23845,9 +23845,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMAX";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee04800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23861,9 +23861,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMAXNM";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee06800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23877,9 +23877,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMIN";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee05800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23893,9 +23893,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMINNM";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee07800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23909,9 +23909,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMUL";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee00800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23925,9 +23925,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMUL";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee08800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23941,9 +23941,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FSUB";
             stmt.key = "opcode & 0xffe0fc00 = 0x1ee03800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -23958,9 +23958,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCSEL";
             stmt.key = "opcode & 0xffe00c00 = 0x1ee00c00";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             stmt.arg4 = helper.decodeBranchCondition(cond);
             return stmt;
         }
@@ -23988,10 +23988,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMADD";
             stmt.key = "opcode & 0xffe08000 = 0x1f400000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("D", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('D', Ra, false, -1);
             return stmt;
         }
 
@@ -24006,10 +24006,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMADD";
             stmt.key = "opcode & 0xffe08000 = 0x1fc00000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("H", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('H', Ra, false, -1);
             return stmt;
         }
 
@@ -24024,10 +24024,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMADD";
             stmt.key = "opcode & 0xffe08000 = 0x1f000000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("S", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('S', Ra, false, -1);
             return stmt;
         }
 
@@ -24042,10 +24042,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMSUB";
             stmt.key = "opcode & 0xffe08000 = 0x1f408000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("D", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('D', Ra, false, -1);
             return stmt;
         }
 
@@ -24060,10 +24060,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMSUB";
             stmt.key = "opcode & 0xffe08000 = 0x1fc08000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("H", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('H', Ra, false, -1);
             return stmt;
         }
 
@@ -24078,10 +24078,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMSUB";
             stmt.key = "opcode & 0xffe08000 = 0x1f008000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("S", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('S', Ra, false, -1);
             return stmt;
         }
 
@@ -24096,10 +24096,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMADD";
             stmt.key = "opcode & 0xffe08000 = 0x1f600000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("D", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('D', Ra, false, -1);
             return stmt;
         }
 
@@ -24114,10 +24114,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMADD";
             stmt.key = "opcode & 0xffe08000 = 0x1fe00000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("H", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('H', Ra, false, -1);
             return stmt;
         }
 
@@ -24132,10 +24132,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMADD";
             stmt.key = "opcode & 0xffe08000 = 0x1f200000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("S", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('S', Ra, false, -1);
             return stmt;
         }
 
@@ -24150,10 +24150,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMSUB";
             stmt.key = "opcode & 0xffe08000 = 0x1f608000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("D", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("D", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('D', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('D', Ra, false, -1);
             return stmt;
         }
 
@@ -24168,10 +24168,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMSUB";
             stmt.key = "opcode & 0xffe08000 = 0x1fe08000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("H", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('H', Ra, false, -1);
             return stmt;
         }
 
@@ -24186,10 +24186,10 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FNMSUB";
             stmt.key = "opcode & 0xffe08000 = 0x1f208000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("S", Rm, false, -1);
-            stmt.arg4 = helper.getRegisterName("S", Ra, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('S', Rm, false, -1);
+            stmt.arg4 = helper.getRegisterName('S', Ra, false, -1);
             return stmt;
         }
 
@@ -24240,7 +24240,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xff000000 = 0x9c000000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -24266,8 +24266,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e640000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24280,8 +24280,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e240000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24294,8 +24294,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e700000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24308,8 +24308,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e300000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24322,8 +24322,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e600000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24336,8 +24336,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e200000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24350,8 +24350,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e680000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24364,8 +24364,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e280000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24378,8 +24378,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e780000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24392,8 +24392,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZS";
             stmt.key = "opcode & 0xfffffc00 = 0x9e380000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24408,8 +24408,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x9e660000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24422,8 +24422,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x9e620000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -24436,8 +24436,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x9e220000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -24453,8 +24453,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZS";
                 stmt.key = "opcode & 0xffff0000 = 0x9e580000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24472,8 +24472,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZS";
                 stmt.key = "opcode & 0xffff0000 = 0x9e180000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24491,8 +24491,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "SCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x9e420000";
-                stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24510,8 +24510,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "SCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x9e020000";
-                stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24538,8 +24538,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAS";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee40000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -24552,8 +24552,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMS";
             stmt.key = "opcode & 0xfffffc00 = 0x9ef00000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -24566,8 +24566,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNS";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee00000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -24580,8 +24580,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPS";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee80000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -24594,8 +24594,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZS";
             stmt.key = "opcode & 0xfffffc00 = 0x9ef80000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -24610,8 +24610,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee60000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -24626,7 +24626,7 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x9eae0000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
             stmt.arg2 = helper.formatVectorRegister(Rn, "D[1]");
             return stmt;
         }
@@ -24640,8 +24640,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee20000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -24657,8 +24657,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZS";
                 stmt.key = "opcode & 0xffff0000 = 0x9ed80000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24676,8 +24676,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "SCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x9ec20000";
-                stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24704,8 +24704,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e650000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24718,8 +24718,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e250000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24732,8 +24732,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e710000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24746,8 +24746,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e310000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24760,8 +24760,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e610000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24774,8 +24774,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e210000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24788,8 +24788,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e690000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24802,8 +24802,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e290000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24816,8 +24816,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e790000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
             return stmt;
         }
 
@@ -24830,8 +24830,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZU";
             stmt.key = "opcode & 0xfffffc00 = 0x9e390000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -24846,8 +24846,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x9e670000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -24860,8 +24860,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x9e630000";
-            stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -24874,8 +24874,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x9e230000";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -24891,8 +24891,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZU";
                 stmt.key = "opcode & 0xffff0000 = 0x9e590000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("D", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('D', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24910,8 +24910,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZU";
                 stmt.key = "opcode & 0xffff0000 = 0x9e190000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24929,8 +24929,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "UCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x9e430000";
-                stmt.arg1 = helper.getRegisterName("D", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('D', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24948,8 +24948,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "UCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x9e030000";
-                stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -24976,8 +24976,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAU";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee50000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -24990,8 +24990,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMU";
             stmt.key = "opcode & 0xfffffc00 = 0x9ef10000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -25004,8 +25004,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNU";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee10000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -25018,8 +25018,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPU";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee90000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -25032,8 +25032,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZU";
             stmt.key = "opcode & 0xfffffc00 = 0x9ef90000";
-            stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -25048,8 +25048,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee70000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25065,7 +25065,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "FMOV";
             stmt.key = "opcode & 0xfffffc00 = 0x9eaf0000";
             stmt.arg1 = helper.formatVectorRegister(Rd, "D[1]");
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25078,8 +25078,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x9ee30000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25095,8 +25095,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "FCVTZU";
                 stmt.key = "opcode & 0xffff0000 = 0x9ed90000";
-                stmt.arg1 = helper.getRegisterName("X", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('X', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -25114,8 +25114,8 @@ public class ArmDisasmDecoder {
             if ((sf == 1 || (scale>>5)>0)) {
                 stmt.opcode = "UCVTF";
                 stmt.key = "opcode & 0xffff0000 = 0x9ec30000";
-                stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-                stmt.arg2 = helper.getRegisterName("X", Rn, false, -1);
+                stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rn, false, -1);
                 stmt.arg3 = helper.decodeFbitsFromScale(scale);
                 return stmt;
             }
@@ -25143,7 +25143,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "CBZ";
             stmt.key = "opcode & 0xff000000 = 0x34000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -25158,7 +25158,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "CBZ";
             stmt.key = "opcode & 0xff000000 = 0xb4000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -25175,7 +25175,7 @@ public class ArmDisasmDecoder {
             final int imm14Signed = helper.asSigned(imm14, 14);
             stmt.opcode = "TBZ";
             stmt.key = "opcode & 0x7f000000 = 0x36000000";
-            stmt.arg1 = helper.getRegisterName(b5==0 ? "W" : "X", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName(b5==0 ? 'W' : 'X', Rt, false, -1);
             stmt.arg2 = helper.formatDecimalImm((b5<<5)+b40);
             stmt.arg3 = helper.decodePcRelativeLabel(pc, 4 * imm14Signed);
             return stmt;
@@ -25205,8 +25205,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x3c400400";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25222,8 +25222,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x3cc00400";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25239,8 +25239,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0xbc400400";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25256,8 +25256,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDUR";
             stmt.key = "opcode & 0xffe00c00 = 0x3c400000";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25273,8 +25273,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDUR";
             stmt.key = "opcode & 0xffe00c00 = 0x3cc00000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25290,8 +25290,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDUR";
             stmt.key = "opcode & 0xffe00c00 = 0xbc400000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25307,8 +25307,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0x3c800400";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25324,8 +25324,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0xbc000400";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25341,8 +25341,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffa00c00 = 0x3c000400";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25358,8 +25358,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STUR";
             stmt.key = "opcode & 0xffa00c00 = 0x3c000000";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25375,8 +25375,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STUR";
             stmt.key = "opcode & 0xffa00c00 = 0x3c800000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25392,8 +25392,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STUR";
             stmt.key = "opcode & 0xffa00c00 = 0xbc000000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25422,8 +25422,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe0ec00 = 0x3c606800";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl("X", Rn, Rm, S==1?(size+4*(opc/2)):0, S);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl('X', Rn, Rm, S==1?(size+4*(opc/2)):0, S);
             return stmt;
         }
 
@@ -25440,8 +25440,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe0ec00 = 0x3c206800";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl("X", Rn, Rm, S==1?(size+4*(opc/2)):0, S);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegistersLsl('X', Rn, Rm, S==1?(size+4*(opc/2)):0, S);
             return stmt;
         }
 
@@ -25457,8 +25457,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x3c400c00";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25476,8 +25476,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x3c600800";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, true);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, true);
             return stmt;
         }
 
@@ -25493,8 +25493,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x3cc00c00";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25512,8 +25512,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x3ce00800";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
             return stmt;
         }
 
@@ -25529,8 +25529,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0xbc400c00";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25548,8 +25548,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0xbc600800";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
             return stmt;
         }
 
@@ -25565,8 +25565,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0x3c000c00";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25584,8 +25584,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0x3c200800";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, true);
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, true);
             return stmt;
         }
 
@@ -25601,8 +25601,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0x3c800c00";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25620,8 +25620,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0x3ca00800";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
             return stmt;
         }
 
@@ -25637,8 +25637,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0xbc000c00";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -25656,8 +25656,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0xbc200800";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
             return stmt;
         }
 
@@ -25686,8 +25686,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffc00000 = 0x3d400000";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -25704,8 +25704,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffc00000 = 0x3dc00000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -25722,8 +25722,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffc00000 = 0xbd400000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -25740,8 +25740,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffc00000 = 0x3d000000";
-            stmt.arg1 = helper.getRegisterName("B", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('B', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -25758,8 +25758,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffc00000 = 0x3d800000";
-            stmt.arg1 = helper.getRegisterName("Q", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('Q', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -25776,8 +25776,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffc00000 = 0xbd000000";
-            stmt.arg1 = helper.getRegisterName("S", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('S', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -25791,7 +25791,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "CBNZ";
             stmt.key = "opcode & 0xff000000 = 0x35000000";
-            stmt.arg1 = helper.getRegisterName("W", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('W', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -25806,7 +25806,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "CBNZ";
             stmt.key = "opcode & 0xff000000 = 0xb5000000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -25823,7 +25823,7 @@ public class ArmDisasmDecoder {
             final int imm14Signed = helper.asSigned(imm14, 14);
             stmt.opcode = "TBNZ";
             stmt.key = "opcode & 0x7f000000 = 0x37000000";
-            stmt.arg1 = helper.getRegisterName(b5==0 ? "W" : "X", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName(b5==0 ? 'W' : 'X', Rt, false, -1);
             stmt.arg2 = helper.formatDecimalImm((b5<<5)+b40);
             stmt.arg3 = helper.decodePcRelativeLabel(pc, 4 * imm14Signed);
             return stmt;
@@ -25909,7 +25909,7 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "BLR";
             stmt.key = "opcode & 0xfffffc1f = 0xd63f0000";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25921,7 +25921,7 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "BLRAAZ";
             stmt.key = "opcode & 0xfffffc1f = 0xd63f081f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25933,7 +25933,7 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "BLRABZ";
             stmt.key = "opcode & 0xfffffc1f = 0xd63f0c1f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25945,7 +25945,7 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "BR";
             stmt.key = "opcode & 0xfffffc1f = 0xd61f0000";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25957,7 +25957,7 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "BRAAZ";
             stmt.key = "opcode & 0xfffffc1f = 0xd61f081f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25969,7 +25969,7 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "BRABZ";
             stmt.key = "opcode & 0xfffffc1f = 0xd61f0c1f";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
             return stmt;
         }
 
@@ -25981,7 +25981,7 @@ public class ArmDisasmDecoder {
             final int Rn = helper.getPart(opcode32Bit, 5, 5);
             stmt.opcode = "RET";
             stmt.key = "opcode & 0xfffffc1f = 0xd65f0000";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, 30);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, 30);
             return stmt;
         }
 
@@ -26456,7 +26456,7 @@ public class ArmDisasmDecoder {
                 stmt.opcode = "AT";
                 stmt.key = "opcode & 0xfff8fe00 = 0xd5087800";
                 stmt.arg1 = helper.getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[1];
-                stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
                 return stmt;
             }
         }
@@ -26475,7 +26475,7 @@ public class ArmDisasmDecoder {
                 stmt.opcode = "DC";
                 stmt.key = "opcode & 0xfff8f000 = 0xd5087000";
                 stmt.arg1 = helper.getSysOp(op1, op2, CRm, CRn, Rt).split(" ")[1];
-                stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
+                stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
                 return stmt;
             }
         }
@@ -26532,7 +26532,7 @@ public class ArmDisasmDecoder {
                 stmt.arg1 = helper.formatDecimalImm(op1);
                 stmt.arg2 = "C" + CRn;
                 stmt.arg3 = "C" + CRm;
-                stmt.arg4 = helper.formatDecimalImm(op2) + (Rt==31 ? "" : ("," + helper.getRegisterName("X", Rt, false, -1)));
+                stmt.arg4 = helper.formatDecimalImm(op2) + (Rt==31 ? "" : ("," + helper.getRegisterName('X', Rt, false, -1)));
                 return stmt;
             }
         }
@@ -26549,7 +26549,7 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SYSL";
             stmt.key = "opcode & 0xfff80000 = 0xd5280000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
             stmt.arg2 = helper.formatDecimalImm(op1);
             stmt.arg3 = "C" + CRn;
             stmt.arg4 = "C" + CRm;
@@ -26578,8 +26578,8 @@ public class ArmDisasmDecoder {
             final int Rm = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "BLRAA";
             stmt.key = "opcode & 0xfffffc00 = 0xd73f0800";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rm, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rm, true, -1);
             return stmt;
         }
 
@@ -26592,8 +26592,8 @@ public class ArmDisasmDecoder {
             final int Rm = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "BLRAB";
             stmt.key = "opcode & 0xfffffc00 = 0xd73f0c00";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rm, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rm, true, -1);
             return stmt;
         }
 
@@ -26606,8 +26606,8 @@ public class ArmDisasmDecoder {
             final int Rm = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "BRAA";
             stmt.key = "opcode & 0xfffffc00 = 0xd71f0800";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rm, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rm, true, -1);
             return stmt;
         }
 
@@ -26620,8 +26620,8 @@ public class ArmDisasmDecoder {
             final int Rm = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "BRAB";
             stmt.key = "opcode & 0xfffffc00 = 0xd71f0c00";
-            stmt.arg1 = helper.getRegisterName("X", Rn, false, -1);
-            stmt.arg2 = helper.getRegisterName("X", Rm, true, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rn, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rm, true, -1);
             return stmt;
         }
 
@@ -26638,7 +26638,7 @@ public class ArmDisasmDecoder {
             final int Rt = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "MRS";
             stmt.key = "opcode & 0xfff00000 = 0xd5300000";
-            stmt.arg1 = helper.getRegisterName("X", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('X', Rt, false, -1);
             stmt.arg2 = helper.decodeSystemRegister(o0+2, op1, CRn, CRm, op2);
             return stmt;
         }
@@ -26657,7 +26657,7 @@ public class ArmDisasmDecoder {
             stmt.opcode = "MSR";
             stmt.key = "opcode & 0xfff00000 = 0xd5100000";
             stmt.arg1 = helper.decodeSystemRegister(o0+2, op1, CRn, CRm, op2);
-            stmt.arg2 = helper.getRegisterName("X", Rt, false, -1);
+            stmt.arg2 = helper.getRegisterName('X', Rt, false, -1);
             return stmt;
         }
 
@@ -26683,7 +26683,7 @@ public class ArmDisasmDecoder {
             final int imm19Signed = helper.asSigned(imm19, 19);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xff000000 = 0x5c000000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
             stmt.arg2 = helper.decodePcRelativeLabel(pc, 4 * imm19Signed);
             return stmt;
         }
@@ -26709,8 +26709,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCMGT";
             stmt.key = "opcode & 0xfffffc00 = 0x5ef8c800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = "#0.0";
             return stmt;
         }
@@ -26724,8 +26724,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAS";
             stmt.key = "opcode & 0xfffffc00 = 0x5e79c800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -26768,8 +26768,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SHA1H";
             stmt.key = "opcode & 0xfffffc00 = 0x5e280800";
-            stmt.arg1 = helper.getRegisterName("S", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('S', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             return stmt;
         }
 
@@ -26860,8 +26860,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SHA1C";
             stmt.key = "opcode & 0xffe0fc00 = 0x5e000000";
-            stmt.arg1 = helper.getRegisterName("Q", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('Q', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             stmt.arg3 = helper.formatVectorRegister(Rm, "4S");
             return stmt;
         }
@@ -26876,8 +26876,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SHA256H";
             stmt.key = "opcode & 0xffe0fc00 = 0x5e004000";
-            stmt.arg1 = helper.getRegisterName("Q", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('Q', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rn, false, -1);
             stmt.arg3 = helper.formatVectorRegister(Rm, "4S");
             return stmt;
         }
@@ -27003,8 +27003,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCMEQ";
             stmt.key = "opcode & 0xfffffc00 = 0x5ef8d800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = "#0.0";
             return stmt;
         }
@@ -27018,8 +27018,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRECPE";
             stmt.key = "opcode & 0xfffffc00 = 0x5ef9d800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -27032,8 +27032,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x5e79d800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -27123,9 +27123,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMULX";
             stmt.key = "opcode & 0xffe0fc00 = 0x5e401c00";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -27139,8 +27139,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SHA1P";
             stmt.key = "opcode & 0xffe0fc00 = 0x5e001000";
-            stmt.arg1 = helper.getRegisterName("Q", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('Q', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             stmt.arg3 = helper.formatVectorRegister(Rm, "4S");
             return stmt;
         }
@@ -27155,8 +27155,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SHA256H2";
             stmt.key = "opcode & 0xffe0fc00 = 0x5e005000";
-            stmt.arg1 = helper.getRegisterName("Q", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("Q", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('Q', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('Q', Rn, false, -1);
             stmt.arg3 = helper.formatVectorRegister(Rm, "4S");
             return stmt;
         }
@@ -27267,8 +27267,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCMLT";
             stmt.key = "opcode & 0xfffffc00 = 0x5ef8e800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = "#0.0";
             return stmt;
         }
@@ -27282,8 +27282,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNS";
             stmt.key = "opcode & 0xfffffc00 = 0x5e79a800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -27296,8 +27296,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPS";
             stmt.key = "opcode & 0xfffffc00 = 0x5ef9a800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -27387,9 +27387,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCMEQ";
             stmt.key = "opcode & 0xffe0fc00 = 0x5e402400";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -27403,8 +27403,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "SHA1M";
             stmt.key = "opcode & 0xffe0fc00 = 0x5e002000";
-            stmt.arg1 = helper.getRegisterName("Q", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("S", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('Q', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('S', Rn, false, -1);
             stmt.arg3 = helper.formatVectorRegister(Rm, "4S");
             return stmt;
         }
@@ -27480,8 +27480,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMS";
             stmt.key = "opcode & 0xfffffc00 = 0x5e79b800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -27494,8 +27494,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZS";
             stmt.key = "opcode & 0xfffffc00 = 0x5ef9b800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -27538,8 +27538,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRECPX";
             stmt.key = "opcode & 0xfffffc00 = 0x5ef9f800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -27658,9 +27658,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRECPS";
             stmt.key = "opcode & 0xffe0fc00 = 0x5e403c00";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -27674,9 +27674,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRSQRTS";
             stmt.key = "opcode & 0xffe0fc00 = 0x5ec03c00";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -27840,8 +27840,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMLA";
             stmt.key = "opcode & 0xffc0f400 = 0x5f001000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = helper.decodeVectorRegWithIndex3(Rm, H, L, M);
             return stmt;
         }
@@ -27859,8 +27859,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMLS";
             stmt.key = "opcode & 0xffc0f400 = 0x5f005000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = helper.decodeVectorRegWithIndex3(Rm, H, L, M);
             return stmt;
         }
@@ -27878,8 +27878,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMUL";
             stmt.key = "opcode & 0xffc0f400 = 0x5f009000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = helper.decodeVectorRegWithIndex3(Rm, H, L, M);
             return stmt;
         }
@@ -28223,8 +28223,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0xfc600800";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
             return stmt;
         }
 
@@ -28242,8 +28242,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x7c600800";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
             return stmt;
         }
 
@@ -28259,8 +28259,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDUR";
             stmt.key = "opcode & 0xffe00c00 = 0xfc400000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -28276,8 +28276,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDUR";
             stmt.key = "opcode & 0xffe00c00 = 0x7c400000";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -28295,8 +28295,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0xfc200800";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
             return stmt;
         }
 
@@ -28314,8 +28314,8 @@ public class ArmDisasmDecoder {
             final int size = helper.getPart(opcode32Bit, 30, 2); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0x7c200800";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithTwoRegisters("X", Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithTwoRegisters('X', Rn, Rm, option, S==1?(size+4*(opc/2)):0, false, S, false);
             return stmt;
         }
 
@@ -28331,8 +28331,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STUR";
             stmt.key = "opcode & 0xffa00c00 = 0xfc000000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -28348,8 +28348,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STUR";
             stmt.key = "opcode & 0xffa00c00 = 0x7c000000";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -28374,8 +28374,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCMGE";
             stmt.key = "opcode & 0xfffffc00 = 0x7ef8c800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = "#0.0";
             return stmt;
         }
@@ -28389,8 +28389,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCMLE";
             stmt.key = "opcode & 0xfffffc00 = 0x7ef8d800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = "#0.0";
             return stmt;
         }
@@ -28404,8 +28404,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTAU";
             stmt.key = "opcode & 0xfffffc00 = 0x7e79c800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -28418,8 +28418,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FRSQRTE";
             stmt.key = "opcode & 0xfffffc00 = 0x7ef9d800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -28432,8 +28432,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "UCVTF";
             stmt.key = "opcode & 0xfffffc00 = 0x7e79d800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -28627,8 +28627,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTMU";
             stmt.key = "opcode & 0xfffffc00 = 0x7e79b800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -28641,8 +28641,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTNU";
             stmt.key = "opcode & 0xfffffc00 = 0x7e79a800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -28655,8 +28655,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTPU";
             stmt.key = "opcode & 0xfffffc00 = 0x7ef9a800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -28669,8 +28669,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCVTZU";
             stmt.key = "opcode & 0xfffffc00 = 0x7ef9b800";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             return stmt;
         }
 
@@ -28861,9 +28861,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FABD";
             stmt.key = "opcode & 0xffe0fc00 = 0x7ec01400";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -28877,9 +28877,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FACGE";
             stmt.key = "opcode & 0xffe0fc00 = 0x7e402c00";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -28893,9 +28893,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FACGT";
             stmt.key = "opcode & 0xffe0fc00 = 0x7ec02c00";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -28909,9 +28909,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCMGE";
             stmt.key = "opcode & 0xffe0fc00 = 0x7e402400";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -28925,9 +28925,9 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FCMGT";
             stmt.key = "opcode & 0xffe0fc00 = 0x7ec02400";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
-            stmt.arg3 = helper.getRegisterName("H", Rm, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
+            stmt.arg3 = helper.getRegisterName('H', Rm, false, -1);
             return stmt;
         }
 
@@ -28977,8 +28977,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0xfc400c00";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -28994,8 +28994,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0xfc400400";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -29011,8 +29011,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x7c400c00";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -29028,8 +29028,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffe00c00 = 0x7c400400";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -29045,8 +29045,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0xfc000c00";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -29062,8 +29062,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0xfc000400";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -29079,8 +29079,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0x7c000c00";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatPreIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatPreIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -29096,8 +29096,8 @@ public class ArmDisasmDecoder {
             final int imm9Signed = helper.asSigned(imm9, 9);
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffe00c00 = 0x7c000400";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatPostIndexMemAccess("X", Rn, imm9Signed);
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatPostIndexMemAccess('X', Rn, imm9Signed);
             return stmt;
         }
 
@@ -29427,8 +29427,8 @@ public class ArmDisasmDecoder {
             final int Rd = helper.getPart(opcode32Bit, 0, 5);
             stmt.opcode = "FMULX";
             stmt.key = "opcode & 0xffc0f400 = 0x7f009000";
-            stmt.arg1 = helper.getRegisterName("H", Rd, false, -1);
-            stmt.arg2 = helper.getRegisterName("H", Rn, false, -1);
+            stmt.arg1 = helper.getRegisterName('H', Rd, false, -1);
+            stmt.arg2 = helper.getRegisterName('H', Rn, false, -1);
             stmt.arg3 = helper.decodeVectorRegWithIndex3(Rm, H, L, M);
             return stmt;
         }
@@ -29727,8 +29727,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffc00000 = 0xfd400000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -29745,8 +29745,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "LDR";
             stmt.key = "opcode & 0xffc00000 = 0x7d400000";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -29763,8 +29763,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffc00000 = 0xfd000000";
-            stmt.arg1 = helper.getRegisterName("D", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('D', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
@@ -29781,8 +29781,8 @@ public class ArmDisasmDecoder {
             final int opcPart = helper.getPart(opcode32Bit, 23, 1); // raw
             stmt.opcode = "STR";
             stmt.key = "opcode & 0xffc00000 = 0x7d000000";
-            stmt.arg1 = helper.getRegisterName("H", Rt, false, -1);
-            stmt.arg2 = helper.formatMemAccessWithOffset("X", Rn, imm12 << (opcPart*4+size));
+            stmt.arg1 = helper.getRegisterName('H', Rt, false, -1);
+            stmt.arg2 = helper.formatMemAccessWithOffset('X', Rn, imm12 << (opcPart*4+size));
             return stmt;
         }
 
