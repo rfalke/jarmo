@@ -1,7 +1,10 @@
 all:
-	python3 src/main/java/holdec/jarmo/arm64/generate-java.py
+	python3 jarmo-core/src/main/java/holdec/jarmo/arm64/generate-java.py
 	mvn package
 
 clean:
-	rm -f src/main/java/holdec/jarmo/arm64/ArmDisasmDecoder.java
-	rm -rf target
+	rm -f jarmo-core/src/main/java/holdec/jarmo/arm64/ArmDisasmDecoder.java
+	mvn clean
+
+benchmark: all
+	./run-benchmarks.sh

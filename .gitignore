@@ -4,3 +4,6 @@ hs_err_pid*
 
 .idea
 target/
+dependency-reduced-pom.xml
+.env
+perf_report_*.txt

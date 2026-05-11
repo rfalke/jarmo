@@ -2,7 +2,7 @@ import collections
 import os
 import re
 
-BASE_DIR = "src/main/java/holdec/jarmo/arm64"
+BASE_DIR = "jarmo-core/src/main/java/holdec/jarmo/arm64"
 INPUT_FILE = BASE_DIR + "/a64.asm-patterns"
 
 verbose = False
@@ -743,7 +743,7 @@ def doOneLine(line):
 
             second.append(
                 arg + 'helper.formatPostIndexMemAccess("%s", Rn, helper.decodeLd1Offset(Q, numRegs));' % registerPrefix)
-        elif re.match('\[<Xn\|SP>\],<imm-f[1234]>$', word):
+        elif re.match(r'\[<Xn\|SP>\],<imm-f[1234]>$', word):
             registerPrefix = "X"
             require("Rn", 5)
             require("Q", 1)
