@@ -10,6 +10,32 @@ public class ArmDisasmHelper {
     private static final boolean VERBOSE = false;
     private final Formatter formatter;
 
+    private static final String[] X_REGS_ZR = new String[32];
+    private static final String[] X_REGS_SP = new String[32];
+    private static final String[] W_REGS_ZR = new String[32];
+    private static final String[] W_REGS_SP = new String[32];
+    private static final String[] H_REGS = new String[32];
+    private static final String[] S_REGS = new String[32];
+    private static final String[] D_REGS = new String[32];
+    private static final String[] Q_REGS = new String[32];
+    private static final String[] B_REGS = new String[32];
+
+    static {
+        for (int i = 0; i <= 30; i++) {
+            X_REGS_ZR[i] = X_REGS_SP[i] = "X" + i;
+            W_REGS_ZR[i] = W_REGS_SP[i] = "W" + i;
+            H_REGS[i] = "H" + i;
+            S_REGS[i] = "S" + i;
+            D_REGS[i] = "D" + i;
+            Q_REGS[i] = "Q" + i;
+            B_REGS[i] = "B" + i;
+        }
+        X_REGS_ZR[31] = "XZR"; X_REGS_SP[31] = "SP";
+        W_REGS_ZR[31] = "WZR"; W_REGS_SP[31] = "WSP";
+        H_REGS[31] = "H31"; S_REGS[31] = "S31"; D_REGS[31] = "D31";
+        Q_REGS[31] = "Q31"; B_REGS[31] = "B31";
+    }
+
     public ArmDisasmHelper(Formatter formatter) {
         this.formatter = formatter;
     }
@@ -33,7 +59,7 @@ public class ArmDisasmHelper {
         String baseReg = getRegisterName(registerType, baseRegister, true, -1);
         String extraReg = getRegisterName(((option & 1) == 1) ? "X" : "W", extraRegister, false, -1);
         if (option == 3 && scale == 0 && shift == 0) {
-            return String.format("[%s, %s%s]", baseReg, extraReg, showDefaultLsl ? ", lsl #0" : "");
+            return "[" + baseReg + ", " + extraReg + (showDefaultLsl ? ", lsl #0" : "") + "]";
         }
         if (!("W".equals(registerType) || "X".equals(registerType))) {
             throw new RuntimeException();
@@ -53,7 +79,7 @@ public class ArmDisasmHelper {
         if (scale > 0 || shift > 0) {
             suffix += " #" + scale;
         }
-        return String.format("[%s, %s, %s]", baseReg, extraReg, suffix);
+        return "[" + baseReg + ", " + extraReg + ", " + suffix + "]";
     }
 
     public String formatMemAccessWithTwoRegistersLsl(String registerType, int baseRegister, int extraRegister, int scale, int shift) {
@@ -63,9 +89,9 @@ public class ArmDisasmHelper {
             throw new RuntimeException();
         }
         if (scale == 0 && shift == 0) {
-            return String.format("[%s, %s]", baseReg, extraReg);
+            return "[" + baseReg + ", " + extraReg + "]";
         }
-        return String.format("[%s, %s, LSL #%s]", baseReg, extraReg, scale);
+        return "[" + baseReg + ", " + extraReg + ", LSL #" + scale + "]";
     }
 
     public String decodeBaseRegister(int imm5, int register) {
@@ -90,32 +116,39 @@ public class ArmDisasmHelper {
             if (register == optionalReg) {
                 return null;
             }
-            return registerType + register;
-        }
-        if (withSp && register == 31) {
-            if ("X".equals(registerType)) {
-                return "SP";
-            }
-            if ("W".equals(registerType)) {
-                return "WSP";
-            }
-        }
-        if (!withSp && register == 31) {
-            if ("X".equals(registerType)) {
-                return "XZR";
-            }
-            if ("W".equals(registerType)) {
-                return "WZR";
+            switch (registerType.charAt(0)) {
+                case 'X': return X_REGS_ZR[register];
+                case 'W': return W_REGS_ZR[register];
+                case 'H': return H_REGS[register];
+                case 'S': return S_REGS[register];
+                case 'D': return D_REGS[register];
+                case 'Q': return Q_REGS[register];
+                case 'B': return B_REGS[register];
             }
         }
-        if ("H".equals(registerType) || "S".equals(registerType) || "Q".equals(registerType) || "D".equals(registerType) || "B".equals(registerType)) {
-            return registerType + "31";
+        if (register == 31) {
+            switch (registerType.charAt(0)) {
+                case 'X': return withSp ? X_REGS_SP[31] : X_REGS_ZR[31];
+                case 'W': return withSp ? W_REGS_SP[31] : W_REGS_ZR[31];
+                case 'H': return H_REGS[31];
+                case 'S': return S_REGS[31];
+                case 'D': return D_REGS[31];
+                case 'Q': return Q_REGS[31];
+                case 'B': return B_REGS[31];
+            }
         }
         throw new UndefinedInstructionException("Unknown register " + registerType + " and " + register + " with-sp=" + withSp + " optionalReg=" + optionalReg);
     }
 
     public String formatFpuRegister(String prefix, int register) {
         if (register >= 0 && register < 32) {
+            switch (prefix.charAt(0)) {
+                case 'H': return H_REGS[register];
+                case 'S': return S_REGS[register];
+                case 'D': return D_REGS[register];
+                case 'Q': return Q_REGS[register];
+                case 'B': return B_REGS[register];
+            }
             return prefix + register;
         }
         throw new RuntimeException();
@@ -480,7 +513,7 @@ public class ArmDisasmHelper {
             throw new UndefinedInstructionException("imm5=" + imm5 + " register=" + register);
         }
         int index = (imm5 >> (trailingZeros + 1)) & intMask(4 - trailingZeros);
-        String suffix = String.format("%s[%d]", prefix, index);
+        String suffix = prefix + "[" + index + "]";
         return formatVectorRegister(register, suffix);
     }
 
@@ -496,7 +529,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("sz=" + sz);
         }
-        String suffix = String.format("%s[%d]", type, index);
+        String suffix = type + "[" + index + "]";
         return formatVectorRegister(m * 16 + register, suffix);
     }
 
@@ -517,7 +550,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("sz=" + sz + " l=" + l + " m=" + m + " h=" + h);
         }
-        String suffix = String.format("%s[%d]", type, index);
+        String suffix = type + "[" + index + "]";
         return formatVectorRegister(m * 16 + register, suffix);
     }
 
@@ -537,7 +570,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("sz=" + size);
         }
-        String suffix = String.format("%s[%d]", type, index);
+        String suffix = type + "[" + index + "]";
         return formatVectorRegister(realRegister, suffix);
     }
 
@@ -556,7 +589,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("sz=" + size);
         }
-        String suffix = String.format("%s[%d]", type, index);
+        String suffix = type + "[" + index + "]";
         return formatVectorRegister(rmHigh * 16 + register, suffix);
     }
 
@@ -579,27 +612,27 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("imm5=" + imm5 + " register=" + register);
         }
-        String suffix = String.format("%s[%d]", prefix, index);
+        String suffix = prefix + "[" + index + "]";
         return formatVectorRegister(register, suffix);
     }
 
     public String decodeVectorRegWithIndex3(int register, int h, int l, int m) {
         String type = "H";
         int index = h * 4 + 2 * l + m;
-        String suffix = String.format("%s[%d]", type, index);
+        String suffix = type + "[" + index + "]";
         return formatVectorRegister(register, suffix);
     }
 
     public String decodeVectorRegWithIndex11(int register, int m, int h, int l) {
         String type = "4B";
         int index = 2 * h + l;
-        String suffix = String.format("%s[%d]", type, index);
+        String suffix = type + "[" + index + "]";
         return formatVectorRegister(16 * m + register, suffix);
     }
 
     public String decodeVectorRegWithIndex12(int register, int imm2) {
         String type = "S";
-        String suffix = String.format("%s[%d]", type, imm2);
+        String suffix = type + "[" + imm2 + "]";
         return formatVectorRegister(register, suffix);
     }
 
@@ -643,7 +676,7 @@ public class ArmDisasmHelper {
 
     public String formatVectorRegister(int register, String suffix) {
         if (register >= 0 && register <= 31) {
-            return String.format("v%d.%s", register, suffix);
+            return "v" + register + "." + suffix;
         }
         throw new RuntimeException();
     }
@@ -752,25 +785,25 @@ public class ArmDisasmHelper {
 
     private String formatRegisterSet(int startRegister, int numRegs, String suffix) {
         if (numRegs == 1) {
-            return String.format("{v%d.%s}", startRegister, suffix);
+            return "{v" + startRegister + "." + suffix + "}";
         }
         if (numRegs == 2) {
-            return String.format("{v%d.%s,v%d.%s}", startRegister, suffix, (startRegister + 1) % 32, suffix);
+            return "{v" + startRegister + "." + suffix + ",v" + ((startRegister + 1) % 32) + "." + suffix + "}";
         }
         int last = (startRegister + numRegs - 1) % 32;
         if (startRegister < last && formatter.formatVectorRegisterListAsRange()) {
             if (numRegs == 3) {
-                return String.format("{v%d.%s-v%d.%s}", startRegister, suffix, (startRegister + 2) % 32, suffix);
+                return "{v" + startRegister + "." + suffix + "-v" + ((startRegister + 2) % 32) + "." + suffix + "}";
             }
             if (numRegs == 4) {
-                return String.format("{v%d.%s-v%d.%s}", startRegister, suffix, (startRegister + 3) % 32, suffix);
+                return "{v" + startRegister + "." + suffix + "-v" + ((startRegister + 3) % 32) + "." + suffix + "}";
             }
         } else {
             if (numRegs == 3) {
-                return String.format("{v%d.%s,v%d.%s,v%d.%s}", startRegister, suffix, (startRegister + 1) % 32, suffix, (startRegister + 2) % 32, suffix);
+                return "{v" + startRegister + "." + suffix + ",v" + ((startRegister + 1) % 32) + "." + suffix + ",v" + ((startRegister + 2) % 32) + "." + suffix + "}";
             }
             if (numRegs == 4) {
-                return String.format("{v%d.%s,v%d.%s,v%d.%s,v%d.%s}", startRegister, suffix, (startRegister + 1) % 32, suffix, (startRegister + 2) % 32, suffix, (startRegister + 3) % 32, suffix);
+                return "{v" + startRegister + "." + suffix + ",v" + ((startRegister + 1) % 32) + "." + suffix + ",v" + ((startRegister + 2) % 32) + "." + suffix + ",v" + ((startRegister + 3) % 32) + "." + suffix + "}";
             }
         }
         throw new UndefinedInstructionException("numRegs=" + numRegs);
@@ -812,22 +845,22 @@ public class ArmDisasmHelper {
 
     public String decodeLd1Index(String registerType, int register, int q, int s, int size) {
         int index = decodeLdXIndex(registerType, register, q, s, size);
-        return String.format("%s[%d]", formatRegisterSet(register, 1, registerType), index);
+        return formatRegisterSet(register, 1, registerType) + "[" + index + "]";
     }
 
     public String decodeLd2Index(String registerType, int register, int q, int s, int size) {
         int index = decodeLdXIndex(registerType, register, q, s, size);
-        return String.format("%s[%d]", formatRegisterSet(register, 2, registerType), index);
+        return formatRegisterSet(register, 2, registerType) + "[" + index + "]";
     }
 
     public String decodeLd3Index(String registerType, int register, int q, int s, int size) {
         int index = decodeLdXIndex(registerType, register, q, s, size);
-        return String.format("%s[%d]", formatRegisterSet(register, 3, registerType), index);
+        return formatRegisterSet(register, 3, registerType) + "[" + index + "]";
     }
 
     public String decodeLd4Index(String registerType, int register, int q, int s, int size) {
         int index = decodeLdXIndex(registerType, register, q, s, size);
-        return String.format("%s[%d]", formatRegisterSet(register, 4, registerType), index);
+        return formatRegisterSet(register, 4, registerType) + "[" + index + "]";
     }
 
 
@@ -861,7 +894,7 @@ public class ArmDisasmHelper {
                 v &= 0xffffffffL;
             }
         }
-        return String.format("#0x%x", v);
+        return "#0x" + Long.toHexString(v);
     }
 
     public String decodeMovShiftedImm16(int imm16, int hw, int registerSize) {
@@ -880,7 +913,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("cmode=" + cmode);
         }
-        return String.format("MSL #%d", value);
+        return "MSL #" + value;
     }
 
     public String decodeShiftedImm12(int value, int shift) {
@@ -920,7 +953,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("immr=" + immr + " imms=" + imms + " regSize=" + regSize);
         }
-        return String.format("#%d", value);
+        return "#" + value;
     }
 
     public String decodeShift_immMinusConst(int immh, int immb, boolean active3LeadingZeros, boolean active2LeadingZeros, boolean active1LeadingZeros, boolean active0LeadingZeros) {
@@ -938,7 +971,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("immh=" + immh + " immb=" + immb);
         }
-        return String.format("#%d", value);
+        return "#" + value;
     }
 
     public String decodeShift_constMinusImm(int immh, int immb, boolean active3LeadingZeros, boolean active2LeadingZeros, boolean active1LeadingZeros, boolean active0LeadingZeros) {
@@ -956,7 +989,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("immh=" + immh + " immb=" + immb);
         }
-        return String.format("#%d", value);
+        return "#" + value;
     }
 
     public String decodeShift2(int size) {
@@ -967,11 +1000,11 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("size=" + size);
         }
-        return String.format("#%d", value);
+        return "#" + value;
     }
 
     public String decodeAluImm(int n, int immr, int imms, int regSize) {
-        return String.format("#0x%x", decodeAluImm0(n, immr, imms, regSize));
+        return "#0x" + Long.toHexString(decodeAluImm0(n, immr, imms, regSize));
     }
 
     public long decodeAluImm0(int n, int immr, int imms, int regSize) {
@@ -1039,7 +1072,7 @@ public class ArmDisasmHelper {
         } else {
             throw new UndefinedInstructionException("immr=" + immr + " imms=" + imms + " regSize=" + regSize);
         }
-        return String.format("#%d", value);
+        return "#" + value;
     }
 
     public String decodeLsbRor(int imms, int regSize) {
@@ -1048,7 +1081,7 @@ public class ArmDisasmHelper {
         if (value >= regSize) {
             throw new RuntimeException();
         }
-        return String.format("#%d", value);
+        return "#" + value;
     }
 
     public String decodeWidth(int immr, int imms, int regSize, boolean BFXIL) {
@@ -1063,15 +1096,15 @@ public class ArmDisasmHelper {
         if (BFXIL) {
             value -= immr;
         }
-        return String.format("#%d", value);
+        return "#" + value;
     }
 
     public String formatDecimalImm(int imm) {
-        return String.format("#%d", imm);
+        return "#" + imm;
     }
 
     public String formatHexImm(int imm) {
-        return String.format("#0x%x", imm);
+        return "#0x" + Integer.toHexString(imm);
     }
 
     public String decodeBranchCondition(int cc) {
@@ -1143,7 +1176,7 @@ public class ArmDisasmHelper {
         value = (value << 8) + replicateBit8Times(f);
         value = (value << 8) + replicateBit8Times(g);
         value = (value << 8) + replicateBit8Times(h);
-        return String.format("#0x%x", value);
+        return "#0x" + Long.toHexString(value);
     }
 
     private long replicateBit8Times(int input) {
@@ -1195,8 +1228,7 @@ public class ArmDisasmHelper {
         if (op1 == 3 && crn == 7 && crm == 5 && op2 == 1) {
             return "IC IVAU," + getRegisterName("X", register, false, -1);
         }
-        String key = String.format("%s %s %s %s", asBinaryString(3, op1),
-                asBinaryString(4, crn), asBinaryString(4, crm), asBinaryString(3, op2));
+        String key = asBinaryString(3, op1) + " " + asBinaryString(4, crn) + " " + asBinaryString(4, crm) + " " + asBinaryString(3, op2);
         String result = SYS_OP_MAP.get(key);
         return result != null ? result : "SYS dummy";
     }
@@ -1248,11 +1280,10 @@ public class ArmDisasmHelper {
     }
 
     public String decodeSystemRegister(int op0, int op1, int crn, int crm, int op2) {
-        String key = String.format("%s:%s:%s:%s:%s", asBinaryString(2, op0), asBinaryString(3, op1),
-                asBinaryString(4, crn), asBinaryString(4, crm), asBinaryString(3, op2));
+        String key = asBinaryString(2, op0) + ":" + asBinaryString(3, op1) + ":" + asBinaryString(4, crn) + ":" + asBinaryString(4, crm) + ":" + asBinaryString(3, op2);
         String r = SYSTEM_REGISTER_MAP.get(key);
         if (r == null) {
-            return String.format("s%d_%d_c%d_c%d_%d", op0, op1, crn, crm, op2);
+            return "s" + op0 + "_" + op1 + "_c" + crn + "_c" + crm + "_" + op2;
         }
         return r;
     }
@@ -1317,8 +1348,7 @@ public class ArmDisasmHelper {
     }
 
     private String getTlbiRegister(int op1, int crm, int op2) {
-        String key = String.format("%s:%s:%s", asBinaryString(3, op1),
-                asBinaryString(4, crm), asBinaryString(3, op2));
+        String key = asBinaryString(3, op1) + ":" + asBinaryString(4, crm) + ":" + asBinaryString(3, op2);
         return TLBI_MAP.get(key);
     }
 
@@ -1359,7 +1389,7 @@ public class ArmDisasmHelper {
         } else if (crm == 15) {
             return "sy";
         }
-        return String.format("#0x%02x", crm);
+        return "#0x" + (crm < 16 ? "0" : "") + Integer.toHexString(crm);
     }
 
     public String decodePrefetchOp(int imm5) {
@@ -1392,7 +1422,7 @@ public class ArmDisasmHelper {
         if (type != null && target != null) {
             return type + target + policy;
         }
-        return String.format("#0x%02x", imm5);
+        return "#0x" + (imm5 < 16 ? "0" : "") + Integer.toHexString(imm5);
     }
 
     public String decodeIsbOption(int crm) {
@@ -1404,10 +1434,10 @@ public class ArmDisasmHelper {
 
     public String decodeIndex(int q, int imm4) {
         if (q == 1) {
-            return String.format("#%d", imm4);
+            return "#" + imm4;
         }
         if ((imm4 & 0b1000) == 0) {
-            return String.format("#%d", imm4);
+            return "#" + imm4;
         }
         throw new UndefinedInstructionException("q=" + q + " imm4=" + imm4);
     }
@@ -1492,7 +1522,7 @@ public class ArmDisasmHelper {
     }
 
     public String decodePstatefield(int op1, int op2) {
-        String key = String.format("%s:%s", asBinaryString(3, op1), asBinaryString(3, op2));
+        String key = asBinaryString(3, op1) + ":" + asBinaryString(3, op2);
         Map<String, String> map = new HashMap<>();
         map.put("000:011", "UAO");
         map.put("000:100", "PAN");
