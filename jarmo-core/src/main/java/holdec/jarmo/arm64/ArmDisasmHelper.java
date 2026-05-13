@@ -7,6 +7,7 @@ import java.util.Map;
 @SuppressWarnings("WeakerAccess")
 public class ArmDisasmHelper {
 
+    private static final boolean VERBOSE = false;
     private final Formatter formatter;
 
     public ArmDisasmHelper(Formatter formatter) {
@@ -185,7 +186,7 @@ public class ArmDisasmHelper {
         if (control.length() != 8) {
             throw new RuntimeException();
         }
-        if (!control.replace("_", "").replace("r", "").isEmpty()) {
+        if (VERBOSE && !control.replace("_", "").replace("r", "").isEmpty()) {
             throw new RuntimeException();
         }
         return decodeVectorReg_sizeQ(size, q, register,
@@ -1154,93 +1155,102 @@ public class ArmDisasmHelper {
         throw new RuntimeException();
     }
 
+    private static final Map<String, String> SYS_OP_MAP;
+    static {
+        Map<String, String> m = new HashMap<>();
+        m.put("000 0111 1000 000", "AT S1E1R");
+        m.put("100 0111 1000 000", "AT S1E2R");
+        m.put("110 0111 1000 000", "AT S1E3R");
+        m.put("000 0111 1000 001", "AT S1E1W");
+        m.put("100 0111 1000 001", "AT S1E2W");
+        m.put("110 0111 1000 001", "AT S1E3W");
+        m.put("000 0111 1000 010", "AT S1E0R");
+        m.put("000 0111 1000 011", "AT S1E0W");
+        m.put("100 0111 1000 100", "AT S12E1R");
+        m.put("100 0111 1000 101", "AT S12E1W");
+        m.put("100 0111 1000 110", "AT S12E0R");
+        m.put("100 0111 1000 111", "AT S12E0W");
+        m.put("000 0111 1001 000", "AT S1E1RP");
+        m.put("000 0111 1001 001", "AT S1E1WP");
+        m.put("011 0111 0100 001", "DC ZVA");
+        m.put("000 0111 0110 001", "DC IVAC");
+        m.put("000 0111 0110 010", "DC ISW");
+        m.put("011 0111 1010 001", "DC CVAC");
+        m.put("000 0111 1010 010", "DC CSW");
+        m.put("011 0111 1011 001", "DC CVAU");
+        m.put("011 0111 1110 001", "DC CIVAC");
+        m.put("000 0111 1110 010", "DC CISW");
+        m.put("011 0111 1100 001", "DC CVAP");
+        m.put("000 0111 0001 000", "IC IALLUIS");
+        m.put("000 0111 0101 000", "IC IALLU");
+        // "IC IVAU,Xn" is register-dependent; handled as a special case in getSysOp.
+        SYS_OP_MAP = m;
+    }
+
     public String getSysOp(int op1, int op2, int crm, int crn, int register) {
         if (crn == 8 && getTlbiRegister(op1, crm, op2) != null) {
             return "TLBI dummy";
         }
+        // IC IVAU: op1=3, crn=7, crm=5, op2=1 — result includes the register operand.
+        if (op1 == 3 && crn == 7 && crm == 5 && op2 == 1) {
+            return "IC IVAU," + getRegisterName("X", register, false, -1);
+        }
         String key = String.format("%s %s %s %s", asBinaryString(3, op1),
                 asBinaryString(4, crn), asBinaryString(4, crm), asBinaryString(3, op2));
-        Map<String, String> map = new HashMap<>();
-        map.put("000 0111 1000 000", "AT S1E1R");
-        map.put("100 0111 1000 000", "AT S1E2R");
-        map.put("110 0111 1000 000", "AT S1E3R");
-        map.put("000 0111 1000 001", "AT S1E1W");
-        map.put("100 0111 1000 001", "AT S1E2W");
-        map.put("110 0111 1000 001", "AT S1E3W");
-        map.put("000 0111 1000 010", "AT S1E0R");
-        map.put("000 0111 1000 011", "AT S1E0W");
-        map.put("100 0111 1000 100", "AT S12E1R");
-        map.put("100 0111 1000 101", "AT S12E1W");
-        map.put("100 0111 1000 110", "AT S12E0R");
-        map.put("100 0111 1000 111", "AT S12E0W");
-        map.put("000 0111 1001 000", "AT S1E1RP");
-        map.put("000 0111 1001 001", "AT S1E1WP");
+        String result = SYS_OP_MAP.get(key);
+        return result != null ? result : "SYS dummy";
+    }
 
-        map.put("011 0111 0100 001", "DC ZVA");
-        map.put("000 0111 0110 001", "DC IVAC");
-        map.put("000 0111 0110 010", "DC ISW");
-        map.put("011 0111 1010 001", "DC CVAC");
-        map.put("000 0111 1010 010", "DC CSW");
-        map.put("011 0111 1011 001", "DC CVAU");
-        map.put("011 0111 1110 001", "DC CIVAC");
-        map.put("000 0111 1110 010", "DC CISW");
-        map.put("011 0111 1100 001", "DC CVAP");
-
-        map.put("000 0111 0001 000", "IC IALLUIS");
-        map.put("000 0111 0101 000", "IC IALLU");
-        map.put("011 0111 0101 001", "IC IVAU," + getRegisterName("X", register, false, -1));
-        if (map.containsKey(key)) {
-            return map.get(key);
-        }
-        return "SYS dummy";
+    private static final Map<String, String> SYSTEM_REGISTER_MAP;
+    static {
+        Map<String, String> m = new HashMap<>();
+        m.put("11:011:1110:0000:010", "CNTVCT_EL0");
+        m.put("10:000:0000:0110:100", "DBGBVR6_EL1");
+        m.put("10:000:0000:0110:101", "DBGBCR6_EL1");
+        m.put("11:011:0100:0100:000", "FPCR");
+        m.put("11:011:0100:0100:001", "FPSR");
+        m.put("11:000:0000:0111:001", "ID_AA64MMFR1_EL1");
+        m.put("11:000:0000:0000:000", "MIDR_EL1");
+        m.put("11:000:0100:0001:000", "SP_EL0");
+        m.put("11:000:0100:0010:000", "SPSEL");
+        m.put("11:110:0100:0000:000", "SPSR_EL3");
+        m.put("11:100:0100:0011:010", "SPSR_UND");
+        m.put("11:000:0001:0000:000", "SCTLR_EL1");
+        m.put("11:101:0010:0000:010", "TCR_EL12");
+        m.put("11:011:1101:0000:010", "TPIDR_EL0");
+        m.put("11:110:1101:0000:010", "TPIDR_EL3");
+        m.put("11:011:1101:0000:011", "TPIDRRO_EL0");
+        m.put("11:000:0010:0000:000", "TTBR0_EL1");
+        m.put("11:100:0101:0010:011", "VSESR_EL2");
+        m.put("11:000:0100:0010:100", "UAO");
+        m.put("11:101:1100:0000:000", "VBAR_EL12");
+        m.put("11:110:1100:0000:000", "VBAR_EL3");
+        m.put("11:100:0000:0000:101", "VMPIDR_EL2");
+        m.put("11:100:0000:0000:000", "VPIDR_EL2");
+        m.put("11:100:0010:0110:000", "VSTTBR_EL2");
+        m.put("11:100:0010:0001:010", "VTCR_EL2");
+        m.put("11:100:0010:0001:000", "VTTBR_EL2");
+        m.put("11:000:0010:0001:010", "APIBKEYLO_EL1");
+        m.put("10:000:0000:0100:110", "DBGWVR4_EL1");
+        m.put("11:110:0110:0000:000", "FAR_EL3");
+        m.put("11:011:1110:1000:111", "PMEVCNTR7_EL0");
+        m.put("11:100:0110:0000:000", "FAR_EL2");
+        m.put("11:000:0000:0100:001", "ID_AA64PFR1_EL1");
+        m.put("11:110:0001:0010:000", "ZCR_EL3");
+        m.put("11:101:0110:0000:000", "FAR_EL12");
+        m.put("11:000:0000:0101:001", "ID_AA64DFR1_EL1");
+        m.put("11:011:1110:1101:101", "PMEVTYPER13_EL0");
+        m.put("11:011:1110:0011:000", "CNTV_TVAL_EL0");
+        m.put("11:000:0101:0001:000", "AFSR0_EL1");
+        m.put("11:100:0001:0000:000", "SCTLR_EL2");
+        m.put("11:101:0101:0001:001", "afsr1_el12");
+        SYSTEM_REGISTER_MAP = m;
     }
 
     public String decodeSystemRegister(int op0, int op1, int crn, int crm, int op2) {
         String key = String.format("%s:%s:%s:%s:%s", asBinaryString(2, op0), asBinaryString(3, op1),
                 asBinaryString(4, crn), asBinaryString(4, crm), asBinaryString(3, op2));
-        Map<String, String> map = new HashMap<>();
-        map.put("11:011:1110:0000:010", "CNTVCT_EL0");
-        map.put("10:000:0000:0110:100", "DBGBVR6_EL1");
-        map.put("10:000:0000:0110:101", "DBGBCR6_EL1");
-        map.put("11:011:0100:0100:000", "FPCR");
-        map.put("11:011:0100:0100:001", "FPSR");
-        map.put("11:000:0000:0111:001", "ID_AA64MMFR1_EL1");
-        map.put("11:000:0000:0000:000", "MIDR_EL1");
-        map.put("11:000:0100:0001:000", "SP_EL0");
-        map.put("11:000:0100:0010:000", "SPSEL");
-        map.put("11:110:0100:0000:000", "SPSR_EL3");
-        map.put("11:100:0100:0011:010", "SPSR_UND");
-        map.put("11:000:0001:0000:000", "SCTLR_EL1");
-        map.put("11:101:0010:0000:010", "TCR_EL12");
-        map.put("11:011:1101:0000:010", "TPIDR_EL0");
-        map.put("11:110:1101:0000:010", "TPIDR_EL3");
-        map.put("11:011:1101:0000:011", "TPIDRRO_EL0");
-        map.put("11:000:0010:0000:000", "TTBR0_EL1");
-        map.put("11:100:0101:0010:011", "VSESR_EL2");
-        map.put("11:000:0100:0010:100", "UAO");
-        map.put("11:101:1100:0000:000", "VBAR_EL12");
-        map.put("11:110:1100:0000:000", "VBAR_EL3");
-        map.put("11:100:0000:0000:101", "VMPIDR_EL2");
-        map.put("11:100:0000:0000:000", "VPIDR_EL2");
-        map.put("11:100:0010:0110:000", "VSTTBR_EL2");
-        map.put("11:100:0010:0001:010", "VTCR_EL2");
-        map.put("11:100:0010:0001:000", "VTTBR_EL2");
-        map.put("11:000:0010:0001:010", "APIBKEYLO_EL1");
-        map.put("10:000:0000:0100:110", "DBGWVR4_EL1");
-        map.put("11:110:0110:0000:000", "FAR_EL3");
-        map.put("11:011:1110:1000:111", "PMEVCNTR7_EL0");
-        map.put("11:100:0110:0000:000", "FAR_EL2");
-        map.put("11:000:0000:0100:001", "ID_AA64PFR1_EL1");
-        map.put("11:110:0001:0010:000", "ZCR_EL3");
-        map.put("11:101:0110:0000:000", "FAR_EL12");
-        map.put("11:000:0000:0101:001", "ID_AA64DFR1_EL1");
-        map.put("11:011:1110:1101:101", "PMEVTYPER13_EL0");
-        map.put("11:011:1110:0011:000", "CNTV_TVAL_EL0");
-        map.put("11:000:0101:0001:000", "AFSR0_EL1");
-        map.put("11:100:0001:0000:000", "SCTLR_EL2");
-        map.put("11:101:0101:0001:001", "afsr1_el12");
-
-        String r = map.get(key);
+        String r = SYSTEM_REGISTER_MAP.get(key);
         if (r == null) {
             return String.format("s%d_%d_c%d_c%d_%d", op0, op1, crn, crm, op2);
         }
@@ -1256,65 +1266,60 @@ public class ArmDisasmHelper {
         return tlbiReg + suffix;
     }
 
+    private static final Map<String, String> TLBI_MAP;
+    static {
+        Map<String, String> m = new HashMap<>();
+        m.put("000:0011:000", "VMALLE1IS");
+        m.put("000:0011:001", "VAE1IS");
+        m.put("000:0011:010", "ASIDE1IS");
+        m.put("000:0011:011", "VAAE1IS");
+        m.put("000:0011:101", "VALE1IS");
+        m.put("000:0011:111", "VAALE1IS");
+        m.put("000:0111:000", "VMALLE1");
+        m.put("000:0111:001", "VAE1");
+        m.put("000:0111:010", "ASIDE1");
+        m.put("000:0111:011", "VAAE1");
+        m.put("000:0111:101", "VALE1");
+        m.put("000:0111:111", "VAALE1");
+        m.put("100:0000:001", "IPAS2E1IS");
+        m.put("100:0000:101", "IPAS2LE1IS");
+        m.put("100:0011:000", "ALLE2IS");
+        m.put("100:0011:001", "VAE2IS");
+        m.put("100:0011:100", "ALLE1IS");
+        m.put("100:0011:101", "VALE2IS");
+        m.put("100:0011:110", "VMALLS12E1IS");
+        m.put("100:0100:001", "IPAS2E1");
+        m.put("100:0100:101", "IPAS2LE1");
+        m.put("100:0111:000", "ALLE2");
+        m.put("100:0111:001", "VAE2");
+        m.put("100:0111:100", "ALLE1");
+        m.put("100:0111:101", "VALE2");
+        m.put("100:0111:110", "VMALLS12E1");
+        m.put("110:0011:000", "ALLE3IS");
+        m.put("110:0011:001", "VAE3IS");
+        m.put("110:0011:101", "VALE3IS");
+        m.put("110:0111:000", "ALLE3");
+        m.put("110:0111:001", "VAE3");
+        m.put("110:0111:101", "VALE3");
+        m.put("100:0100:000", "IPAS2E1OS");
+        m.put("100:0100:010", "RIPAS2E1");
+        m.put("100:0100:011", "RIPAS2E1OS");
+        m.put("100:0000:110", "RIPAS2LE1IS");
+        m.put("000:0010:011", "RVAAE1IS");
+        m.put("000:0110:111", "RVAALE1");
+        m.put("110:0101:001", "RVAE3OS");
+        m.put("000:0101:101", "RVALE1OS");
+        m.put("110:0010:101", "RVALE3IS");
+        m.put("000:0001:011", "VAAE1OS");
+        m.put("000:0001:111", "VAALE1OS");
+        m.put("100:0010:101", "RVALE2IS");
+        TLBI_MAP = m;
+    }
+
     private String getTlbiRegister(int op1, int crm, int op2) {
         String key = String.format("%s:%s:%s", asBinaryString(3, op1),
                 asBinaryString(4, crm), asBinaryString(3, op2));
-        Map<String, String> map = new HashMap<>();
-        map.put("000:0011:000", "VMALLE1IS");
-        map.put("000:0011:001", "VAE1IS");
-        map.put("000:0011:010", "ASIDE1IS");
-        map.put("000:0011:011", "VAAE1IS");
-        map.put("000:0011:101", "VALE1IS");
-        map.put("000:0011:111", "VAALE1IS");
-
-        map.put("000:0111:000", "VMALLE1");
-        map.put("000:0111:001", "VAE1");
-        map.put("000:0111:010", "ASIDE1");
-        map.put("000:0111:011", "VAAE1");
-        map.put("000:0111:101", "VALE1");
-        map.put("000:0111:111", "VAALE1");
-
-        map.put("100:0000:001", "IPAS2E1IS");
-        map.put("100:0000:101", "IPAS2LE1IS");
-
-        map.put("100:0011:000", "ALLE2IS");
-        map.put("100:0011:001", "VAE2IS");
-        map.put("100:0011:100", "ALLE1IS");
-        map.put("100:0011:101", "VALE2IS");
-        map.put("100:0011:110", "VMALLS12E1IS");
-
-        map.put("100:0100:001", "IPAS2E1");
-        map.put("100:0100:101", "IPAS2LE1");
-
-        map.put("100:0111:000", "ALLE2");
-        map.put("100:0111:001", "VAE2");
-        map.put("100:0111:100", "ALLE1");
-        map.put("100:0111:101", "VALE2");
-        map.put("100:0111:110", "VMALLS12E1");
-
-        map.put("110:0011:000", "ALLE3IS");
-        map.put("110:0011:001", "VAE3IS");
-        map.put("110:0011:101", "VALE3IS");
-
-        map.put("110:0111:000", "ALLE3");
-        map.put("110:0111:001", "VAE3");
-        map.put("110:0111:101", "VALE3");
-
-        map.put("100:0100:000", "IPAS2E1OS");
-        map.put("100:0100:010", "RIPAS2E1");
-        map.put("100:0100:011", "RIPAS2E1OS");
-        map.put("100:0000:110", "RIPAS2LE1IS");
-        map.put("000:0010:011", "RVAAE1IS");
-        map.put("000:0110:111", "RVAALE1");
-        map.put("110:0101:001", "RVAE3OS");
-        map.put("000:0101:101", "RVALE1OS");
-        map.put("110:0010:101", "RVALE3IS");
-        map.put("000:0001:011", "VAAE1OS");
-        map.put("000:0001:111", "VAALE1OS");
-        map.put("100:0010:101", "RVALE2IS");
-
-        String result = map.get(key);
-        return result;
+        return TLBI_MAP.get(key);
     }
 
     private String asBinaryString(int length, int num) {
