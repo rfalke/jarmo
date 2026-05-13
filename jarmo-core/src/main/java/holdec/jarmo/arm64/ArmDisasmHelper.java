@@ -1188,34 +1188,39 @@ public class ArmDisasmHelper {
         throw new RuntimeException();
     }
 
-    private static final Map<String, String> SYS_OP_MAP;
+    private static int encode(String bits) {
+        return Integer.parseInt(bits.replaceAll("[^01]", ""), 2);
+    }
+
+    // Packed key: (op1 << 11) | (crn << 7) | (crm << 3) | op2
+    private static final Map<Integer, String> SYS_OP_MAP;
     static {
-        Map<String, String> m = new HashMap<>();
-        m.put("000 0111 1000 000", "AT S1E1R");
-        m.put("100 0111 1000 000", "AT S1E2R");
-        m.put("110 0111 1000 000", "AT S1E3R");
-        m.put("000 0111 1000 001", "AT S1E1W");
-        m.put("100 0111 1000 001", "AT S1E2W");
-        m.put("110 0111 1000 001", "AT S1E3W");
-        m.put("000 0111 1000 010", "AT S1E0R");
-        m.put("000 0111 1000 011", "AT S1E0W");
-        m.put("100 0111 1000 100", "AT S12E1R");
-        m.put("100 0111 1000 101", "AT S12E1W");
-        m.put("100 0111 1000 110", "AT S12E0R");
-        m.put("100 0111 1000 111", "AT S12E0W");
-        m.put("000 0111 1001 000", "AT S1E1RP");
-        m.put("000 0111 1001 001", "AT S1E1WP");
-        m.put("011 0111 0100 001", "DC ZVA");
-        m.put("000 0111 0110 001", "DC IVAC");
-        m.put("000 0111 0110 010", "DC ISW");
-        m.put("011 0111 1010 001", "DC CVAC");
-        m.put("000 0111 1010 010", "DC CSW");
-        m.put("011 0111 1011 001", "DC CVAU");
-        m.put("011 0111 1110 001", "DC CIVAC");
-        m.put("000 0111 1110 010", "DC CISW");
-        m.put("011 0111 1100 001", "DC CVAP");
-        m.put("000 0111 0001 000", "IC IALLUIS");
-        m.put("000 0111 0101 000", "IC IALLU");
+        Map<Integer, String> m = new HashMap<>();
+        m.put(encode("000 0111 1000 000"), "AT S1E1R");
+        m.put(encode("100 0111 1000 000"), "AT S1E2R");
+        m.put(encode("110 0111 1000 000"), "AT S1E3R");
+        m.put(encode("000 0111 1000 001"), "AT S1E1W");
+        m.put(encode("100 0111 1000 001"), "AT S1E2W");
+        m.put(encode("110 0111 1000 001"), "AT S1E3W");
+        m.put(encode("000 0111 1000 010"), "AT S1E0R");
+        m.put(encode("000 0111 1000 011"), "AT S1E0W");
+        m.put(encode("100 0111 1000 100"), "AT S12E1R");
+        m.put(encode("100 0111 1000 101"), "AT S12E1W");
+        m.put(encode("100 0111 1000 110"), "AT S12E0R");
+        m.put(encode("100 0111 1000 111"), "AT S12E0W");
+        m.put(encode("000 0111 1001 000"), "AT S1E1RP");
+        m.put(encode("000 0111 1001 001"), "AT S1E1WP");
+        m.put(encode("011 0111 0100 001"), "DC ZVA");
+        m.put(encode("000 0111 0110 001"), "DC IVAC");
+        m.put(encode("000 0111 0110 010"), "DC ISW");
+        m.put(encode("011 0111 1010 001"), "DC CVAC");
+        m.put(encode("000 0111 1010 010"), "DC CSW");
+        m.put(encode("011 0111 1011 001"), "DC CVAU");
+        m.put(encode("011 0111 1110 001"), "DC CIVAC");
+        m.put(encode("000 0111 1110 010"), "DC CISW");
+        m.put(encode("011 0111 1100 001"), "DC CVAP");
+        m.put(encode("000 0111 0001 000"), "IC IALLUIS");
+        m.put(encode("000 0111 0101 000"), "IC IALLU");
         // "IC IVAU,Xn" is register-dependent; handled as a special case in getSysOp.
         SYS_OP_MAP = m;
     }
@@ -1228,59 +1233,60 @@ public class ArmDisasmHelper {
         if (op1 == 3 && crn == 7 && crm == 5 && op2 == 1) {
             return "IC IVAU," + getRegisterName('X', register, false, -1);
         }
-        String key = asBinaryString(3, op1) + " " + asBinaryString(4, crn) + " " + asBinaryString(4, crm) + " " + asBinaryString(3, op2);
+        int key = (op1 << 11) | (crn << 7) | (crm << 3) | op2;
         String result = SYS_OP_MAP.get(key);
         return result != null ? result : "SYS dummy";
     }
 
-    private static final Map<String, String> SYSTEM_REGISTER_MAP;
+    // Packed key: (op0 << 14) | (op1 << 11) | (crn << 7) | (crm << 3) | op2
+    private static final Map<Integer, String> SYSTEM_REGISTER_MAP;
     static {
-        Map<String, String> m = new HashMap<>();
-        m.put("11:011:1110:0000:010", "CNTVCT_EL0");
-        m.put("10:000:0000:0110:100", "DBGBVR6_EL1");
-        m.put("10:000:0000:0110:101", "DBGBCR6_EL1");
-        m.put("11:011:0100:0100:000", "FPCR");
-        m.put("11:011:0100:0100:001", "FPSR");
-        m.put("11:000:0000:0111:001", "ID_AA64MMFR1_EL1");
-        m.put("11:000:0000:0000:000", "MIDR_EL1");
-        m.put("11:000:0100:0001:000", "SP_EL0");
-        m.put("11:000:0100:0010:000", "SPSEL");
-        m.put("11:110:0100:0000:000", "SPSR_EL3");
-        m.put("11:100:0100:0011:010", "SPSR_UND");
-        m.put("11:000:0001:0000:000", "SCTLR_EL1");
-        m.put("11:101:0010:0000:010", "TCR_EL12");
-        m.put("11:011:1101:0000:010", "TPIDR_EL0");
-        m.put("11:110:1101:0000:010", "TPIDR_EL3");
-        m.put("11:011:1101:0000:011", "TPIDRRO_EL0");
-        m.put("11:000:0010:0000:000", "TTBR0_EL1");
-        m.put("11:100:0101:0010:011", "VSESR_EL2");
-        m.put("11:000:0100:0010:100", "UAO");
-        m.put("11:101:1100:0000:000", "VBAR_EL12");
-        m.put("11:110:1100:0000:000", "VBAR_EL3");
-        m.put("11:100:0000:0000:101", "VMPIDR_EL2");
-        m.put("11:100:0000:0000:000", "VPIDR_EL2");
-        m.put("11:100:0010:0110:000", "VSTTBR_EL2");
-        m.put("11:100:0010:0001:010", "VTCR_EL2");
-        m.put("11:100:0010:0001:000", "VTTBR_EL2");
-        m.put("11:000:0010:0001:010", "APIBKEYLO_EL1");
-        m.put("10:000:0000:0100:110", "DBGWVR4_EL1");
-        m.put("11:110:0110:0000:000", "FAR_EL3");
-        m.put("11:011:1110:1000:111", "PMEVCNTR7_EL0");
-        m.put("11:100:0110:0000:000", "FAR_EL2");
-        m.put("11:000:0000:0100:001", "ID_AA64PFR1_EL1");
-        m.put("11:110:0001:0010:000", "ZCR_EL3");
-        m.put("11:101:0110:0000:000", "FAR_EL12");
-        m.put("11:000:0000:0101:001", "ID_AA64DFR1_EL1");
-        m.put("11:011:1110:1101:101", "PMEVTYPER13_EL0");
-        m.put("11:011:1110:0011:000", "CNTV_TVAL_EL0");
-        m.put("11:000:0101:0001:000", "AFSR0_EL1");
-        m.put("11:100:0001:0000:000", "SCTLR_EL2");
-        m.put("11:101:0101:0001:001", "afsr1_el12");
+        Map<Integer, String> m = new HashMap<>();
+        m.put(encode("11 011 1110 0000 010"), "CNTVCT_EL0");
+        m.put(encode("10 000 0000 0110 100"), "DBGBVR6_EL1");
+        m.put(encode("10 000 0000 0110 101"), "DBGBCR6_EL1");
+        m.put(encode("11 011 0100 0100 000"), "FPCR");
+        m.put(encode("11 011 0100 0100 001"), "FPSR");
+        m.put(encode("11 000 0000 0111 001"), "ID_AA64MMFR1_EL1");
+        m.put(encode("11 000 0000 0000 000"), "MIDR_EL1");
+        m.put(encode("11 000 0100 0001 000"), "SP_EL0");
+        m.put(encode("11 000 0100 0010 000"), "SPSEL");
+        m.put(encode("11 110 0100 0000 000"), "SPSR_EL3");
+        m.put(encode("11 100 0100 0011 010"), "SPSR_UND");
+        m.put(encode("11 000 0001 0000 000"), "SCTLR_EL1");
+        m.put(encode("11 101 0010 0000 010"), "TCR_EL12");
+        m.put(encode("11 011 1101 0000 010"), "TPIDR_EL0");
+        m.put(encode("11 110 1101 0000 010"), "TPIDR_EL3");
+        m.put(encode("11 011 1101 0000 011"), "TPIDRRO_EL0");
+        m.put(encode("11 000 0010 0000 000"), "TTBR0_EL1");
+        m.put(encode("11 100 0101 0010 011"), "VSESR_EL2");
+        m.put(encode("11 000 0100 0010 100"), "UAO");
+        m.put(encode("11 101 1100 0000 000"), "VBAR_EL12");
+        m.put(encode("11 110 1100 0000 000"), "VBAR_EL3");
+        m.put(encode("11 100 0000 0000 101"), "VMPIDR_EL2");
+        m.put(encode("11 100 0000 0000 000"), "VPIDR_EL2");
+        m.put(encode("11 100 0010 0110 000"), "VSTTBR_EL2");
+        m.put(encode("11 100 0010 0001 010"), "VTCR_EL2");
+        m.put(encode("11 100 0010 0001 000"), "VTTBR_EL2");
+        m.put(encode("11 000 0010 0001 010"), "APIBKEYLO_EL1");
+        m.put(encode("10 000 0000 0100 110"), "DBGWVR4_EL1");
+        m.put(encode("11 110 0110 0000 000"), "FAR_EL3");
+        m.put(encode("11 011 1110 1000 111"), "PMEVCNTR7_EL0");
+        m.put(encode("11 100 0110 0000 000"), "FAR_EL2");
+        m.put(encode("11 000 0000 0100 001"), "ID_AA64PFR1_EL1");
+        m.put(encode("11 110 0001 0010 000"), "ZCR_EL3");
+        m.put(encode("11 101 0110 0000 000"), "FAR_EL12");
+        m.put(encode("11 000 0000 0101 001"), "ID_AA64DFR1_EL1");
+        m.put(encode("11 011 1110 1101 101"), "PMEVTYPER13_EL0");
+        m.put(encode("11 011 1110 0011 000"), "CNTV_TVAL_EL0");
+        m.put(encode("11 000 0101 0001 000"), "AFSR0_EL1");
+        m.put(encode("11 100 0001 0000 000"), "SCTLR_EL2");
+        m.put(encode("11 101 0101 0001 001"), "afsr1_el12");
         SYSTEM_REGISTER_MAP = m;
     }
 
     public String decodeSystemRegister(int op0, int op1, int crn, int crm, int op2) {
-        String key = asBinaryString(2, op0) + ":" + asBinaryString(3, op1) + ":" + asBinaryString(4, crn) + ":" + asBinaryString(4, crm) + ":" + asBinaryString(3, op2);
+        int key = (op0 << 14) | (op1 << 11) | (crn << 7) | (crm << 3) | op2;
         String r = SYSTEM_REGISTER_MAP.get(key);
         if (r == null) {
             return "s" + op0 + "_" + op1 + "_c" + crn + "_c" + crm + "_" + op2;
@@ -1297,70 +1303,60 @@ public class ArmDisasmHelper {
         return tlbiReg + suffix;
     }
 
-    private static final Map<String, String> TLBI_MAP;
+    // Packed key: (op1 << 7) | (crm << 3) | op2
+    private static final Map<Integer, String> TLBI_MAP;
     static {
-        Map<String, String> m = new HashMap<>();
-        m.put("000:0011:000", "VMALLE1IS");
-        m.put("000:0011:001", "VAE1IS");
-        m.put("000:0011:010", "ASIDE1IS");
-        m.put("000:0011:011", "VAAE1IS");
-        m.put("000:0011:101", "VALE1IS");
-        m.put("000:0011:111", "VAALE1IS");
-        m.put("000:0111:000", "VMALLE1");
-        m.put("000:0111:001", "VAE1");
-        m.put("000:0111:010", "ASIDE1");
-        m.put("000:0111:011", "VAAE1");
-        m.put("000:0111:101", "VALE1");
-        m.put("000:0111:111", "VAALE1");
-        m.put("100:0000:001", "IPAS2E1IS");
-        m.put("100:0000:101", "IPAS2LE1IS");
-        m.put("100:0011:000", "ALLE2IS");
-        m.put("100:0011:001", "VAE2IS");
-        m.put("100:0011:100", "ALLE1IS");
-        m.put("100:0011:101", "VALE2IS");
-        m.put("100:0011:110", "VMALLS12E1IS");
-        m.put("100:0100:001", "IPAS2E1");
-        m.put("100:0100:101", "IPAS2LE1");
-        m.put("100:0111:000", "ALLE2");
-        m.put("100:0111:001", "VAE2");
-        m.put("100:0111:100", "ALLE1");
-        m.put("100:0111:101", "VALE2");
-        m.put("100:0111:110", "VMALLS12E1");
-        m.put("110:0011:000", "ALLE3IS");
-        m.put("110:0011:001", "VAE3IS");
-        m.put("110:0011:101", "VALE3IS");
-        m.put("110:0111:000", "ALLE3");
-        m.put("110:0111:001", "VAE3");
-        m.put("110:0111:101", "VALE3");
-        m.put("100:0100:000", "IPAS2E1OS");
-        m.put("100:0100:010", "RIPAS2E1");
-        m.put("100:0100:011", "RIPAS2E1OS");
-        m.put("100:0000:110", "RIPAS2LE1IS");
-        m.put("000:0010:011", "RVAAE1IS");
-        m.put("000:0110:111", "RVAALE1");
-        m.put("110:0101:001", "RVAE3OS");
-        m.put("000:0101:101", "RVALE1OS");
-        m.put("110:0010:101", "RVALE3IS");
-        m.put("000:0001:011", "VAAE1OS");
-        m.put("000:0001:111", "VAALE1OS");
-        m.put("100:0010:101", "RVALE2IS");
+        Map<Integer, String> m = new HashMap<>();
+        m.put(encode("000 0011 000"), "VMALLE1IS");
+        m.put(encode("000 0011 001"), "VAE1IS");
+        m.put(encode("000 0011 010"), "ASIDE1IS");
+        m.put(encode("000 0011 011"), "VAAE1IS");
+        m.put(encode("000 0011 101"), "VALE1IS");
+        m.put(encode("000 0011 111"), "VAALE1IS");
+        m.put(encode("000 0111 000"), "VMALLE1");
+        m.put(encode("000 0111 001"), "VAE1");
+        m.put(encode("000 0111 010"), "ASIDE1");
+        m.put(encode("000 0111 011"), "VAAE1");
+        m.put(encode("000 0111 101"), "VALE1");
+        m.put(encode("000 0111 111"), "VAALE1");
+        m.put(encode("100 0000 001"), "IPAS2E1IS");
+        m.put(encode("100 0000 101"), "IPAS2LE1IS");
+        m.put(encode("100 0011 000"), "ALLE2IS");
+        m.put(encode("100 0011 001"), "VAE2IS");
+        m.put(encode("100 0011 100"), "ALLE1IS");
+        m.put(encode("100 0011 101"), "VALE2IS");
+        m.put(encode("100 0011 110"), "VMALLS12E1IS");
+        m.put(encode("100 0100 001"), "IPAS2E1");
+        m.put(encode("100 0100 101"), "IPAS2LE1");
+        m.put(encode("100 0111 000"), "ALLE2");
+        m.put(encode("100 0111 001"), "VAE2");
+        m.put(encode("100 0111 100"), "ALLE1");
+        m.put(encode("100 0111 101"), "VALE2");
+        m.put(encode("100 0111 110"), "VMALLS12E1");
+        m.put(encode("110 0011 000"), "ALLE3IS");
+        m.put(encode("110 0011 001"), "VAE3IS");
+        m.put(encode("110 0011 101"), "VALE3IS");
+        m.put(encode("110 0111 000"), "ALLE3");
+        m.put(encode("110 0111 001"), "VAE3");
+        m.put(encode("110 0111 101"), "VALE3");
+        m.put(encode("100 0100 000"), "IPAS2E1OS");
+        m.put(encode("100 0100 010"), "RIPAS2E1");
+        m.put(encode("100 0100 011"), "RIPAS2E1OS");
+        m.put(encode("100 0000 110"), "RIPAS2LE1IS");
+        m.put(encode("000 0010 011"), "RVAAE1IS");
+        m.put(encode("000 0110 111"), "RVAALE1");
+        m.put(encode("110 0101 001"), "RVAE3OS");
+        m.put(encode("000 0101 101"), "RVALE1OS");
+        m.put(encode("110 0010 101"), "RVALE3IS");
+        m.put(encode("000 0001 011"), "VAAE1OS");
+        m.put(encode("000 0001 111"), "VAALE1OS");
+        m.put(encode("100 0010 101"), "RVALE2IS");
         TLBI_MAP = m;
     }
 
     private String getTlbiRegister(int op1, int crm, int op2) {
-        String key = asBinaryString(3, op1) + ":" + asBinaryString(4, crm) + ":" + asBinaryString(3, op2);
+        int key = (op1 << 7) | (crm << 3) | op2;
         return TLBI_MAP.get(key);
-    }
-
-    private String asBinaryString(int length, int num) {
-        StringBuilder result = new StringBuilder(Integer.toBinaryString(num));
-        if (result.length() > length) {
-            throw new RuntimeException();
-        }
-        while (result.length() < length) {
-            result.insert(0, "0");
-        }
-        return result.toString();
     }
 
     public String decodeDmbOption(int crm) {
@@ -1522,18 +1518,14 @@ public class ArmDisasmHelper {
     }
 
     public String decodePstatefield(int op1, int op2) {
-        String key = asBinaryString(3, op1) + ":" + asBinaryString(3, op2);
-        Map<String, String> map = new HashMap<>();
-        map.put("000:011", "UAO");
-        map.put("000:100", "PAN");
-        map.put("000:101", "SPSel");
-        map.put("011:110", "DAIFSet");
-        map.put("011:111", "DAIFClr");
-        String result = map.get(key);
-        if (result == null) {
-            throw new UndefinedInstructionException("op1=" + op1 + " op2=" + op2);
+        switch ((op1 << 3) | op2) {
+            case 3: return "UAO";
+            case 4: return "PAN";
+            case 5: return "SPSel";
+            case 30: return "DAIFSet";
+            case 31: return "DAIFClr";
+            default: throw new UndefinedInstructionException("op1=" + op1 + " op2=" + op2);
         }
-        return result;
     }
 
 }
